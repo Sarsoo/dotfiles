@@ -17,6 +17,11 @@ gaps outer 10
 
 smart_gaps on
 
+bindsym $mod+n exec --no-startup-id nautilus
+bindsym $mod+m exec --no-startup-id spotify
+bindsym $mod+c exec --no-startup-id chromium
+bindsym $mod+shift+l exec pkill -KILL -u andy
+
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -44,17 +49,17 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+#bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+ bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+#bindsym $mod+j focus left
+#bindsym $mod+k focus down
+#bindsym $mod+l focus up
+#bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -63,10 +68,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+#bindsym $mod+Shift+j move left
+#bindsym $mod+Shift+k move down
+#bindsym $mod+Shift+l move up
+#bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -102,16 +107,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws1 "I"
+set $ws2 "II"
+set $ws3 "III"
+set $ws4 "IV"
+set $ws5 "V"
+set $ws6 "VI"
+set $ws7 "VII"
+set $ws8 "VIII"
+set $ws9 "IX"
+set $ws10 "X"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -126,16 +131,16 @@ bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+1 move container to workspace $ws1 ; workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2 ; workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3 ; workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4 ; workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5 ; workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6 ; workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7 ; workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8 ; workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9 ; workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10 ; workspace $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -174,15 +179,17 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	#i3bar_command i3bar -t
-	status_command i3status
+	#i3bar_command polybar
+	status_command i3blocks -c ~/.config/i3/i3blocks.conf
+	#status_command i3blocks
 	position top
 	colors{
 		background #002B36
 	}
 	separator_symbol "/"
 	tray_output none
-	#height 30
+	height 23
 }
 
-exec_always compton -b --config ~/.config/i3/compton.conf
+#exec_always --no-startup-id killall polybar; polybar -r bar
+exec_always --no-startup-id compton -b --config ~/.config/i3/compton.conf
