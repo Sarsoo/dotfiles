@@ -17,6 +17,9 @@ gaps outer 5
 
 smart_gaps on
 
+bindsym Control+$alt+Right workspace next
+bindsym Control+$alt+Left workspace prev
+
 #set client.focused #FFFFFF
 
 bindsym $mod+n exec --no-startup-id nautilus
@@ -25,6 +28,9 @@ bindsym $mod+c exec --no-startup-id chromium
 bindsym $mod+shift+l exec pkill -KILL -u andy
 
 set $mod Mod4
+set $alt Mod1
+
+for_window [class="(?i)spotify"] move window to workspace 100:spotify
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
