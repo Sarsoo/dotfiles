@@ -1,0 +1,8 @@
+
+-o ~/Music/youtube/%(uploader)s/%(title)s.%(ext)s
+
+-f "bestaudio/best"
+
+-x
+
+--audio-format flac

@@ -1,0 +1,5 @@
+
+-o ~/Videos/youtube/%(uploader)s/%(title)s.%(ext)s
+
+#-f "best"
+-f "bestvideo+bestaudio/best"
