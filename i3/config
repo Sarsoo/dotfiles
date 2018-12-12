@@ -22,7 +22,7 @@ bindsym Control+$alt+Left workspace prev
 
 bindsym $mod+n exec --no-startup-id nautilus
 bindsym $mod+m exec --no-startup-id spotify
-bindsym $mod+c exec --no-startup-id chromium
+bindsym $mod+c exec --no-startup-id firefox
 bindsym $mod+shift+l exec pkill -KILL -u andy
 
 set $mod Mod4
@@ -59,7 +59,7 @@ bindsym $mod+Shift+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
- bindsym $mod+d exec rofi -show run
+ bindsym $mod+d exec rofi -show combi -config ~/.config/rofi/config
 
 # change focus
 #bindsym $mod+j focus left

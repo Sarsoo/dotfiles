@@ -1,0 +1,3 @@
+rofi.lines: 20
+rofi.modi: window,run,ssh
+rofi.combi-modi: window,run,ssh
