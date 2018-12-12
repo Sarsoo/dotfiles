@@ -12,15 +12,13 @@
 #new_window 1pixel
 hide_edge_borders smart
 workspace_auto_back_and_forth yes
-gaps inner 20
+gaps inner 15
 gaps outer 5
 
 smart_gaps on
 
 bindsym Control+$alt+Right workspace next
 bindsym Control+$alt+Left workspace prev
-
-#set client.focused #FFFFFF
 
 bindsym $mod+n exec --no-startup-id nautilus
 bindsym $mod+m exec --no-startup-id spotify
@@ -188,7 +186,7 @@ client.focused	#FFFFFF #FFFFFF #000000 #FFFFFF #FFFFFF
 client.focused_inactive	#a5a5a5 #a5a5a5 #000000 #FFFFFF #a5a5a5
 client.unfocused	#a5a5a5 #a5a5a5 #000000 #FFFFFF #a5a5a5	
 
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 3
 
 #exec_always --no-startup-id killall polybar; polybar -r bar
 exec_always --no-startup-id compton -b --config ~/.config/i3/compton.conf
