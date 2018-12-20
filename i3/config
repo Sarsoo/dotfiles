@@ -9,6 +9,8 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+set $wsSpotify "100:spotify"
+
 #new_window 1pixel
 hide_edge_borders smart
 workspace_auto_back_and_forth yes
@@ -20,15 +22,25 @@ smart_gaps on
 bindsym Control+$alt+Right workspace next
 bindsym Control+$alt+Left workspace prev
 
-bindsym $mod+n exec --no-startup-id nautilus
+bindsym $mod+n exec --no-startup-id i3-sensible-terminal -e ranger
+bindsym $mod+i exec --no-startup-id i3-sensible-terminal -e nmtui
 bindsym $mod+m exec --no-startup-id spotify
 bindsym $mod+c exec --no-startup-id firefox
+bindsym $mod+o exec --no-startup-id obs --startrecording
+
+#for_window [class="(?i)firefox"] set workspace_layout tabbed
+
+assign [class="obs"] 101:obs
+
 bindsym $mod+shift+l exec pkill -KILL -u andy
+
+bindsym $mod+l exec --no-startup-id firefox -new-window last.fm/user/sarsoo
 
 set $mod Mod4
 set $alt Mod1
 
-for_window [class="(?i)spotify"] move window to workspace 100:spotify
+for_window [class="(?i)spotify"] move window to workspace $wsSpotify
+for_window [class="(?i)spotify"] fullscreen enable
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -59,7 +71,7 @@ bindsym $mod+Shift+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
- bindsym $mod+d exec rofi -show combi -config ~/.config/rofi/config
+ bindsym $mod+d exec rofi -show combi -show-icons -config ~/.config/rofi/config
 
 # change focus
 #bindsym $mod+j focus left
