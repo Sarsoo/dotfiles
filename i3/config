@@ -9,21 +9,23 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+exec --no-startup-id  wal -R
+
 set $wsSpotify "100:spotify"
 
 #new_window 1pixel
 hide_edge_borders smart
 workspace_auto_back_and_forth yes
-gaps inner 15
-gaps outer 5
+gaps inner 10
+gaps outer 3
 
 smart_gaps on
 
 bindsym Control+$alt+Right workspace next
 bindsym Control+$alt+Left workspace prev
 
-bindsym $mod+n exec --no-startup-id i3-sensible-terminal -e ranger
-bindsym $mod+i exec --no-startup-id i3-sensible-terminal -e nmtui
+bindsym $mod+n exec --no-startup-id termite -e ranger
+bindsym $mod+i exec --no-startup-id termite -e nmtui
 bindsym $mod+m exec --no-startup-id spotify
 bindsym $mod+c exec --no-startup-id firefox
 bindsym $mod+o exec --no-startup-id obs --startrecording
@@ -194,11 +196,24 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-client.focused	#FFFFFF #FFFFFF #000000 #FFFFFF #FFFFFF
-client.focused_inactive	#a5a5a5 #a5a5a5 #000000 #FFFFFF #a5a5a5
-client.unfocused	#a5a5a5 #a5a5a5 #000000 #FFFFFF #a5a5a5	
+set_from_resource $fg i3wm.color2 #f0f0f0
+set_from_resource $bg i3wm.color7 #f0f0f0
 
-for_window [class="^.*"] border pixel 3
+
+# class                 border  backgr. text indicator child_border
+client.focused          $bg     $bg     $fg  $bg       $bg
+client.focused_inactive $fg     $bg     $fg  $bg       $fg
+client.unfocused        $fg     $bg     $fg  $bg       $fg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+
+client.background       $bg
+
+#client.focused	#FFFFFF #FFFFFF #000000 #FFFFFF #FFFFFF
+#client.focused_inactive	#a5a5a5 #a5a5a5 #000000 #FFFFFF #a5a5a5
+#client.unfocused	#a5a5a5 #a5a5a5 #000000 #FFFFFF #a5a5a5	
+
+for_window [class="^.*"] border pixel 6
 
 #exec_always --no-startup-id killall polybar; polybar -r bar
 exec_always --no-startup-id compton -b --config ~/.config/i3/compton.conf

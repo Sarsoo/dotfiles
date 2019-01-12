@@ -1,11 +1,18 @@
 [colors]
-#background = #3b4c6d
-background = rgba(0,0,0,0)
-foreground = #eee
-separator = #66ffffff
-linecolor = #8e8e8e
-bordercolor = #333
-accent = #e60053
+#background = #2d2d2d
+#background = rgba(0,0,0,0)
+#foreground = #f2f2f2
+#separator = #66ffffff
+#linecolor = #8e8e8e
+#bordercolor = #333
+#accent = #e60053
+
+background = ${xrdb:color0:#222}
+foreground = ${xrdb:color7:#222}
+foreground-alt = ${xrdb:color7:#222}
+primary = ${xrdb:color1:#222}
+secondary = ${xrdb:color2:#222}
+alert = ${xrdb:color3:#222}
 
 [settings]
 screenchange-reload = true
@@ -20,45 +27,37 @@ screenchange-reload = true
 ;compositing-border = over
 
 [global/wm]
-margin-top = 0
-margin-bottom = 0
+;margin-top = 0
+;margin-bottom = 0
 
 [bar/top]
-enable-ipc = true
 monitor = ${env:MONITOR:eDP1}
-width = 100%
-height = 24
-;radius = 3.0
+height = 26
+radius = 7.0
 ;fixed-center = false
 ;override-redirect = true
-separator = /
+
+padding = 2
+module-margin = 2
+line-size = 2
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-;background-0 = #333
-;background-1 = #222
-;background-2 = ${self.background-1}
-;background-3 = ${self.background-1}
-;background-4 = ${self.background-1}
-;background-5 = ${self.background-1}
-;background-6 = ${self.background-1}
-;background-7 = #111
+;line-color = ${colors.linecolor}
+;underline-size = 1
+;overline-size = 2
 
-line-color = ${colors.linecolor}
-underline-size = 1
-overline-size = 2
-
-border-size = 5
+#border-size = 3
 ;border-color = 0
-;border-bottom-size = 0
-border-bottom-size = 2
+#border-top-size = 4
+;border-bottom-size = 2
 ;border-bottom-color = ${colors.bordercolor}
 
-padding-left = 0
-padding-right = 2
-module-margin-left = 1
-module-margin-right = 2
+;padding-left = 0
+;padding-right = 2
+;module-margin-left = 1
+;module-margin-right = 2
 
 font-0 = dina:pixelsize=9;1
 font-1 = siji:pixelsize=10;1
@@ -66,10 +65,10 @@ font-2 = unifont:size=6;1
 
 modules-left = i3
 ;modules-center = mpd
-;modules-center = xwindow
-modules-right = xbacklight wifi public-ip vpn battery powermenu date 
+modules-center = xwindow
+modules-right = wifi public-ip vpn battery powermenu date 
 
-;tray-position = right
+;tray-position = left
 ;tray-padding = 4
 ;tray-maxsize = 16
 ;tray-transparent = true
@@ -78,41 +77,19 @@ modules-right = xbacklight wifi public-ip vpn battery powermenu date
 
 wm-restack = i3
 
-;dim-value = 0.2
+dim-value = 1.0
 
-;click-left =
-;click-middle =
-;click-right =
-;scroll-up = bspwm-deskprev
-;scroll-down = bspwm-desknext
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
-;double-click-left = notify-send -u low doubleclick
-;double-click-right = notify-send -u low doubleclick2
-
-[module/subscriber]
-type = custom/ipc
-interval = 1	
-; Define the command to be executed when the hook is triggered
-; Available tokens:
-;   %pid% (id of the parent polybar process)
-;hook-0 = date
-hook-0 = wget -qO - icanhazip.com
-;hook-1 = whoami
-;hook-2 = echo "Files in ${HOME}: $(ls -1a ~ | wc -l)"
-
-; Hook to execute on launch. The index is 1-based and using
-; the example below (2) `whoami` would be executed on launch.
-; Default: 0
-initial = 1
-click-left = polybar-msg -p %pid% hook subscriber 1
 
 [module/public-ip]
 type = custom/script
 exec = wget -qO - icanhazip.com
 interval = 60
 label = %output%
-;label = %{A1:wget -qO - icanhazip.com:} output %{A}
+
+format-background = ${xrdb:color5:#222}
+format-padding = 2
 
 [module/i3]
 type = internal/i3
@@ -128,19 +105,19 @@ enable-click = true
 
 label-mode = %mode%
 label-mode-padding = 2
-label-mode-background = ${colors.accent}
+label-mode-background = ${colors.primary}
 
 ;label-focused = %index%
-label-focused-foreground = #ffffff
-label-focused-background = #3f3f3f
-label-focused-underline = ${colors.linecolor}
+label-focused-foreground = ${colors.foreground}
+label-focused-background = ${colors.background}
+label-focused-underline = ${colors.secondary}
 label-focused-padding = 4
 
 ;label-unfocused = %index%
 label-unfocused-padding = 4
 
 ;label-urgent = %index%!
-label-urgent-foreground = #000000
+label-urgent-foreground = ${colors.alert}
 label-urgent-background = #bd2c40
 label-urgent-padding = 4
 
@@ -153,6 +130,10 @@ interval = 5
 ;udspeed-minwidth = 0
 
 format-connected = <label-connected>
+format-connected-background = ${xrdb:color6:#222}
+format-disconnected-background = ${xrdb:color6:#222}
+format-connected-padding = 2
+format-disconnected-padding = 2
 
 ; Available tags:
 ;   <label-disconnected> (default)
@@ -229,11 +210,20 @@ time = %H:%M
 
 label = %date% %time%
 
-
+format-background = ${xrdb:color10:#222}
+format-foreground = #FFFFFF
+;format-underline = #7bfc67
+;format-overline = #7bfc67
+format-padding = 2
 
 [module/battery]
 type = internal/battery
 full-at = 98
+
+format-discharging-background = ${xrdb:color4:#222}
+format-charging-background = ${xrdb:color4:#222}
+format-charging-padding = 2
+format-discharging-padding = 2
 
 battery = BAT0
 adapter = AC
@@ -322,27 +312,34 @@ type = custom/menu
 format-spacing = 1
 
 label-open =power
+label-foreground = #FFFFFF
 ;label-open-foreground = ${colors.separator}
 label-close = cancel
 ;label-close-foreground = ${colors.separator}
 label-separator = |
-label-separator-foreground = ${colors.separator}
+;label-separator-foreground = ${colors.separator}
 
 menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
 menu-0-1 = power off
 menu-0-1-exec = menu-open-2
 
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = reboot
+;menu-1-0 = cancel
+;menu-1-0-exec = menu-open-0
+menu-1-0 = reboot
+menu-1-0-exec = reboot
 
 menu-2-0 = power off
 menu-2-0-exec = poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
-format-label-foreground = #5b
+;format-label-foreground = #5b
+
+format-background = ${xrdb:color2:#222}
+format-foreground = #FFFFFF
+;format-underline = #b51e3a
+;format-overline = #b51e3a
+format-padding = 2
 
 [module/vpn]
 type = custom/script
@@ -352,9 +349,11 @@ label = %output%
 ;format-underline = #268bd2
 format-prefix = "vpn: "
 format-spacing = 1
-exec-if = pgrep -x openvpn
 
-format-prefix-foreground = ${colors.foreground}
-
+format-background = ${xrdb:color3:#222}
+format-foreground = #ffffff
+;format-underline = #3c28d6
+;format-overline = #3c28d6
+format-padding = 2
 
 ; vim:ft=dosini

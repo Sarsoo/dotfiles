@@ -1,13 +1,13 @@
 [options]
-#allow_bold = true
+allow_bold = true
 #audible_bell = false
-#bold_is_bright = true
-#clickable_url = true
+bold_is_bright = true
+clickable_url = true
 #dynamic_title = true
-font = Monospace 9
+font = Monospace 10
 #fullscreen = true
 #icon_name = terminal
-#mouse_autohide = false
+mouse_autohide = true
 #scroll_on_output = false
 #scroll_on_keystroke = true
 # Length of the scrollback buffer, 0 disabled the scrollback buffer
@@ -48,7 +48,7 @@ scrollback_lines = 10000
 #foreground_bold = #ffffff
 #background = #3f3f3f
 #background = rgba(47, 87, 153, 0.8)
-background = rgba(23, 48, 89, 0.8)
+background = rgba(41, 47, 91, 1)
 
 # 20% background transparency (requires a compositor)
 #background = rgba(59, 76, 109, 0.8)
