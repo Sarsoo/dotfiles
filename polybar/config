@@ -85,7 +85,7 @@ scroll-down = i3wm-wsprev
 [module/public-ip]
 type = custom/script
 exec = wget -qO - icanhazip.com
-interval = 60
+interval = 600
 label = %output%
 
 format-background = ${xrdb:color5:#222}
@@ -344,6 +344,7 @@ format-padding = 2
 [module/vpn]
 type = custom/script
 exec = pgrep openvpn >/dev/null && printf "up\n" || printf "down\n"
+exec-if = pgrep -x openvpn
 interval = 5
 label = %output%
 ;format-underline = #268bd2
