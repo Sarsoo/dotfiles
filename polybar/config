@@ -1,13 +1,13 @@
 [colors]
 #background = #2d2d2d
-#background = rgba(0,0,0,0)
+background = rgba(0,0,0,0)
 #foreground = #f2f2f2
 #separator = #66ffffff
 #linecolor = #8e8e8e
 #bordercolor = #333
 #accent = #e60053
 
-background = ${xrdb:color0:#222}
+#background = ${xrdb:color0:#222}
 foreground = ${xrdb:color7:#222}
 foreground-alt = ${xrdb:color7:#222}
 primary = ${xrdb:color1:#222}
@@ -27,7 +27,7 @@ screenchange-reload = true
 ;compositing-border = over
 
 [global/wm]
-;margin-top = 0
+;margin-top = 3
 ;margin-bottom = 0
 
 [bar/top]
@@ -44,13 +44,13 @@ line-size = 2
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-;line-color = ${colors.linecolor}
-;underline-size = 1
+line-color = ${colors.background}
+underline-size = 4
 ;overline-size = 2
 
-#border-size = 3
+;border-size = 6
 ;border-color = 0
-#border-top-size = 4
+border-top-size = 4
 ;border-bottom-size = 2
 ;border-bottom-color = ${colors.bordercolor}
 
@@ -59,7 +59,7 @@ foreground = ${colors.foreground}
 ;module-margin-left = 1
 ;module-margin-right = 2
 
-font-0 = dina:pixelsize=9;1
+font-0 = dina:pixelsize=12;1
 font-1 = siji:pixelsize=10;1
 font-2 = unifont:size=6;1
 
@@ -88,7 +88,7 @@ exec = wget -qO - icanhazip.com
 interval = 600
 label = %output%
 
-format-background = ${xrdb:color5:#222}
+format-underline = ${xrdb:color5}
 format-foreground = #ffffff
 format-padding = 2
 
@@ -109,8 +109,8 @@ label-mode-padding = 2
 label-mode-background = ${colors.primary}
 
 ;label-focused = %index%
-label-focused-foreground = ${colors.foreground}
-label-focused-background = ${colors.background}
+label-focused-foreground = #000000
+label-focused-background = ${xrdb:color5}
 label-focused-underline = ${colors.secondary}
 label-focused-padding = 4
 
@@ -131,9 +131,9 @@ interval = 5
 ;udspeed-minwidth = 0
 
 format-connected = <label-connected>
-format-connected-background = ${xrdb:color6:#222}
+format-connected-underline = ${xrdb:color6:#222}
 format-connected-foreground = #ffffff
-format-disconnected-background = ${xrdb:color6:#222}
+format-disconnected-underline = ${xrdb:color6:#222}
 format-disconnected-foreground = #ffffff
 format-connected-padding = 2
 format-disconnected-padding = 2
@@ -197,9 +197,9 @@ time = %H:%M
 
 label = %date% %time%
 
-format-background = ${xrdb:color10:#222}
+;format-background = ${xrdb:color10:#222}
 format-foreground = #FFFFFF
-;format-underline = #7bfc67
+format-underline = ${xrdb:color10:#222}
 ;format-overline = #7bfc67
 format-padding = 2
 
@@ -207,9 +207,9 @@ format-padding = 2
 type = internal/battery
 full-at = 98
 
-format-discharging-background = ${xrdb:color4:#222}
+format-discharging-underline = ${xrdb:color4:#222}
 format-discharging-foreground = #ffffff
-format-charging-background = ${xrdb:color4:#222}
+format-charging-underline = ${xrdb:color4:#222}
 format-charging-foreground = #ffffff
 format-charging-padding = 2
 format-discharging-padding = 2
@@ -280,7 +280,7 @@ label-foreground = #FFFFFF
 ;label-open-foreground = ${colors.separator}
 label-close = cancel
 ;label-close-foreground = ${colors.separator}
-label-separator = |
+label-separator = " "
 ;label-separator-foreground = ${colors.separator}
 
 menu-0-0 = reboot
@@ -299,7 +299,7 @@ menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 ;format-label-foreground = #5b
 
-format-background = ${xrdb:color2:#222}
+format-underline = ${xrdb:color2:#222}
 format-foreground = #FFFFFF
 ;format-underline = #b51e3a
 ;format-overline = #b51e3a
@@ -315,9 +315,9 @@ label = %output%
 format-prefix = "vpn: "
 format-spacing = 1
 
-format-background = ${xrdb:color3:#222}
+format-underline = ${xrdb:color3:#222}
 format-foreground = #ffffff
-;format-underline = #3c28d6
+;format-underline = ${xrdb:color3:#222}
 ;format-overline = #3c28d6
 format-padding = 2
 
