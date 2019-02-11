@@ -213,6 +213,9 @@ format-charging-underline = ${xrdb:color4:#222}
 format-charging-foreground = #ffffff
 format-charging-padding = 2
 format-discharging-padding = 2
+format-full-padding = 2
+format-full-underline = ${xrdb:color4:#222}
+format-full-foreground = #ffffff
 
 battery = BAT0
 adapter = AC
