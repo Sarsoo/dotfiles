@@ -31,7 +31,7 @@ screenchange-reload = true
 ;margin-bottom = 0
 
 [bar/top]
-monitor = ${env:MONITOR:eDP1}
+monitor = ${env:MONITOR:}
 height = 26
 radius = 7.0
 ;fixed-center = false
