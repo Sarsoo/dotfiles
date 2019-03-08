@@ -24,8 +24,8 @@ smart_gaps on
 bindsym Control+$alt+Right workspace next
 bindsym Control+$alt+Left workspace prev
 
-bindsym $mod+n exec --no-startup-id termite -e ranger
-bindsym $mod+i exec --no-startup-id termite -e nmtui
+bindsym $mod+n exec --no-startup-id termite -e "bash -ic ranger"
+bindsym $mod+i exec --no-startup-id termite -e "bash -ic nmtui"
 bindsym $mod+m exec --no-startup-id spotify
 bindsym $mod+c exec --no-startup-id firefox
 bindsym $mod+o exec --no-startup-id obs --startrecording
