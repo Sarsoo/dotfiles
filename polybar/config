@@ -68,10 +68,10 @@ modules-left = i3
 modules-center = xwindow
 modules-right = wifi public-ip vpn battery powermenu date 
 
-;tray-position = left
-;tray-padding = 4
+tray-position = right
+tray-padding = 4
 ;tray-maxsize = 16
-;tray-transparent = true
+tray-transparent = true
 ;tray-detached = true
 ;tray-offset-x = 50
 
