@@ -65,7 +65,7 @@ font-2 = unifont:size=6;1
 
 modules-left = i3
 ;modules-center = mpd
-modules-center = xwindow
+;modules-center = xwindow
 modules-right = wifi public-ip vpn battery powermenu date 
 
 tray-position = right
