@@ -12,6 +12,7 @@
 exec --no-startup-id  wal -R
 
 set $wsSpotify "100:spotify"
+set $term termite
 
 #new_window 1pixel
 hide_edge_borders smart
@@ -24,8 +25,8 @@ smart_gaps on
 bindsym Control+$alt+Right workspace next
 bindsym Control+$alt+Left workspace prev
 
-bindsym $mod+n exec --no-startup-id termite -e "bash -ic ranger"
-bindsym $mod+i exec --no-startup-id termite -e "bash -ic nmtui"
+bindsym $mod+n exec --no-startup-id $term -e "bash -ic ranger"
+bindsym $mod+i exec --no-startup-id $term -e "bash -ic nmtui"
 bindsym $mod+m exec --no-startup-id spotify
 bindsym $mod+c exec --no-startup-id firefox
 bindsym $mod+o exec --no-startup-id obs --startrecording
@@ -42,7 +43,7 @@ set $mod Mod4
 set $alt Mod1
 
 for_window [class="(?i)spotify"] move window to workspace $wsSpotify
-for_window [class="(?i)spotify"] fullscreen enable
+#for_window [class="(?i)spotify"] fullscreen enable
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -63,7 +64,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec $term
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -220,3 +221,4 @@ exec_always --no-startup-id compton -b --config ~/.config/i3/compton.conf
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+exec_always --no-startup-id feh --bg-scale $HOME/Pictures/wallpaper.jpg
