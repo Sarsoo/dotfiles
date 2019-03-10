@@ -38,6 +38,7 @@ assign [class="obs"] 101:obs
 bindsym $mod+shift+l exec pkill -KILL -u andy
 
 bindsym $mod+l exec --no-startup-id firefox -new-window last.fm/user/sarsoo
+bindsym $mod+x exec --no-startup-id firefox 192.168.0.41
 
 set $mod Mod4
 set $alt Mod1
