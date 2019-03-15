@@ -4,6 +4,8 @@
 
 [[ $- != *i* ]] && return
 
+export PATH="$PATH:$(du --exclude=.git "$HOME/scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
+
 colors() {
 	local fgc bgc vals seq0
 
@@ -95,6 +97,7 @@ alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
+alias mkdir='mkdir -p'
 
 alias dis='intel-virtual-output -f'
 

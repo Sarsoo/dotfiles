@@ -66,13 +66,13 @@ font-2 = unifont:size=6;1
 modules-left = i3 mpd
 ;modules-center = mpd
 ;modules-center = xwindow
-modules-right = wifi public-ip vpn battery powermenu date 
+modules-right = wifi public-ip vpn battery date 
 
 tray-position = right
 tray-padding = 4
 ;tray-maxsize = 16
-tray-transparent = true
-;tray-detached = true
+tray-background = ${root.background}
+tray-detached = false
 ;tray-offset-x = 50
 
 wm-restack = i3
@@ -272,41 +272,6 @@ label-maxlen = 75
 type = internal/counter
 format = <counter>
 interval = 0.1
-
-[module/powermenu]
-type = custom/menu
-
-format-spacing = 1
-
-label-open =power
-label-foreground = #FFFFFF
-;label-open-foreground = ${colors.separator}
-label-close = cancel
-;label-close-foreground = ${colors.separator}
-label-separator = " "
-;label-separator-foreground = ${colors.separator}
-
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-
-;menu-1-0 = cancel
-;menu-1-0-exec = menu-open-0
-menu-1-0 = reboot
-menu-1-0-exec = reboot
-
-menu-2-0 = power off
-menu-2-0-exec = poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
-;format-label-foreground = #5b
-
-format-underline = ${xrdb:color2:#222}
-format-foreground = #FFFFFF
-;format-underline = #b51e3a
-;format-overline = #b51e3a
-format-padding = 2
 
 [module/vpn]
 type = custom/script
