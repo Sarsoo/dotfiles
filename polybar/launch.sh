@@ -9,8 +9,16 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 # Launch bar1 and bar2
 #polybar top &
 
-for m in $(polybar --list-monitors | cut -d":" -f1); do
-    MONITOR=$m polybar --reload top &
-done
+if [[ "$(hostname)" == "andy-pc"  ]]; then
+	for m in $(polybar --list-monitors | cut -d":" -f1); do
+    		MONITOR=$m IFACE="eno1" polybar --reload top &
+	done
+else
+	for m in $(polybar --list-monitors | cut -d":" -f1); do
+    		MONITOR=$m IFACE="wlp3s0" polybar --reload top &
+	done
+fi	
+
+
 
 echo "Bars launched..."
