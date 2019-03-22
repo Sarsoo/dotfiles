@@ -1,13 +1,13 @@
 [colors]
 #background = #2d2d2d
-background = rgba(0,0,0,0)
+#background = rgba(0,0,0,0)
 #foreground = #f2f2f2
 #separator = #66ffffff
 #linecolor = #8e8e8e
 #bordercolor = #333
 #accent = #e60053
 
-#background = ${xrdb:color0:#222}
+background = ${xrdb:color0:#222}
 foreground = ${xrdb:color7:#222}
 foreground-alt = ${xrdb:color7:#222}
 primary = ${xrdb:color1:#222}
@@ -33,8 +33,8 @@ screenchange-reload = true
 [bar/top]
 monitor = ${env:MONITOR:}
 height = 26
-radius = 7.0
-;fixed-center = false
+radius = 0.0
+fixed-center = false
 ;override-redirect = true
 
 padding = 2
@@ -48,10 +48,10 @@ line-color = ${colors.background}
 underline-size = 4
 ;overline-size = 2
 
-;border-size = 6
-;border-color = 0
-border-top-size = 4
-;border-bottom-size = 2
+border-size = 2
+border-color = ${colors.background}
+;border-top-size = 4
+;border-bottom-size = 4
 ;border-bottom-color = ${colors.bordercolor}
 
 ;padding-left = 0
@@ -59,14 +59,16 @@ border-top-size = 4
 ;module-margin-left = 1
 ;module-margin-right = 2
 
-font-0 = dina:pixelsize=12;1
+;font-0 = dina:pixelsize=10;1
+font-0 = "Roboto:pixelsize=12"
 font-1 = siji:pixelsize=10;1
 font-2 = unifont:size=6;1
+font-3 = "Material Icons:size=15;3"
 
 modules-left = i3 mpd
 ;modules-center = mpd
 ;modules-center = xwindow
-modules-right = wifi public-ip vpn battery date 
+modules-right = wifi internalip public-ip vpn battery time date 
 
 tray-position = right
 tray-padding = 4
@@ -86,7 +88,7 @@ scroll-down = i3wm-wsprev
 type = custom/script
 exec = wget -qO - icanhazip.com
 interval = 600
-label = %output%
+label =  %output%
 
 format-underline = ${xrdb:color5}
 format-foreground = #ffffff
@@ -105,24 +107,93 @@ enable-click = true
 ;format = <label-state> <label-mode>
 
 label-mode = %mode%
-label-mode-padding = 2
+label-mode-padding = 3
 label-mode-background = ${colors.primary}
 
-;label-focused = %index%
+label-focused = %icon%
 label-focused-foreground = #000000
 label-focused-background = ${xrdb:color5}
 label-focused-underline = ${colors.secondary}
-label-focused-padding = 4
+label-focused-padding = 3
 
-;label-unfocused = %index%
-label-unfocused-padding = 4
+label-unfocused = %icon%
+label-unfocused-padding = 3
 
-;label-urgent = %index%!
+label-urgent = %icon%!
 label-urgent-foreground = ${colors.alert}
 label-urgent-background = #bd2c40
-label-urgent-padding = 4
+label-urgent-padding = 3
 
-;label-visible = %index%
+label-separator-padding = 2
+
+label-visible-padding = 3
+label-visible = %icon%
+
+ws-icon-0 = 1:I;
+ws-icon-1 = 2:II;
+ws-icon-2 = 3:III;
+ws-icon-3 = 4:IV;
+ws-icon-4 = 5:V;
+ws-icon-5 = 6:VI;
+ws-icon-6 = 7:VII;
+ws-icon-7 = 8:VIII;
+ws-icon-8 = 9:IX;
+
+ws-icon-9 = 100:spotify;
+
+[module/internalip]
+type = internal/network
+interface = wlp3s0
+interval = 5
+;udspeed-minwidth = 0
+
+format-connected =  <label-connected>
+format-connected-underline = ${xrdb:color6:#222}
+format-connected-foreground = #ffffff
+format-disconnected-underline = ${xrdb:color6:#222}
+format-disconnected-foreground = #ffffff
+format-connected-padding = 2
+format-disconnected-padding = 2
+
+; Available tags:
+;   <label-disconnected> (default)
+format-disconnected = 
+
+; Available tags:
+;   <label-connected> (default)
+;   <label-packetloss>
+;   <animation-packetloss>
+format-packetloss = <label-connected>
+
+; Available tokens:
+;   %ifname%    [wireless+wired]
+;   %local_ip%  [wireless+wired]
+;   %local_ip6% [wireless+wired]
+;   %essid%     [wireless]
+;   %signal%    [wireless]
+;   %upspeed%   [wireless+wired]
+;   %downspeed% [wireless+wired]
+;   %linkspeed% [wired]
+; Default: %ifname% %local_ip%
+label-connected = %local_ip%
+;label-connected-foreground = #eefafafa
+
+; Available tokens:
+;   %ifname%    [wireless+wired]
+; Default: (none)
+label-disconnected = not connected
+label-disconnected-foreground = #66ffffff
+
+; Available tokens:
+;   %ifname%    [wireless+wired]
+;   %local_ip%  [wireless+wired]
+;   %local_ip6% [wireless+wired]
+;   %essid%     [wireless]
+;   %signal%    [wireless]
+;   %linkspeed% [wired]
+; Default: (none)
+label-packetloss = %essid%
+label-packetloss-foreground = #eefafafa
 
 [module/wifi]
 type = internal/network
@@ -158,7 +229,7 @@ format-packetloss = <label-connected>
 ;   %downspeed% [wireless+wired]
 ;   %linkspeed% [wired]
 ; Default: %ifname% %local_ip%
-label-connected = %essid% %local_ip%
+label-connected = %essid%
 ;label-connected-foreground = #eefafafa
 
 ; Available tokens:
@@ -178,15 +249,11 @@ label-disconnected-foreground = #66ffffff
 label-packetloss = %essid%
 label-packetloss-foreground = #eefafafa
 
-[module/date]
+[module/time]
 type = internal/date
 
 ; Seconds to sleep between updates
 interval = 10.0
-; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
-; NOTE: if you want to use syntax tags here you need to use %%{...}
-date = %d.%m%
-
 ; Optional time format
 time = %H:%M
 
@@ -195,7 +262,22 @@ time = %H:%M
 ;date-alt = %A, %d %B %Y
 ;time-alt = %H:%M:%S
 
-label = %date% %time%
+label =  %time%
+
+;format-background = ${xrdb:color10:#222}
+format-foreground = #FFFFFF
+format-underline = ${xrdb:color10:#222}
+;format-overline = #7bfc67
+format-padding = 2
+
+[module/date]
+type = internal/date
+interval = 600.0
+; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+date = %d.%m%
+
+label =  %date%
 
 ;format-background = ${xrdb:color10:#222}
 format-foreground = #FFFFFF
@@ -248,37 +330,27 @@ format-discharging = <label-discharging>
 ;   %percentage% (default)
 ;   %time%
 ;   %consumption% (shows current charge rate in watts)
-label-charging = chg: %percentage%%
+label-charging =  %percentage%%
 
 ; Available tokens:
 ;   %percentage% (default)
 ;   %time%
 ;   %consumption% (shows current discharge rate in watts)
-label-discharging = dis: %percentage%%
+label-discharging =  %percentage%%
 
 ; Available tokens:
 ;   %percentage% (default)
-label-full = full
+label-full = 
 
 ; Only applies if <bar-capacity> is used
 ;bar-capacity-width = 10
-
-[module/xwindow]
-type = internal/xwindow
-format = <label>
-label-maxlen = 75
-
-[module/counter]
-type = internal/counter
-format = <counter>
-interval = 0.1
 
 [module/vpn]
 type = custom/script
 exec = pgrep openvpn >/dev/null && printf "up\n" || printf "down\n"
 exec-if = pgrep -x openvpn
 interval = 5
-label = %output%
+label =  %output%
 ;format-underline = #268bd2
 format-prefix = "vpn: "
 format-spacing = 1
@@ -301,9 +373,15 @@ port = 6600
 ; Default: 1
 interval = 1
 
-format-online = <label-song>
+format-online = <icon-prev> <toggle> <icon-next> <label-song> <label-time>
 
-label-song =  %artist% / %album% / %title%
+label-song =  %artist% / %title%
+label-time = (%elapsed% / %total%)
+
+icon-pause = 
+icon-play = 
+icon-prev = 
+icon-next = 
 
 format-online-underline = ${xrdb:color6:#222}
 format-online-foreground = #ffffff
