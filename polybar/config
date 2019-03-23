@@ -107,26 +107,26 @@ enable-click = true
 ;format = <label-state> <label-mode>
 
 label-mode = %mode%
-label-mode-padding = 3
+label-mode-padding = 1
 label-mode-background = ${colors.primary}
 
 label-focused = %icon%
 label-focused-foreground = #000000
 label-focused-background = ${xrdb:color5}
 label-focused-underline = ${colors.secondary}
-label-focused-padding = 3
+label-focused-padding = 1
 
 label-unfocused = %icon%
-label-unfocused-padding = 3
+label-unfocused-padding = 1
 
 label-urgent = %icon%!
 label-urgent-foreground = ${colors.alert}
 label-urgent-background = #bd2c40
-label-urgent-padding = 3
+label-urgent-padding = 1
 
 label-separator-padding = 2
 
-label-visible-padding = 3
+label-visible-padding = 1
 label-visible = %icon%
 
 ws-icon-0 = 1:I;
