@@ -378,8 +378,8 @@ format-online = <icon-prev> <toggle> <icon-next> <label-song> <label-time>
 label-song =  %artist% / %title%
 label-time = (%elapsed% / %total%)
 
-icon-pause = 
-icon-play = 
+icon-play = 
+icon-pause = 
 icon-prev = 
 icon-next = 
 
