@@ -68,7 +68,7 @@ font-3 = "Material Icons:size=15;3"
 modules-left = i3 mpd
 ;modules-center = mpd
 ;modules-center = xwindow
-modules-right = wifi internalip public-ip vpn battery time date 
+modules-right = wifi vpn internalip public-ip battery time date 
 
 tray-position = right
 tray-padding = 4
@@ -350,9 +350,9 @@ type = custom/script
 exec = pgrep openvpn >/dev/null && printf "up\n" || printf "down\n"
 exec-if = pgrep -x openvpn
 interval = 5
-label =  %output%
+label = 
 ;format-underline = #268bd2
-format-prefix = "vpn: "
+;format-prefix = "vpn: "
 format-spacing = 1
 
 format-underline = ${xrdb:color3:#222}
