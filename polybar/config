@@ -1,13 +1,13 @@
 [colors]
 #background = #2d2d2d
-#background = rgba(0,0,0,0)
+background = rgba(0,0,0,0)
 #foreground = #f2f2f2
 #separator = #66ffffff
 #linecolor = #8e8e8e
 #bordercolor = #333
 #accent = #e60053
 
-background = ${xrdb:color0:#222}
+#background = ${xrdb:color0:#222}
 foreground = ${xrdb:color7:#222}
 foreground-alt = ${xrdb:color7:#222}
 primary = ${xrdb:color1:#222}
@@ -60,10 +60,10 @@ border-color = ${colors.background}
 ;module-margin-right = 2
 
 ;font-0 = dina:pixelsize=10;1
-font-0 = "Roboto:pixelsize=12"
+font-0 = "Roboto:pixelsize=12;2"
 font-1 = siji:pixelsize=10;1
 font-2 = unifont:size=6;1
-font-3 = "Material Icons:size=15;3"
+font-3 = "Material Icons:size=15;5"
 
 modules-left = i3 mpd
 ;modules-center = mpd
@@ -90,7 +90,7 @@ exec = wget -qO - icanhazip.com
 interval = 600
 label =  %output%
 
-format-underline = ${xrdb:color5}
+#format-underline = ${xrdb:color5}
 format-foreground = #ffffff
 format-padding = 2
 
@@ -108,20 +108,21 @@ enable-click = true
 
 label-mode = %mode%
 label-mode-padding = 1
-label-mode-background = ${colors.primary}
+#label-mode-background = ${colors.primary}
 
 label-focused = %icon%
 label-focused-foreground = #000000
-label-focused-background = ${xrdb:color5}
-label-focused-underline = ${colors.secondary}
+#label-focused-background = ${xrdb:color5}
+#label-focused-underline = ${colors.secondary}
 label-focused-padding = 1
 
 label-unfocused = %icon%
 label-unfocused-padding = 1
 
 label-urgent = %icon%!
-label-urgent-foreground = ${colors.alert}
-label-urgent-background = #bd2c40
+label-urgent-foreground = $FF0000
+#label-urgent-foreground = ${colors.alert}
+#label-urgent-background = #bd2c40
 label-urgent-padding = 1
 
 label-separator-padding = 2
@@ -148,9 +149,9 @@ interval = 5
 ;udspeed-minwidth = 0
 
 format-connected =  <label-connected>
-format-connected-underline = ${xrdb:color6:#222}
+#format-connected-underline = ${xrdb:color6:#222}
 format-connected-foreground = #ffffff
-format-disconnected-underline = ${xrdb:color6:#222}
+#format-disconnected-underline = ${xrdb:color6:#222}
 format-disconnected-foreground = #ffffff
 format-connected-padding = 2
 format-disconnected-padding = 2
@@ -202,9 +203,9 @@ interval = 5
 ;udspeed-minwidth = 0
 
 format-connected = <label-connected>
-format-connected-underline = ${xrdb:color6:#222}
+#format-connected-underline = ${xrdb:color6:#222}
 format-connected-foreground = #ffffff
-format-disconnected-underline = ${xrdb:color6:#222}
+#format-disconnected-underline = ${xrdb:color6:#222}
 format-disconnected-foreground = #ffffff
 format-connected-padding = 2
 format-disconnected-padding = 2
@@ -266,7 +267,7 @@ label =  %time%
 
 ;format-background = ${xrdb:color10:#222}
 format-foreground = #FFFFFF
-format-underline = ${xrdb:color10:#222}
+#format-underline = ${xrdb:color10:#222}
 ;format-overline = #7bfc67
 format-padding = 2
 
@@ -281,7 +282,7 @@ label =  %date%
 
 ;format-background = ${xrdb:color10:#222}
 format-foreground = #FFFFFF
-format-underline = ${xrdb:color10:#222}
+#format-underline = ${xrdb:color10:#222}
 ;format-overline = #7bfc67
 format-padding = 2
 
@@ -289,14 +290,14 @@ format-padding = 2
 type = internal/battery
 full-at = 98
 
-format-discharging-underline = ${xrdb:color4:#222}
+#format-discharging-underline = ${xrdb:color4:#222}
 format-discharging-foreground = #ffffff
-format-charging-underline = ${xrdb:color4:#222}
+#format-charging-underline = ${xrdb:color4:#222}
 format-charging-foreground = #ffffff
 format-charging-padding = 2
 format-discharging-padding = 2
 format-full-padding = 2
-format-full-underline = ${xrdb:color4:#222}
+#format-full-underline = ${xrdb:color4:#222}
 format-full-foreground = #ffffff
 
 battery = BAT0
@@ -355,7 +356,7 @@ label = 
 ;format-prefix = "vpn: "
 format-spacing = 1
 
-format-underline = ${xrdb:color3:#222}
+#format-underline = ${xrdb:color3:#222}
 format-foreground = #ffffff
 ;format-underline = ${xrdb:color3:#222}
 ;format-overline = #3c28d6
@@ -383,7 +384,7 @@ icon-pause = 
 icon-prev = 
 icon-next = 
 
-format-online-underline = ${xrdb:color6:#222}
+#format-online-underline = ${xrdb:color6:#222}
 format-online-foreground = #ffffff
 ;format-underline = ${xrdb:color3:#222}
 ;format-overline = #3c28d6
