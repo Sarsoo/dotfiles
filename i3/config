@@ -12,7 +12,7 @@
 exec --no-startup-id  wal -R
 
 set $wsSpotify "100:spotify"
-set $term termite
+set $term mate-terminal
 
 #new_window 1pixel
 hide_edge_borders smart
