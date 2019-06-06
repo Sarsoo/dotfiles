@@ -218,7 +218,9 @@ client.background       $bg
 #client.focused_inactive	#a5a5a5 #a5a5a5 #000000 #FFFFFF #a5a5a5
 #client.unfocused	#a5a5a5 #a5a5a5 #000000 #FFFFFF #a5a5a5	
 
-for_window [class="^.*"] border pixel 6
+#for_window [class="^.*"] border pixel 6
+
+default_border none
 
 #exec_always --no-startup-id killall polybar; polybar -r bar
 exec_always --no-startup-id compton -b --config ~/.config/i3/compton.conf
