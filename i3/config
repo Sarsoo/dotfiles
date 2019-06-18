@@ -201,9 +201,11 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set_from_resource $fg i3wm.color2 #f0f0f0
-set_from_resource $bg i3wm.color7 #f0f0f0
+#set_from_resource $fg i3wm.color2 #f0f0f0
+#set_from_resource $bg i3wm.color7 #f0f0f0
 
+set $fg #000000
+set $bg #ffffff
 
 # class                 border  backgr. text indicator child_border
 client.focused          $bg     $bg     $fg  $bg       $bg
@@ -220,7 +222,7 @@ client.background       $bg
 
 #for_window [class="^.*"] border pixel 6
 
-default_border none
+default_border pixel 1
 
 #exec_always --no-startup-id killall polybar; polybar -r bar
 exec_always --no-startup-id compton -b --config ~/.config/i3/compton.conf
