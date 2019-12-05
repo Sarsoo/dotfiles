@@ -103,6 +103,9 @@ alias np='nano -w PKGBUILD'
 alias more=less
 alias mkdir='mkdir -p'
 
+alias ytmpv='mpv --hwdec=auto --ytdl-format="bestvideo[height<=?1800]+bestaudio/best"'
+alias ytmpvhd='mpv --hwdec=auto --ytdl-format="bestvideo[height<=?1080]+bestaudio/best"'
+
 alias dis='intel-virtual-output -f'
 
 xhost +local:root > /dev/null 2>&1
@@ -150,15 +153,8 @@ ex ()
 # better yaourt colors
 export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
 
-# Import colorscheme from 'wal' asynchronously
-# &   # Run the process in the background.
-# ( ) # Hide shell job control messages.
-(cat ~/.cache/wal/sequences &)
-
 export EDITOR=vim
 
-# To add support for TTYs this line can be optionally added.
-source ~/.cache/wal/colors-tty.sh
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/andy/dev/google-cloud-sdk/path.bash.inc' ]; then . '/home/andy/dev/google-cloud-sdk/path.bash.inc'; fi
