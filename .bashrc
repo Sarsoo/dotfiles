@@ -103,8 +103,11 @@ alias np='nano -w PKGBUILD'
 alias more=less
 alias mkdir='mkdir -p'
 
-alias ytmpv='mpv --hwdec=auto --ytdl-format="bestvideo[height<=?1800]+bestaudio/best"'
+alias ytmpv='mpv --hwdec=auto --ytdl-format="bestvideo+bestaudio/best"'
+alias ytmpvqhd='mpv --hwdec=auto --ytdl-format="bestvideo[height<=?1800]+bestaudio/best"'
 alias ytmpvhd='mpv --hwdec=auto --ytdl-format="bestvideo[height<=?1080]+bestaudio/best"'
+
+alias gitlog='git log --graph --all --oneline'
 
 alias dis='intel-virtual-output -f'
 
