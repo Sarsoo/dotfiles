@@ -109,6 +109,8 @@ alias ytmpvhd='mpv --hwdec=auto --ytdl-format="bestvideo[height<=?1080]+bestaudi
 
 alias gitlog='git log --graph --all --oneline'
 
+alias cdev='cd /mnt/files/dev'
+
 alias dis='intel-virtual-output -f'
 
 xhost +local:root > /dev/null 2>&1
