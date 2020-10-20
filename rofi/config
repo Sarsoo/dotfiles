@@ -4,3 +4,4 @@ rofi.combi-modi: drun,run
 rofi.location: 2
 rofi.sidebar-mode: true
 rofi.theme: ~/dotfiles/rofi/colors-rofi-dark.rasi
+rofi.font: cantarell 35

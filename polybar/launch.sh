@@ -15,7 +15,7 @@ if [[ "$(hostname)" == "andy-pc"  ]]; then
 	done
 else
 	for m in $(polybar --list-monitors | cut -d":" -f1); do
-    		MONITOR=$m IFACE="wlp3s0" polybar --reload top &
+    		MONITOR=$m IFACE="wlp1s0" polybar --reload top &
 	done
 fi	
 

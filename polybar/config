@@ -8,7 +8,7 @@ background = rgba(0,0,0,0)
 #accent = #e60053
 
 #background = ${xrdb:color0:#222}
-foreground = ${xrdb:color7:#222}
+foreground = #ffffff
 foreground-alt = ${xrdb:color7:#222}
 primary = ${xrdb:color1:#222}
 secondary = ${xrdb:color2:#222}
@@ -32,14 +32,14 @@ screenchange-reload = true
 
 [bar/top]
 monitor = ${env:MONITOR:}
-height = 15
+height = 50
 radius = 0.0
 fixed-center = false
 ;override-redirect = true
 
-padding = 2
-module-margin = 2
-line-size = 2
+padding = 1
+module-margin = 0
+line-size = 0 
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -60,10 +60,10 @@ border-color = ${colors.background}
 ;module-margin-right = 2
 
 ;font-0 = dina:pixelsize=10;1
-font-0 = "Roboto:pixelsize=11;2"
+font-0 = "Inconsolata:pixelsize=26:weight=bold;5"
 font-1 = siji:pixelsize=10;1
 font-2 = unifont:size=6;1
-font-3 = "Material Icons:size=12;3"
+font-3 = "Material Icons:size=30;10"
 
 modules-left = i3 mpd
 ;modules-center = mpd
@@ -71,10 +71,11 @@ modules-left = i3 mpd
 modules-right = wifi vpn internalip public-ip battery time date 
 
 tray-position = right
-tray-padding = 4
-;tray-maxsize = 16
+tray-padding = 2
+tray-maxsize = 40
 tray-background = ${root.background}
 tray-detached = false
+;tray-scale = 2.0
 ;tray-offset-x = 50
 
 wm-restack = i3
@@ -198,7 +199,7 @@ label-packetloss-foreground = #eefafafa
 
 [module/wifi]
 type = internal/network
-interface = wlp3s0
+interface = wlp1s0
 interval = 5
 ;udspeed-minwidth = 0
 
