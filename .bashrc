@@ -111,6 +111,7 @@ alias gitlog='git log --graph --all --oneline'
 
 alias cdev='cd /mnt/files/dev'
 alias rdoc='cargo doc --open'
+alias lasterror='journalctl -p 3 -xb'
 
 alias dis='intel-virtual-output -f'
 
