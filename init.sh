@@ -52,5 +52,8 @@ fi
 if [ -e "$HOME/.vim/plugins.vim" ]; then
     rm $HOME/.vim/plugins.vim
 fi
+if [ ! -d "$HOME/.vim/bundle" ]; then
+    git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
+fi
 ln -s $SCRIPT_DIR/vim/plugins.vim $HOME/.vim/plugins.vim
 vim +PluginInstall +qall
