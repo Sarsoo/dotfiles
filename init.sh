@@ -57,3 +57,12 @@ if [ ! -d "$HOME/.vim/bundle" ]; then
 fi
 ln -s $SCRIPT_DIR/vim/plugins.vim $HOME/.vim/plugins.vim
 vim +PluginInstall +qall
+
+############
+#  RANGER
+############
+
+if [ -d "$HOME/.config/ranger" ]; then
+    rm -rf $HOME/.config/ranger
+fi
+ln -s $SCRIPT_DIR/ranger $HOME/.config/ranger
