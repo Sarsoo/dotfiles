@@ -66,3 +66,12 @@ if [ -d "$HOME/.config/ranger" ]; then
     rm -rf $HOME/.config/ranger
 fi
 ln -s $SCRIPT_DIR/ranger $HOME/.config/ranger
+
+############
+# ALACRITTY
+############
+
+if [ -d "$HOME/.config/alacritty" ]; then
+    rm -rf $HOME/.config/alacritty
+fi
+ln -s $SCRIPT_DIR/alacritty $HOME/.config/alacritty
