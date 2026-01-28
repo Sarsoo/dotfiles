@@ -110,6 +110,7 @@ alias ytmpvhd='mpv --hwdec=auto --ytdl-format="bestvideo[height<=?1080]+bestaudi
 alias gitlog='git log --graph --all --oneline'
 
 alias cdev='cd /mnt/files/dev'
+alias cdans='cd ~/lab/infra/ansible'
 alias rdoc='cargo doc --open'
 alias lasterror='journalctl -p 3 -xb'
 
