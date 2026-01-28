@@ -4,5 +4,5 @@ live_config_reload = true
 [window]
 padding = { x = 10, y = 10 }
 dynamic_padding = true
-opacity = 0.5
+opacity = 0.8
 blur = true
