@@ -75,3 +75,12 @@ if [ -d "$HOME/.config/alacritty" ]; then
     rm -rf $HOME/.config/alacritty
 fi
 ln -s $SCRIPT_DIR/alacritty $HOME/.config/alacritty
+
+############
+#  HALLOY
+############
+
+if [ -d "$HOME/.var/app/org.squidowl.halloy/config/halloy" ]; then
+    rm -rf $HOME/.var/app/org.squidowl.halloy/config/halloy
+fi
+ln -s $SCRIPT_DIR/halloy $HOME/.var/app/org.squidowl.halloy/config/halloy
