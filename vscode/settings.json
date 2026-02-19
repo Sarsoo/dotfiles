@@ -1,0 +1,176 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.wordWrap": "on",
+    "debug.onTaskErrors": "showErrors",
+    "terminal.integrated.shellArgs.windows": [
+        "-ExecutionPolicy",
+        "Bypass"
+    ],
+    "jupyter.askForKernelRestart": false,
+    "explorer.confirmDelete": false,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb",
+        "*.so": "hexEditor.hexedit",
+        "*.dylib": "hexEditor.hexedit"
+    },
+    "python.autoComplete.addBrackets": true,
+    "python.analysis.completeFunctionParens": true,
+    "codeQL.telemetry.enableTelemetry": false,
+    "dotnet-test-explorer.autoExpandTree": true,
+    "dotnet-test-explorer.autoWatch": true,
+    "csharp.semanticHighlighting.enabled": true,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "remote.SSH.remotePlatform": {
+        
+    },
+    "git.confirmSync": false,
+    "telemetry.telemetryLevel": "off",
+    "dotnet-test-explorer.enableTelemetry": false,
+    "editor.guides.bracketPairs": "active",
+    "settingsSync.ignoredSettings": [
+        "-omnisharp.enableDecompilationSupport"
+    ],
+    "git.autofetch": "all",
+    "git.fetchOnPull": true,
+    "redhat.telemetry.enabled": false,
+    "debug.allowBreakpointsEverywhere": true,
+    "window.autoDetectColorScheme": true,
+    "cmake.configureOnOpen": true,
+    "csharp.experimental.debug.hotReload": true,
+    "cmake.showOptionsMovedNotification": false,
+    "diffEditor.experimental.showMoves": true,
+    "vs-kubernetes": {
+        "vs-kubernetes.crd-code-completion": "enabled"
+    },
+    "cmake.pinnedCommands": [
+        "workbench.action.tasks.configureTaskRunner",
+        "workbench.action.tasks.runTask"
+    ],
+    "workbench.secondarySideBar.showLabels": false,
+    "docker.extension.enableComposeLanguageServer": false,
+    "editor.autoIndentOnPaste": true,
+    "editor.formatOnPaste": true,
+    "chat.agent.enabled": false,
+    "workbench.settings.applyToAllProfiles": [
+        "chat.agent.enabled"
+    ],
+    "chat.commandCenter.enabled": false,
+    "chat.detectParticipant.enabled": false,
+    "telemetry.feedback.enabled": false,
+    "workbench.preferredLightColorTheme": "GitHub Light Default",
+    "workbench.preferredHighContrastColorTheme": "GitHub Dark",
+    "terminal.integrated.scrollback": 100000,
+    "ansible.lightspeed.suggestions.enabled": false,
+    "ansible.lightspeed.enabled": false,
+    "ansible.python.activationScript": "/Users/andy/dev/infra/ansible/.venv/bin/activate",
+    "python.analysis.typeCheckingMode": "standard",
+    "python.analysis.autoFormatStrings": true,
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.generateWithTypeAnnotation": true,
+    "python.analysis.inlayHints.callArgumentNames": "all",
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.pytestParameters": true,
+    "python.analysis.inlayHints.variableTypes": true,
+    "python.analysis.typeEvaluation.deprecateTypingAliases": true,
+    "chat.mcp.access": "none",
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-output-directory=build",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ],
+            "env": {}
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "pdfLaTeX",
+            "tools": [
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "latexmk 🔃",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "xelatex",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        {
+            "name": "pdflatex ➞ bibtex ➞ pdflatex`×2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "xelatex ➞ bibtex ➞ xelatex`×2",
+            "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex"
+            ]
+        }
+    ],
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        },
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "workbench.settings.showAISearchToggle": false,
+    "chat.disableAIFeatures": true
+}

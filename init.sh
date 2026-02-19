@@ -3,6 +3,17 @@ set -x
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     machine=Linux;;
+    Darwin*)    machine=Mac;;
+    CYGWIN*)    machine=Cygwin;;
+    MINGW*)     machine=MinGw;;
+    MSYS_NT*)   machine=MSys;;
+    *)          machine="UNKNOWN:${unameOut}"
+esac
+echo "Init-ing [${machine}]"
+
 ############
 # BashRC
 ############
@@ -84,3 +95,37 @@ if [ -d "$HOME/.var/app/org.squidowl.halloy/config/halloy" ]; then
     rm -rf $HOME/.var/app/org.squidowl.halloy/config/halloy
 fi
 ln -s $SCRIPT_DIR/halloy $HOME/.var/app/org.squidowl.halloy/config/halloy
+
+############
+#  ZED
+############
+
+if [ ! -d "$HOME/.config/zed" ]; then
+    mkdir $HOME/.config/zed
+fi
+if [ -e "$HOME/.config/zed/settings.json" ]; then
+    rm $HOME/.config/zed/settings.json
+fi
+ln -s $SCRIPT_DIR/zed/settings.json $HOME/.config/zed/settings.json
+
+############
+#  VSCODE
+############
+
+case $machine in
+
+    Mac)
+        if [ -e "$HOME/Library/Application Support/Code/User/settings.json" ]; then
+            rm "$HOME/Library/Application Support/Code/User/settings.json"
+        fi
+        ln -s $SCRIPT_DIR/vscode/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
+    ;;
+
+    Linux)
+        if [ -e "$HOME/.config/Code/User/settings.json" ]; then
+            rm $HOME/.config/Code/User/settings.json
+        fi
+        ln -s $SCRIPT_DIR/vscode/settings.json "$HOME/.config/Code/User/settings.json"
+    ;;
+
+esac
