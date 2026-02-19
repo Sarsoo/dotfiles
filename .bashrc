@@ -4,8 +4,6 @@
 
 [[ $- != *i* ]] && return
 
-export PATH="$PATH:$(du --exclude=.git "$HOME/scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
-
 colors() {
 	local fgc bgc vals seq0
 
@@ -96,26 +94,6 @@ fi
 
 unset use_color safe_term match_lhs sh
 
-alias cp="cp -i"                          # confirm before overwriting something
-alias df='df -h'                          # human-readable sizes
-alias free='free -m'                      # show sizes in MB
-alias np='nano -w PKGBUILD'
-alias more=less
-alias mkdir='mkdir -p'
-
-alias ytmpv='mpv --hwdec=auto --ytdl-format="bestvideo+bestaudio/best"'
-alias ytmpvqhd='mpv --hwdec=auto --ytdl-format="bestvideo[height<=?1800]+bestaudio/best"'
-alias ytmpvhd='mpv --hwdec=auto --ytdl-format="bestvideo[height<=?1080]+bestaudio/best"'
-
-alias gitlog='git log --graph --all --oneline'
-
-alias cdev='cd /mnt/files/dev'
-alias cdans='cd ~/lab/infra/ansible'
-alias rdoc='cargo doc --open'
-alias lasterror='journalctl -p 3 -xb'
-
-alias dis='intel-virtual-output -f'
-
 xhost +local:root > /dev/null 2>&1
 
 complete -cf sudo
@@ -158,15 +136,6 @@ ex ()
   fi
 }
 
-# better yaourt colors
-export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
+. "$HOME/.sarc"
 
-export EDITOR=vim
-
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/andy/dev/google-cloud-sdk/path.bash.inc' ]; then . '/home/andy/dev/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/andy/dev/google-cloud-sdk/completion.bash.inc' ]; then . '/home/andy/dev/google-cloud-sdk/completion.bash.inc'; fi
-. "$HOME/.cargo/env"
+eval "$(starship init bash)"

@@ -22,6 +22,27 @@ rm $HOME/.bashrc
 ln -s $SCRIPT_DIR/.bashrc $HOME/.bashrc
 
 ############
+# ZshRC
+############
+
+rm $HOME/.zshrc
+ln -s $SCRIPT_DIR/.zshrc $HOME/.zshrc
+
+############
+# SaRC
+############
+
+rm $HOME/.sarc
+ln -s $SCRIPT_DIR/.sarc $HOME/.sarc
+
+############
+# profile
+############
+
+rm $HOME/.profile
+ln -s $SCRIPT_DIR/.profile $HOME/.profile
+
+############
 # SSH
 ############
 
@@ -129,3 +150,33 @@ case $machine in
     ;;
 
 esac
+
+############
+#  HTOP
+############
+
+if [ ! -d "$HOME/.config/htop" ]; then
+    mkdir $HOME/.config/htop
+fi
+if [ -e "$HOME/.config/htop/htoprc" ]; then
+    rm $HOME/.config/htop/htoprc
+fi
+ln -s $SCRIPT_DIR/htop/htoprc $HOME/.config/htop/htoprc
+
+############
+#  LINEAR MOUSE
+############
+
+if [ -d "$HOME/.config/linearmouse" ]; then
+    rm -rf $HOME/.config/linearmouse
+fi
+ln -s $SCRIPT_DIR/linearmouse $HOME/.config/linearmouse
+
+############
+#  npm
+############
+
+if [ -e "$HOME/.npmrc" ]; then
+    rm $HOME/.npmrc
+fi
+ln -s $SCRIPT_DIR/npm/npmrc $HOME/.npmrc

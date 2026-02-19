@@ -1,0 +1,71 @@
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     machine=Linux;;
+    Darwin*)    machine=Mac;;
+    CYGWIN*)    machine=Cygwin;;
+    MINGW*)     machine=MinGw;;
+    MSYS_NT*)   machine=MSys;;
+    *)          machine="UNKNOWN:${unameOut}"
+esac
+
+export EDITOR=vim
+# PS1='%F{green}%n@%m%f %1/ %F{red}%#%f '
+
+################
+# LINUX
+################
+
+alias mkdir='mkdir -p'
+alias cp="cp -i" # confirm before overwriting something
+alias free='free -m' # show sizes in MB
+alias df='df -h' # human-readable sizes
+alias more=less
+
+alias lasterror='journalctl -p 3 -xb'
+
+################
+# UTIL
+################
+
+alias ytmpv='mpv --hwdec=auto --ytdl-format="bestvideo+bestaudio/best"'
+alias ytmpvqhd='mpv --hwdec=auto --ytdl-format="bestvideo[height<=?1800]+bestaudio/best"'
+alias ytmpvhd='mpv --hwdec=auto --ytdl-format="bestvideo[height<=?1080]+bestaudio/best"'
+
+alias gitlog='git log --graph --all --oneline'
+
+alias rdoc='cargo doc --open'
+
+################
+# MAC
+################
+if [ $machine = "Mac" ]; then
+    alias cdicloud='cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs'
+fi
+
+
+paths=(
+    '/opt/homebrew/opt/python/bin'
+    "$HOME/bin"
+    "$HOME/.local/bin"
+    "$HOME/.dotnet/tools"
+)
+for p in ${paths}; do
+    echo "adding $p"
+    if [ -d "$p" ]; then
+        export PATH="$p:$PATH"
+    fi
+done
+
+if [ -d "$HOME/lab/infra/ansible" ]; then
+    alias cdans='cd ~/lab/infra/ansible'
+fi
+
+if [ -e "$HOME/.cargo/env" ]; then
+    . "$HOME/.cargo/env"
+fi
+
+if [ -d "$HOME/scripts" ]; then
+    . "$HOME/scripts/.rc"
+else
+    echo "Scripts repo not installed.."
+fi
