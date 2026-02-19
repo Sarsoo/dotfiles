@@ -10,36 +10,36 @@
   "disable_ai": true,
   "terminal": {
     "toolbar": {
-      "breadcrumbs": true
-    }
+      "breadcrumbs": true,
+    },
   },
   "agent": {
     "button": false,
     "favorite_models": [],
-    "model_parameters": []
+    "model_parameters": [],
   },
   "git_panel": {
     "tree_view": true,
-    "dock": "right"
+    "dock": "right",
   },
   "bottom_dock_layout": "contained",
   "show_whitespaces": "selection",
   "indent_guides": {
-    "background_coloring": "indent_aware"
+    "background_coloring": "indent_aware",
   },
   "soft_wrap": "editor_width",
   "minimap": {
-    "show": "always"
+    "show": "always",
   },
   "autosave": "off",
   "telemetry": {
     "diagnostics": true,
-    "metrics": false
+    "metrics": false,
   },
   "icon_theme": {
     "mode": "system",
     "light": "Zed (Default)",
-    "dark": "Zed (Default)"
+    "dark": "Zed (Default)",
   },
   "ui_font_size": 16,
   "buffer_font_size": 15,
@@ -47,5 +47,22 @@
     "mode": "system",
     "light": "One Light",
     "dark": "One Dark",
+  },
+  "auto_install_extensions": {
+    "ansible": true,
+    "basher": true,
+    "csharp": true,
+    "csv": true,
+    "docker-compose": true,
+    "dockerfile": true,
+    "helm": true,
+    "html": true,
+    "just": true,
+    "latex": true,
+    "log": true,
+    "nginx": true,
+    "powershell": true,
+    "sql": true,
+    "terraform": true,
   },
 }
