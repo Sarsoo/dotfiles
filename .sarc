@@ -50,14 +50,13 @@ paths=(
     "$HOME/.dotnet/tools"
 )
 for p in ${paths}; do
-    echo "adding $p"
     if [ -d "$p" ]; then
         export PATH="$p:$PATH"
     fi
 done
 
-if [ -d "$HOME/lab/infra/ansible" ]; then
-    alias cdans='cd ~/lab/infra/ansible'
+if [ -d "$HOME/dev/infra/ansible" ]; then
+    alias cdans='cd ~/dev/infra/ansible'
 fi
 
 if [ -e "$HOME/.cargo/env" ]; then

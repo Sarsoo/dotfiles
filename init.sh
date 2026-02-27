@@ -127,7 +127,11 @@ fi
 if [ -e "$HOME/.config/zed/settings.json" ]; then
     rm $HOME/.config/zed/settings.json
 fi
+if [ -e "$HOME/.config/zed/keymap.json" ]; then
+    rm $HOME/.config/zed/keymap.json
+fi
 ln -s $SCRIPT_DIR/zed/settings.json $HOME/.config/zed/settings.json
+ln -s $SCRIPT_DIR/zed/keymap.json $HOME/.config/zed/keymap.json
 
 ############
 #  VSCODE
