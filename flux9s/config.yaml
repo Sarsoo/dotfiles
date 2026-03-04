@@ -1,0 +1,19 @@
+readOnly: true
+defaultNamespace: all
+defaultControllerNamespace: all
+ui:
+  enableMouse: true
+  headless: false
+  noIcons: false
+  skin: default
+  skinReadOnly: dracula
+  splashless: true
+logger:
+  tail: 100
+  buffer: 5000
+  sinceSeconds: 300
+  textWrap: false
+favorites:
+  - Kustomization:flux-system:grafana
+  - Kustomization:flux-system:mimir
+  - Kustomization:flux-system:searxng

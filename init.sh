@@ -226,3 +226,12 @@ case $machine in
     ;;
 
 esac
+
+############
+#  flux9s
+############
+
+if [ -e "$HOME/.config/flux9s" ]; then
+    rm -rf $HOME/.config/flux9s
+fi
+ln -s $SCRIPT_DIR/flux9s $HOME/.config/flux9s
