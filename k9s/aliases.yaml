@@ -1,0 +1,14 @@
+aliases:
+  dp: deployments
+  sec: v1/secrets
+  jo: jobs
+  cj: cronjobs
+  cr: clusterroles
+  crb: clusterrolebindings
+  ro: roles
+  rb: rolebindings
+  np: networkpolicies
+  ss: statefulsets
+  ds: daemonsets
+  xd: xray deploy all
+  xs: xray statefulsets all

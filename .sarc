@@ -63,6 +63,12 @@ if [ -e "$HOME/.cargo/env" ]; then
     . "$HOME/.cargo/env"
 fi
 
+if [ -d "$HOME/.scripts" ]; then
+    . "$HOME/.scripts/.rc"
+else
+    echo "Private scripts repo not installed.."
+fi
+
 if [ -d "$HOME/scripts" ]; then
     . "$HOME/scripts/.rc"
 else

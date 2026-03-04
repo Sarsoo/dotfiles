@@ -184,3 +184,45 @@ if [ -e "$HOME/.npmrc" ]; then
     rm $HOME/.npmrc
 fi
 ln -s $SCRIPT_DIR/npm/npmrc $HOME/.npmrc
+
+############
+#   K9S
+############
+
+case $machine in
+
+    Mac)
+        if [ -e "$HOME/Library/Application Support/k9s/aliases.yaml" ]; then
+            rm "$HOME/Library/Application Support/k9s/aliases.yaml"
+        fi
+        ln -s $SCRIPT_DIR/k9s/aliases.yaml "$HOME/Library/Application Support/k9s/aliases.yaml"
+
+        if [ -e "$HOME/Library/Application Support/k9s/config.yaml" ]; then
+            rm "$HOME/Library/Application Support/k9s/config.yaml"
+        fi
+        ln -s $SCRIPT_DIR/k9s/config.yaml "$HOME/Library/Application Support/k9s/config.yaml"
+
+        if [ -e "$HOME/Library/Application Support/k9s/views.yaml" ]; then
+            rm "$HOME/Library/Application Support/k9s/views.yaml"
+        fi
+        ln -s $SCRIPT_DIR/k9s/config.yaml "$HOME/Library/Application Support/k9s/views.yaml"
+    ;;
+
+    Linux)
+        if [ -e "$HOME/.config/k9s/aliases.yaml" ]; then
+            rm "$HOME/.config/k9s/aliases.yaml"
+        fi
+        ln -s $SCRIPT_DIR/k9s/aliases.yaml "$HOME/.config/k9s/aliases.yaml"
+
+        if [ -e "$HOME/.config/k9s/config.yaml" ]; then
+            rm "$HOME/.config/k9s/config.yaml"
+        fi
+        ln -s $SCRIPT_DIR/k9s/config.yaml "$HOME/.config/k9s/config.yaml"
+
+        if [ -e "$HOME/.config/k9s/views.yaml" ]; then
+            rm "$HOME/.config/k9s/views.yaml"
+        fi
+        ln -s $SCRIPT_DIR/k9s/config.yaml "$HOME/.config/k9s/views.yaml"
+    ;;
+
+esac
