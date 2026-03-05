@@ -7,6 +7,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/syntastic'
+Plugin 'mhinz/vim-startify'
 
 call vundle#end()
 

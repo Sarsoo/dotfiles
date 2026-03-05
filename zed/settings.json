@@ -7,6 +7,31 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "languages": {
+    "HCL": {
+      "colorize_brackets": true,
+      "inlay_hints": {
+        "enabled": true
+      }
+    }
+  },
+  "diagnostics": {
+    "inline": {
+      "enabled": true
+    }
+  },
+  "prettier": {
+    "allowed": true
+  },
+  "document_symbols": "on",
+  "document_folding_ranges": "on",
+  "semantic_tokens": "combined",
+  "git": {
+    "inline_blame": {
+      "show_commit_summary": true
+    }
+  },
+  "tab_size": 2,
   "ssh_connections": [
     {
       "host": "penfold",

@@ -162,6 +162,22 @@
           "vertical" : true
         }
       }
+    },
+    {
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0xc08a",
+          "productName" : "MX Vertical Advanced Ergonomic Mouse",
+          "serialNumber" : "5A9E327A280B527E",
+          "vendorID" : "0x46d"
+        }
+      },
+      "scrolling" : {
+        "reverse" : {
+          "vertical" : true
+        }
+      }
     }
   ]
 }
