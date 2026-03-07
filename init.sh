@@ -43,6 +43,20 @@ rm $HOME/.profile
 ln -s $SCRIPT_DIR/.profile $HOME/.profile
 
 ############
+# zprofile
+############
+
+rm $HOME/.zprofile
+ln -s $SCRIPT_DIR/.zprofile $HOME/.zprofile
+
+############
+# zprofile
+############
+
+rm $HOME/.zshenv
+ln -s $SCRIPT_DIR/.zshenv $HOME/.zshenv
+
+############
 # SSH
 ############
 
