@@ -7,7 +7,56 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "collaboration_panel": {
+    "button": false
+  },
+  "outline_panel": {
+    "file_icons": true
+  },
+  "project_panel": {
+    "sort_mode": "directories_first",
+    "hide_root": true,
+    "diagnostic_badges": true,
+    "bold_folder_labels": true,
+    "indent_size": 15.0,
+    "git_status": true,
+    "folder_icons": false,
+    "file_icons": true,
+    "entry_spacing": "standard",
+    "dock": "left"
+  },
+  "active_pane_modifiers": {
+    "inactive_opacity": 0.7
+  },
+  "tabs": {
+    "file_icons": true,
+    "git_status": true
+  },
+  "title_bar": {
+    "show_menus": false,
+    "show_user_menu": true,
+    "show_sign_in": false,
+    "show_branch_icon": true
+  },
+  "status_bar": {
+    "active_encoding_button": "enabled"
+  },
+  "use_smartcase_search": true,
+  "inlay_hints": {
+    "enabled": true
+  },
+  "vim": {
+    "toggle_relative_line_numbers": false
+  },
+  "relative_line_numbers": "disabled",
+  "vim_mode": true,
+  "ui_font_family": ".ZedSans",
+  "buffer_line_height": "comfortable",
+  "buffer_font_family": ".ZedMono",
   "languages": {
+    "PowerShell": {
+      "tab_size": 4
+    },
     "HCL": {
       "colorize_brackets": true,
       "inlay_hints": {
@@ -16,6 +65,7 @@
     }
   },
   "diagnostics": {
+    "button": true,
     "inline": {
       "enabled": true
     }
@@ -27,6 +77,7 @@
   "document_folding_ranges": "on",
   "semantic_tokens": "combined",
   "git": {
+    "enable_diff": true,
     "inline_blame": {
       "show_commit_summary": true
     }
@@ -47,6 +98,10 @@
   ],
   "disable_ai": true,
   "terminal": {
+    "cursor_shape": "bar",
+    "font_family": ".ZedMono",
+    "working_directory": "current_file_directory",
+    "dock": "bottom",
     "toolbar": {
       "breadcrumbs": true,
     },
@@ -57,6 +112,10 @@
     "model_parameters": [],
   },
   "git_panel": {
+    "diff_stats": true,
+    "sort_by_path": true,
+    "status_style": "icon",
+    "button": true,
     "tree_view": true,
     "dock": "right",
   },
@@ -67,6 +126,7 @@
   },
   "soft_wrap": "editor_width",
   "minimap": {
+    "display_in": "active_editor",
     "show": "always",
   },
   "autosave": "off",
@@ -76,15 +136,15 @@
   },
   "icon_theme": {
     "mode": "system",
-    "light": "Zed (Default)",
-    "dark": "Zed (Default)",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Macchiato",
   },
   "ui_font_size": 15.0,
   "buffer_font_size": 11.0,
   "theme": {
     "mode": "system",
-    "light": "One Light",
-    "dark": "One Dark",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Macchiato",
   },
   "auto_install_extensions": {
     "ansible": true,
@@ -95,6 +155,7 @@
     "dockerfile": true,
     "helm": true,
     "html": true,
+    "ini": true,
     "just": true,
     "latex": true,
     "log": true,
@@ -102,5 +163,9 @@
     "powershell": true,
     "sql": true,
     "terraform": true,
+    "toml": true,
+    "rose-pine-theme": true,
+    "catppuccin": true,
+    "catppuccin-icons": true,
   },
 }
