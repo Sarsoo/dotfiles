@@ -49,7 +49,7 @@
     "toggle_relative_line_numbers": false
   },
   "relative_line_numbers": "disabled",
-  "vim_mode": true,
+  "vim_mode": false,
   "ui_font_family": ".ZedSans",
   "buffer_line_height": "comfortable",
   "buffer_font_family": ".ZedMono",
@@ -67,7 +67,7 @@
   "diagnostics": {
     "button": true,
     "inline": {
-      "enabled": true
+      "enabled": false
     }
   },
   "prettier": {
@@ -145,6 +145,34 @@
     "mode": "system",
     "light": "Catppuccin Latte",
     "dark": "Catppuccin Macchiato",
+  },
+  "file_types": {
+    "Helm": [
+      "**/templates/**/*.tpl",
+      "**/templates/**/*.yaml",
+      "**/templates/**/*.yml",
+      "**/helmfile.d/**/*.yaml",
+      "**/helmfile.d/**/*.yml",
+      "**/values*.yaml"
+    ]
+  },
+  "lsp": {
+    "terraform-ls": {
+      "initialization_options": {
+        "experimentalFeatures": {
+          "prefillRequiredFields": true
+        }
+      }
+    },
+    "yaml-language-server": {
+      "settings": {
+        "yaml": {
+          "schemas": {
+            "https://raw.githubusercontent.com/compose-spec/compose-go/master/schema/compose-spec.json": "docker-compose*.yml"
+          }
+        }
+      }
+    }
   },
   "auto_install_extensions": {
     "ansible": true,
