@@ -249,3 +249,12 @@ if [ -e "$HOME/.config/flux9s" ]; then
     rm -rf $HOME/.config/flux9s
 fi
 ln -s $SCRIPT_DIR/flux9s $HOME/.config/flux9s
+
+############
+#  flux9s
+############
+
+if [ -e "$HOME/.config/opencode/opencode.jsonc" ]; then
+    rm -rf $HOME/.config/opencode/opencode.jsonc
+fi
+ln -s $SCRIPT_DIR/opencode/opencode.jsonc $HOME/.config/opencode/opencode.jsonc

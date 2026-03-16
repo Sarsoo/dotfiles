@@ -7,6 +7,19 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent_servers": {
+    "opencode": {
+      "type": "registry"
+    }
+  },
+  "show_edit_predictions": true,
+  "edit_predictions": {
+    "enabled_in_text_threads": true,
+    "open_ai_compatible_api": {
+      "prompt_format": "infer"
+    },
+    "provider": "zed"
+  },
   "collaboration_panel": {
     "button": false
   },
@@ -96,7 +109,7 @@
       ]
     }
   ],
-  "disable_ai": true,
+  "disable_ai": false,
   "terminal": {
     "cursor_shape": "bar",
     "font_family": ".ZedMono",
@@ -107,8 +120,19 @@
     },
   },
   "agent": {
-    "button": false,
-    "favorite_models": [],
+    "default_model": {
+      "provider": "sarsoo.chat",
+      "model": "development-expert-system",
+      "enable_thinking": false
+    },
+    "button": true,
+    "favorite_models": [
+      {
+        "provider": "sarsoo.chat",
+        "model": "cloud-expert-system",
+        "enable_thinking": false
+      }
+    ],
     "model_parameters": [],
   },
   "git_panel": {
@@ -194,6 +218,44 @@
     "toml": true,
     "rose-pine-theme": true,
     "catppuccin": true,
-    "catppuccin-icons": true,
+    "catppuccin-icons": true
   },
+  "language_models": {
+    "openai_compatible": {
+      // Using Together AI as an example
+      "sarsoo.chat": {
+        "api_url": "https://chat.lab.sarsoo.xyz/api",
+        "available_models": [
+          {
+            "name": "cloud-expert-system",
+            "display_name": "Cloud Expert",
+            "max_tokens": 200000,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "chat_completions": true
+            }
+          },
+          {
+            "name": "development-expert-system",
+            "display_name": "Dev Expert",
+            "max_tokens": 200000,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "chat_completions": true
+            }
+          }
+        ]
+      }
+    }
+  }
 }
