@@ -9,6 +9,9 @@
 {
   "agent_servers": {
     "opencode": {
+      "favorite_models": [
+        "sarsoo-ai/sinara.ai/bedrock/qwen.qwen3-coder-next"
+      ],
       "type": "registry"
     }
   },
@@ -121,16 +124,16 @@
   },
   "agent": {
     "default_model": {
-      "provider": "sarsoo.chat",
-      "model": "development-expert-system",
-      "enable_thinking": false
+      "provider": "sarsoo-ai",
+      "model": "sinara.ai/bedrock/qwen.qwen3-coder-next",
+      "enable_thinking": true
     },
     "button": true,
     "favorite_models": [
       {
-        "provider": "sarsoo.chat",
-        "model": "cloud-expert-system",
-        "enable_thinking": false
+        "provider": "sarsoo-ai",
+        "model": "sinara.ai/bedrock/qwen.qwen3-coder-next",
+        "enable_thinking": true
       }
     ],
     "model_parameters": [],
@@ -224,25 +227,11 @@
     "openai_compatible": {
       // Using Together AI as an example
       "sarsoo.chat": {
-        "api_url": "https://chat.lab.sarsoo.xyz/api",
+        "api_url": "https://bifrost.lab.sarsoo.xyz/v1",
         "available_models": [
           {
-            "name": "cloud-expert-system",
-            "display_name": "Cloud Expert",
-            "max_tokens": 200000,
-            "max_output_tokens": 32000,
-            "max_completion_tokens": 200000,
-            "capabilities": {
-              "tools": true,
-              "images": false,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "chat_completions": true
-            }
-          },
-          {
-            "name": "development-expert-system",
-            "display_name": "Dev Expert",
+            "name": "sarsoo-ai/sinara.ai/bedrock/qwen.qwen3-coder-next",
+            "display_name": "Qwen 3 Coder Next [Sinara]",
             "max_tokens": 200000,
             "max_output_tokens": 32000,
             "max_completion_tokens": 200000,
