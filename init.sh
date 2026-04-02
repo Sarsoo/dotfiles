@@ -144,8 +144,12 @@ fi
 if [ -e "$HOME/.config/zed/keymap.json" ]; then
     rm $HOME/.config/zed/keymap.json
 fi
+if [ -e "$HOME/.config/zed/tasks.json" ]; then
+    rm $HOME/.config/zed/tasks.json
+fi
 ln -s $SCRIPT_DIR/zed/settings.json $HOME/.config/zed/settings.json
 ln -s $SCRIPT_DIR/zed/keymap.json $HOME/.config/zed/keymap.json
+ln -s $SCRIPT_DIR/zed/tasks.json $HOME/.config/zed/tasks.json
 
 ############
 #  VSCODE
@@ -254,7 +258,19 @@ ln -s $SCRIPT_DIR/flux9s $HOME/.config/flux9s
 #  flux9s
 ############
 
+if [ ! -d "$HOME/.config/opencode" ]; then
+    mkdir $HOME/.config/opencode
+fi
 if [ -e "$HOME/.config/opencode/opencode.jsonc" ]; then
     rm -rf $HOME/.config/opencode/opencode.jsonc
 fi
 ln -s $SCRIPT_DIR/opencode/opencode.jsonc $HOME/.config/opencode/opencode.jsonc
+
+################
+#  aerospace
+################
+
+if [ -e "$HOME/.aerospace.toml" ]; then
+    rm $HOME/.aerospace.toml
+fi
+ln -s $SCRIPT_DIR/aerospace/.aerospace.toml $HOME/.aerospace.toml
