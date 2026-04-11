@@ -20,9 +20,7 @@
     "dotnet-test-explorer.autoWatch": true,
     "csharp.semanticHighlighting.enabled": true,
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "remote.SSH.remotePlatform": {
-        
-    },
+    "remote.SSH.remotePlatform": {},
     "git.confirmSync": false,
     "telemetry.telemetryLevel": "off",
     "dotnet-test-explorer.enableTelemetry": false,
@@ -50,14 +48,12 @@
     "docker.extension.enableComposeLanguageServer": false,
     "editor.autoIndentOnPaste": true,
     "editor.formatOnPaste": true,
-    "chat.agent.enabled": false,
     "workbench.settings.applyToAllProfiles": [
         "chat.agent.enabled"
     ],
     "chat.commandCenter.enabled": false,
     "chat.detectParticipant.enabled": false,
     "telemetry.feedback.enabled": false,
-    "workbench.preferredLightColorTheme": "GitHub Light Default",
     "workbench.preferredHighContrastColorTheme": "GitHub Dark",
     "terminal.integrated.scrollback": 100000,
     "ansible.lightspeed.suggestions.enabled": false,
@@ -172,5 +168,27 @@
         "editor.defaultFormatter": "redhat.vscode-yaml"
     },
     "workbench.settings.showAISearchToggle": false,
-    "chat.disableAIFeatures": true
+    "workbench.preferredLightColorTheme": "Catppuccin Latte",
+    "resharper.region.region": "Europe",
+    "resharper.dataSharing.allowDataSharing": false,
+    "workbench.preferredDarkColorTheme": "Catppuccin Frappé",
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.iconTheme": "catppuccin-latte",
+    "workbench.activityBar.location": "bottom",
+    "window.newWindowProfile": "Default",
+    "terraform.codelens.referenceCount": true,
+    "merge-conflict.autoNavigateNextConflict.enabled": true,
+    "terraform.experimentalFeatures.validateOnSave": true,
+    "json.schemaDownload.trustedDomains": {
+        "https://developer.microsoft.com/json-schemas/": true,
+        "https://json-schema.org/": true,
+        "https://json.schemastore.org/": true,
+        "https://models.dev": true,
+        "https://opencode.ai": true,
+        "https://raw.githubusercontent.com/devcontainers/spec/": true,
+        "https://raw.githubusercontent.com/microsoft/vscode/": true,
+        "https://schemastore.azurewebsites.net/": true,
+        "https://www.schemastore.org/": true
+    },
+    "editor.formatOnSave": true
 }

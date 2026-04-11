@@ -264,7 +264,11 @@ fi
 if [ -e "$HOME/.config/opencode/opencode.jsonc" ]; then
     rm -rf $HOME/.config/opencode/opencode.jsonc
 fi
+if [ -e "$HOME/.config/opencode/tui.jsonc" ]; then
+    rm -rf $HOME/.config/opencode/tui.jsonc
+fi
 ln -s $SCRIPT_DIR/opencode/opencode.jsonc $HOME/.config/opencode/opencode.jsonc
+ln -s $SCRIPT_DIR/opencode/tui.jsonc $HOME/.config/opencode/tui.jsonc
 
 ################
 #  aerospace

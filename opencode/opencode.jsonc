@@ -3,6 +3,8 @@
   "disabled_providers": [
     "sarsoo-chat"
   ],
+  "model": "sarsoo-ai/sinara.ai/bedrock/qwen.qwen3-coder-next",
+  "small_model": "sarsoo-ai/sinara.ai/bedrock/google.gemma-3-4b-it",
   "provider": {
     "sarsoo-chat": {
       "name": "sarsoo.chat",
@@ -28,6 +30,9 @@
       "models": {
         "sinara.ai/bedrock/qwen.qwen3-coder-next": {
           "name": "Qwen 3 Coder Next [Sinara]"
+        },
+        "sinara.ai/bedrock/google.gemma-3-4b-it": {
+          "name": "Gemma 3 [Sinara]"
         }
       },
       "options": {

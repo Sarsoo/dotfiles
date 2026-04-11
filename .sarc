@@ -59,6 +59,10 @@ if [ -d "$HOME/dev/infra/ansible" ]; then
     alias cdans='cd ~/dev/infra/ansible'
 fi
 
+if [ -d "$HOME/lab/nix" ]; then
+    alias cdnix='cd $HOME/lab/nix'
+fi
+
 if [ -e "$HOME/.cargo/env" ]; then
     . "$HOME/.cargo/env"
 fi
