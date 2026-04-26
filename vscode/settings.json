@@ -190,5 +190,6 @@
         "https://schemastore.azurewebsites.net/": true,
         "https://www.schemastore.org/": true
     },
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "chat.disableAIFeatures": true
 }

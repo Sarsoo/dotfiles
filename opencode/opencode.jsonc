@@ -3,7 +3,7 @@
   "disabled_providers": [
     "sarsoo-chat"
   ],
-  "model": "sarsoo-ai/sinara.ai/bedrock/qwen.qwen3-coder-next",
+  "model": "sarsoo-ai/sinara.ai/bedrock/anthropic.claude-sonnet-4-6",
   "small_model": "sarsoo-ai/sinara.ai/bedrock/google.gemma-3-4b-it",
   "provider": {
     "sarsoo-chat": {
@@ -28,6 +28,9 @@
       "name": "sarsoo.ai",
       "npm": "@ai-sdk/openai-compatible",
       "models": {
+        "sinara.ai/bedrock/anthropic.claude-sonnet-4-6": {
+          "name": "Claude Sonnet 4.6 [Sinara]"
+        },
         "sinara.ai/bedrock/qwen.qwen3-coder-next": {
           "name": "Qwen 3 Coder Next [Sinara]"
         },
