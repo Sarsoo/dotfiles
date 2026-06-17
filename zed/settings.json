@@ -7,6 +7,14 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "proxy": "",
+  "preview_tabs": {
+    "enable_keep_preview_on_code_navigation": true
+  },
+  "tab_bar": {
+    "show_pinned_tabs_in_separate_row": true
+  },
+  "colorize_brackets": true,
   "agent_servers": {
     "opencode": {
       "favorite_models": [
@@ -17,11 +25,14 @@
   },
   "show_edit_predictions": true,
   "edit_predictions": {
+    "allow_data_collection": "no",
     "enabled_in_text_threads": true,
     "open_ai_compatible_api": {
+      "model": "sinara.ai/bedrock/qwen.qwen3-coder-next",
+      "api_url": "https://bifrost.lab.sarsoo.xyz/v1",
       "prompt_format": "infer"
     },
-    "provider": "zed"
+    "provider": "open_ai_compatible_api"
   },
   "collaboration_panel": {
     "dock": "left",
@@ -47,16 +58,18 @@
     "inactive_opacity": 0.7
   },
   "tabs": {
+    "show_diagnostics": "errors",
     "file_icons": true,
     "git_status": true
   },
   "title_bar": {
+    "show_branch_status_icon": true,
     "show_menus": false,
     "show_user_menu": true,
-    "show_sign_in": false,
-    "show_branch_icon": true
+    "show_sign_in": false
   },
   "status_bar": {
+    "line_endings_button": true,
     "active_encoding_button": "enabled"
   },
   "use_smartcase_search": true,
@@ -89,7 +102,7 @@
     }
   },
   "prettier": {
-    "allowed": false
+    "allowed": true
   },
   "document_symbols": "on",
   "document_folding_ranges": "on",
@@ -142,6 +155,8 @@
     "model_parameters": [],
   },
   "git_panel": {
+    "show_count_badge": true,
+    "file_icons": true,
     "diff_stats": true,
     "sort_by_path": true,
     "status_style": "icon",

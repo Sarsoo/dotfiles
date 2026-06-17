@@ -1,46 +1,25 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "disabled_providers": [
-    "sarsoo-chat"
-  ],
   "model": "sarsoo-ai/sinara.ai/bedrock/anthropic.claude-sonnet-4-6",
   "small_model": "sarsoo-ai/sinara.ai/bedrock/google.gemma-3-4b-it",
   "provider": {
-    "sarsoo-chat": {
-      "name": "sarsoo.chat",
-      "npm": "@ai-sdk/openai-compatible",
-      "models": {
-        "sinara.ai/bedrock/anthropic.claude-sonnet-4-6": {
-          "name": "Claude Sonnet 4.6 [Sinara]"
-        },
-        "sinara.ai/bedrock/google.gemma-3-27b-it": {
-          "name": "Gemma 3 [Sinara]"
-        },
-        "sinara.ai/bedrock/qwen.qwen3-coder-480b-a35b-v1:0": {
-          "name": "Qwen 3 Coder [Sinara]"
-        }
-      },
-      "options": {
-        "baseURL": "https://chat.lab.sarsoo.xyz/api"
-      }
-    },
     "sarsoo-ai": {
       "name": "sarsoo.ai",
       "npm": "@ai-sdk/openai-compatible",
       "models": {
         "sinara.ai/bedrock/anthropic.claude-sonnet-4-6": {
-          "name": "Claude Sonnet 4.6 [Sinara]"
+          "name": "Claude Sonnet 4.6 [Sinara]",
         },
         "sinara.ai/bedrock/qwen.qwen3-coder-next": {
-          "name": "Qwen 3 Coder Next [Sinara]"
+          "name": "Qwen 3 Coder Next [Sinara]",
         },
         "sinara.ai/bedrock/google.gemma-3-4b-it": {
-          "name": "Gemma 3 [Sinara]"
-        }
+          "name": "Gemma 3 [Sinara]",
+        },
       },
       "options": {
-        "baseURL": "https://bifrost.lab.sarsoo.xyz/v1"
-      }
-    }
-  }
+        "baseURL": "https://bifrost.lab.sarsoo.xyz/v1",
+      },
+    },
+  },
 }
