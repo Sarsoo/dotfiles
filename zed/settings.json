@@ -121,10 +121,20 @@
       "projects": [
         {
           "paths": [
+            "/home/admin_ajp/dev"
+          ]
+        },
+        {
+          "paths": [
             "/home/andy.pack/iac"
           ]
         }
       ]
+    },
+    {
+      "host": "annex",
+      "args": [],
+      "projects": []
     }
   ],
   "disable_ai": false,
@@ -138,6 +148,9 @@
     },
   },
   "agent": {
+    "auto_compact": {
+      "threshold": "90%"
+    },
     "dock": "right",
     "default_model": {
       "provider": "sarsoo-ai",

@@ -22,4 +22,12 @@
       },
     },
   },
+  "permission": {
+    "*": "ask",
+    "bash": {
+      "*": "ask",
+      "rm *": "deny",
+      "grep *": "allow",
+    },
+  },
 }
