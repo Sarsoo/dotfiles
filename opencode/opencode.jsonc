@@ -10,6 +10,9 @@
         "sinara.ai/bedrock/anthropic.claude-sonnet-4-6": {
           "name": "Claude Sonnet 4.6 [Sinara]",
         },
+        "sinara.ai/bedrock/anthropic.claude-opus-4-8": {
+          "name": "Claude Opus 4.8 [Sinara]",
+        },
         "sinara.ai/bedrock/qwen.qwen3-coder-next": {
           "name": "Qwen 3 Coder Next [Sinara]",
         },
@@ -22,6 +25,9 @@
       },
     },
   },
+  "command": {},
+  // "lsp": true,
+  "lsp": false,
   "permission": {
     "*": "ask",
     "bash": {
@@ -30,4 +36,47 @@
       "grep *": "allow",
     },
   },
+  "agent": {
+    "build": {
+      "temperature": 0.3,
+      "model": "sarsoo-ai/sinara.ai/bedrock/qwen.qwen3-coder-next",
+      "permission": {
+        "terraform": "deny", // important, no mcp access when you have write access
+      },
+    },
+    "plan": {
+      "temperature": 0.1,
+      "model": "sarsoo-ai/sinara.ai/bedrock/anthropic.claude-opus-4-8",
+    },
+    "general": {
+      "temperature": 0.3,
+      "permission": {
+        "terraform": "deny", // important, no mcp access when you have write access
+      },
+    },
+    "explore": {},
+    "scout": {},
+    "compaction": {
+      "model": "sarsoo-ai/sinara.ai/bedrock/google.gemma-3-4b-it",
+      "temperature": 0.1,
+      "permission": {
+        "terraform": "deny",
+      },
+    },
+    "title": {
+      "model": "sarsoo-ai/sinara.ai/bedrock/google.gemma-3-4b-it",
+      "temperature": 0.3,
+      "permission": {
+        "terraform": "deny",
+      },
+    },
+    "summary": {
+      "model": "sarsoo-ai/sinara.ai/bedrock/google.gemma-3-4b-it",
+      "temperature": 0.1,
+      "permission": {
+        "terraform": "deny",
+      },
+    },
+  },
+  "share": "disabled",
 }
