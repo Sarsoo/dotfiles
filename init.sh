@@ -278,3 +278,12 @@ if [ -e "$HOME/.aerospace.toml" ]; then
     rm $HOME/.aerospace.toml
 fi
 ln -s $SCRIPT_DIR/aerospace/.aerospace.toml $HOME/.aerospace.toml
+
+################
+#   tmux
+################
+
+if [ -e "$HOME/.tmux.conf" ]; then
+    rm $HOME/.tmux.conf
+fi
+ln -s $SCRIPT_DIR/tmux/tmux.conf $HOME/.tmux.conf

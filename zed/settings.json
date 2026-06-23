@@ -132,9 +132,16 @@
       ]
     },
     {
-      "host": "annex",
+      "host": "annex.sinara.net",
+      "username": "admin_ajp",
       "args": [],
-      "projects": []
+      "projects": [
+        {
+          "paths": [
+            "/home/admin_ajp/iac"
+          ]
+        }
+      ]
     }
   ],
   "disable_ai": false,
