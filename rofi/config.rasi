@@ -1,0 +1,24 @@
+configuration {
+
+  font: "JetBrains Mono 12";
+
+  show-icons: true;
+  terminal: "alacritty";
+
+
+  display-drun: "Apps";
+  drun-display-format: "{name}";
+}
+
+window {
+    // width: 30%;
+    // height: 40%;
+    // enabled: true;
+    transparency: "real";
+    border-radius: 8px;
+}
+
+listview {
+    lines: 15;
+    columns: 1;
+}
