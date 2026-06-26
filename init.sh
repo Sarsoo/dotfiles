@@ -205,6 +205,18 @@ link_file "tmux/tmux.conf" ".tmux.conf"
 #   sway
 ################
 link_file "sway/config" ".config/sway/config"
+link_file "sway/mac" ".config/sway/mac"
+
+# swaybar
+link_file "sway/status.sh" ".config/sway/status.sh"
+link_file "sway/swaybar" ".config/sway/swaybar"
+# waybar
+link_file "sway/waybar" ".config/sway/waybar"
+
+################
+#   waybar
+################
+link_file "waybar/config.jsonc" ".config/waybar/config.jsonc"
 
 ################
 #   rofi

@@ -1,0 +1,9 @@
+bindswitch --locked --reload lid:on exec $lock && swaymsg output eDP-1 disable
+bindswitch --locked --reload lid:off exec swaymsg output eDP-1 enable
+
+output 'eDP-1' scale 1.5
+
+input "1452:641:Apple_SPI_Keyboard" {
+  xkb_layout gb
+  xkb_variant mac
+}
