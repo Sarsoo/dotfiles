@@ -21,13 +21,37 @@
   {
     "context": "Workspace",
     "bindings": {
-      "cmd-enter": "workspace::NewTerminal"
-    }
+      "cmd-enter": "workspace::NewTerminal",
+    },
   },
   {
     "context": "Terminal",
     "bindings": {
-      "cmd-enter": "workspace::NewTerminal"
-    }
-  }
+      "cmd-enter": "workspace::NewTerminal",
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-b": "workspace::ToggleLeftDock",
+    },
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "ctrl-b": "workspace::ToggleLeftDock",
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-r": "workspace::ToggleRightDock",
+    },
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "ctrl-alt-b": "workspace::ToggleRightDock",
+    },
+  },
 ]

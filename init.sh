@@ -205,6 +205,7 @@ link_file "tmux/tmux.conf" ".tmux.conf"
 #   sway
 ################
 link_file "sway/config" ".config/sway/config"
+link_file "sway/keybindings" ".config/sway/keybindings"
 link_file "sway/mac" ".config/sway/mac"
 
 # swaybar
@@ -222,3 +223,6 @@ link_file "waybar/config.jsonc" ".config/waybar/config.jsonc"
 #   rofi
 ################
 link_file "rofi/config.rasi" ".config/rofi/config.rasi"
+link_file "rofi/scripts/slaunch.sh" ".config/rofi/scripts/slaunch.sh"
+
+link_file "niri/config.kdl" ".config/niri/config.kdl"

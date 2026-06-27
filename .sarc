@@ -35,6 +35,9 @@ alias gitlog='git log --graph --all --oneline'
 
 alias rdoc='cargo doc --open'
 
+alias k='kubectl'
+alias tf='terraform'
+
 ################
 # MAC
 ################

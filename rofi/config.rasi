@@ -4,6 +4,10 @@ configuration {
 
   show-icons: true;
   terminal: "alacritty";
+  matching: "fuzzy";
+
+  modes: "window,drun,run,ssh,slaunch,combi";
+  combi-modes: "drun,slaunch";
 
 
   display-drun: "Apps";
