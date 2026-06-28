@@ -35,8 +35,10 @@ alias gitlog='git log --graph --all --oneline'
 
 alias rdoc='cargo doc --open'
 
+alias dbx='distrobox'
 alias k='kubectl'
 alias tf='terraform'
+alias mtr='mtr -b -o "LSRD NABWV G JMXI"'
 
 ################
 # MAC
@@ -52,23 +54,17 @@ paths=(
     "$HOME/.local/bin"
     "$HOME/.dotnet/tools"
 )
-for p in ${paths}; do
-    if [ -d "$p" ]; then
-        export PATH="$p:$PATH"
+for p in "${paths[@]}"; do
+    if [ -d "${p}" ]; then
+        export PATH="${p}:${PATH}"
     fi
 done
 
-if [ -d "$HOME/dev/infra/ansible" ]; then
-    alias cdans='cd ~/dev/infra/ansible'
-fi
+[[ -d "$HOME/dev/infra/ansible" ]] && alias cdans='cd ~/dev/infra/ansible'
+[[ -d "$HOME/lab/infra/ansible" ]] && alias cdans='cd ~/lab/infra/ansible'
+[[ -d "$HOME/lab/nix" ]] && alias cdnix='cd $HOME/lab/nix'
 
-if [ -d "$HOME/lab/nix" ]; then
-    alias cdnix='cd $HOME/lab/nix'
-fi
-
-if [ -e "$HOME/.cargo/env" ]; then
-    . "$HOME/.cargo/env"
-fi
+[[ -e "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 
 if [ -d "$HOME/.scripts" ]; then
     . "$HOME/.scripts/.rc"

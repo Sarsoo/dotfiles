@@ -226,3 +226,8 @@ link_file "rofi/config.rasi" ".config/rofi/config.rasi"
 link_file "rofi/scripts/slaunch.sh" ".config/rofi/scripts/slaunch.sh"
 
 link_file "niri/config.kdl" ".config/niri/config.kdl"
+
+################
+#  distrobox
+################
+link_file "distrobox/distrobox.conf" ".config/distrobox/distrobox.conf"
