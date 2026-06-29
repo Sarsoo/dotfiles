@@ -70,7 +70,7 @@ input {
     // Focus windows and outputs automatically when moving the mouse into them.
     // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
     //focus-follows-mouse max-scroll-amount="0%"
-    focus-follows-mouse 
+    focus-follows-mouse
 }
 
 // You can configure outputs by their name, which you can find
@@ -371,7 +371,7 @@ binds {
     //Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn "rofi" "-show" "combi"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
-    Mod+Shift+F { spawn "firefox" "--new-instance"; }
+    Mod+Shift+F { spawn "firefox"; }
     Mod+Shift+O { spawn "flatpak" "run" "md.obsidian.Obsidian"; }
     Mod+Shift+Z { spawn "dex-autostart" "~/.local/share/applications/dev.zed.Zed.desktop"; }
 

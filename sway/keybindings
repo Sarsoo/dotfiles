@@ -1,6 +1,6 @@
 
 # Applications
 bindsym $mod+Return exec $term
-bindsym $mod+Shift+f exec firefox --new-instance
+bindsym $mod+Shift+f exec firefox
 bindsym $mod+Shift+o exec flatpak run md.obsidian.Obsidian
 bindsym $mod+Shift+z exec dex-autostart ~/.local/share/applications/dev.zed.Zed.desktop
