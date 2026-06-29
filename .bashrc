@@ -140,4 +140,4 @@ ex ()
 
 export TERM=xterm-256color
 
-eval "$(starship init bash)"
+command -v starship >/dev/null 2>&1 && eval "$(starship init bash)"

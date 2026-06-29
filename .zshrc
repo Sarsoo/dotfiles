@@ -6,4 +6,4 @@ _comp_options+=(globdots)
 
 . "$HOME/.sarc"
 
-eval "$(starship init zsh)"
+command -v starship >/dev/null 2>&1 &&  eval "$(starship init zsh)"

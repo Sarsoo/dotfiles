@@ -43,16 +43,18 @@ alias mtr='mtr -b -o "LSRD NABWV G JMXI"'
 ################
 # MAC
 ################
-if [ $machine = "Mac" ]; then
+if [[ "${machine}" = "Mac" ]]; then
     alias cdicloud='cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs'
 fi
 
 
 paths=(
     '/opt/homebrew/opt/python/bin'
-    "$HOME/bin"
-    "$HOME/.local/bin"
-    "$HOME/.dotnet/tools"
+    "${HOME}/bin"
+    "${HOME}/.local/bin"
+    "${HOME}/.dotnet/tools"
+    "${HOME}/.kubectx"
+    "${HOME}/.opencode/bin"
 )
 for p in "${paths[@]}"; do
     if [ -d "${p}" ]; then
@@ -60,20 +62,22 @@ for p in "${paths[@]}"; do
     fi
 done
 
-[[ -d "$HOME/dev/infra/ansible" ]] && alias cdans='cd ~/dev/infra/ansible'
-[[ -d "$HOME/lab/infra/ansible" ]] && alias cdans='cd ~/lab/infra/ansible'
-[[ -d "$HOME/lab/nix" ]] && alias cdnix='cd $HOME/lab/nix'
+if [[ -d "${HOME}/.local/rc.d" ]]; then
 
-[[ -e "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
-
-if [ -d "$HOME/.scripts" ]; then
-    . "$HOME/.scripts/.rc"
-else
-    echo "Private scripts repo not installed.."
+  while IFS= read -r -d '' line; do
+      source "${line}"
+  done < <(find "${HOME}/.local/rc.d" -type f -name '*.sh' -print0)
 fi
 
-if [ -d "$HOME/scripts" ]; then
-    . "$HOME/scripts/.rc"
+[[ -d "${HOME}/dev/infra/ansible" ]] && alias cdans='cd "${HOME}/dev/infra/ansible"'
+[[ -d "${HOME}/lab/infra/ansible" ]] && alias cdans='cd "${HOME}/lab/infra/ansible"'
+[[ -d "${HOME}/lab/nix" ]] && alias cdnix='cd "${HOME}/lab/nix"'
+
+[[ -e "${HOME}/.cargo/env" ]] && source "${HOME}/.cargo/env"
+[[ -d "${HOME}/.scripts" ]] && source "${HOME}/.scripts/.rc"
+
+if [[ -d "${HOME}/scripts" ]]; then
+    . "${HOME}/scripts/.rc"
 else
     echo "Scripts repo not installed.."
 fi
