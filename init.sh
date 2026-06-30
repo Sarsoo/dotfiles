@@ -89,6 +89,11 @@ link_file ".profile" ".profile"
 link_file "starship/starship.toml" ".config/starship.toml"
 
 ############
+#  FONTS
+############
+link_file "font/fonts.conf" ".config/fontconfig/fonts.conf"
+
+############
 #   VIM
 ############
 link_file "vim/.vimrc" ".vimrc"
@@ -208,28 +213,28 @@ link_file "tmux/tmux.conf" ".tmux.conf"
 ################
 #   sway
 ################
-link_file "sway/config" ".config/sway/config"
-link_file "sway/keybindings" ".config/sway/keybindings"
-link_file "sway/mac" ".config/sway/mac"
+link_file "wm/sway/config" ".config/sway/config"
+link_file "wm/sway/keybindings" ".config/sway/keybindings"
+link_file "wm/sway/mac" ".config/sway/mac"
 
 # swaybar
-link_file "sway/status.sh" ".config/sway/status.sh"
-link_file "sway/swaybar" ".config/sway/swaybar"
+link_file "wm/sway/status.sh" ".config/sway/status.sh"
+link_file "wm/sway/swaybar" ".config/sway/swaybar"
 # waybar
-link_file "sway/waybar" ".config/sway/waybar"
+link_file "wm/sway/waybar" ".config/sway/waybar"
 
 ################
 #   waybar
 ################
-link_file "waybar/config.jsonc" ".config/waybar/config.jsonc"
+link_file "wm/util/waybar/config.jsonc" ".config/waybar/config.jsonc"
 
 ################
 #   rofi
 ################
-link_file "rofi/config.rasi" ".config/rofi/config.rasi"
-link_file "rofi/scripts/slaunch.sh" ".config/rofi/scripts/slaunch.sh"
+link_file "wm/util/rofi/config.rasi" ".config/rofi/config.rasi"
+link_file "wm/util/rofi/scripts/slaunch.sh" ".config/rofi/scripts/slaunch.sh"
 
-link_file "niri/config.kdl" ".config/niri/config.kdl"
+link_file "wm/niri/config.kdl" ".config/niri/config.kdl"
 
 ################
 #  distrobox
