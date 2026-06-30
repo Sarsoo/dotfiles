@@ -47,12 +47,14 @@ mkdir -p "${HOME}/.config/systemd/user"
 ############
 # BashRC
 ############
-link_file ".bashrc" ".bashrc"
+link_file "shell/bash/bashrc" ".bashrc"
 
 ############
-# ZshRC
+#   zsh
 ############
-link_file ".zshrc" ".zshrc"
+link_file "shell/zsh/zshrc" ".zshrc"
+link_file "shell/zsh/zprofile" ".zprofile"
+link_file "shell/zsh/zshenv" ".zshenv"
 
 ############
 # SaRC
@@ -63,12 +65,6 @@ link_file ".sarc" ".sarc"
 # profile
 ############
 link_file ".profile" ".profile"
-
-############
-# zprofile
-############
-link_file ".zprofile" ".zprofile"
-link_file ".zshenv" ".zshenv"
 
 ############
 # SSH

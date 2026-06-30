@@ -45,6 +45,7 @@ alias mtr='mtr -b -o "LSRD NABWV G JMXI"'
 ################
 if [[ "${machine}" = "Mac" ]]; then
     alias cdicloud='cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs'
+    alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 fi
 
 
