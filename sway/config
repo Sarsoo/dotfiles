@@ -167,7 +167,7 @@ output * bg #863D5A solid_color
     bindsym $mod+a focus parent
 
     hide_edge_borders smart
-    default_border pixel 1
+    default_border pixel 3
 
     gaps inner 5
     gaps outer 1
