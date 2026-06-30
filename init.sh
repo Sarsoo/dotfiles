@@ -121,25 +121,29 @@ link_file "halloy" ".var/app/org.squidowl.halloy/config/halloy"
 ############
 #  ZED
 ############
-link_file "zed/settings.json" ".config/zed/settings.json"
-link_file "zed/keymap.json" ".config/zed/keymap.json"
-link_file "zed/tasks.json" ".config/zed/tasks.json"
+if [[ -z "${SAR_SKIP_ZED}" ]]; then
+  link_file "zed/settings.json" ".config/zed/settings.json"
+  link_file "zed/keymap.json" ".config/zed/keymap.json"
+  link_file "zed/tasks.json" ".config/zed/tasks.json"
+fi
 
 ############
 #  VSCODE
 ############
 
-case $machine in
+if [[ -z "${SAR_SKIP_VSCODE}" ]]; then
+  case $machine in
 
-    Mac)
-        link_file "vscode/settings.json" "Library/Application Support/Code/User/settings.json"
-    ;;
+      Mac)
+          link_file "vscode/settings.json" "Library/Application Support/Code/User/settings.json"
+      ;;
 
-    Linux)
-        link_file "vscode/settings.json" ".config/Code/User/settings.json"
-    ;;
+      Linux)
+          link_file "vscode/settings.json" ".config/Code/User/settings.json"
+      ;;
 
-esac
+  esac
+fi
 
 ############
 #  HTOP
@@ -160,21 +164,23 @@ link_file "npm/npmrc" ".npmrc"
 #   K9S
 ############
 
-case $machine in
+if [[ -z "${SAR_SKIP_K9S}" ]]; then
+  case $machine in
 
-    Mac)
-        link_file "k9s/aliases.yaml" "Library/Application Support/k9s/aliases.yaml"
-        link_file "k9s/config.yaml" "Library/Application Support/k9s/config.yaml"
-        link_file "k9s/views.yaml" "Library/Application Support/k9s/views.yaml"
-    ;;
+      Mac)
+          link_file "k9s/aliases.yaml" "Library/Application Support/k9s/aliases.yaml"
+          link_file "k9s/config.yaml" "Library/Application Support/k9s/config.yaml"
+          link_file "k9s/views.yaml" "Library/Application Support/k9s/views.yaml"
+      ;;
 
-    Linux)
-        link_file "k9s/aliases.yaml" ".config/k9s/aliases.yaml"
-        link_file "k9s/config.yaml" ".config/k9s/config.yaml"
-        link_file "k9s/views.yaml" ".config/k9s/views.yaml"
-    ;;
+      Linux)
+          link_file "k9s/aliases.yaml" ".config/k9s/aliases.yaml"
+          link_file "k9s/config.yaml" ".config/k9s/config.yaml"
+          link_file "k9s/views.yaml" ".config/k9s/views.yaml"
+      ;;
 
-esac
+  esac
+fi
 
 ############
 #  flux9s
@@ -184,8 +190,10 @@ link_file "flux9s" ".config/flux9s"
 ############
 # opencode
 ############
-link_file "opencode/opencode.jsonc" ".config/opencode/opencode.jsonc"
-link_file "opencode/tui.jsonc" ".config/opencode/tui.jsonc"
+if [[ -z "${SAR_SKIP_OPENCODE}" ]]; then
+  link_file "opencode/opencode.jsonc" ".config/opencode/opencode.jsonc"
+  link_file "opencode/tui.jsonc" ".config/opencode/tui.jsonc"
+fi
 
 ################
 #  aerospace
