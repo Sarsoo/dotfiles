@@ -196,9 +196,14 @@ link_file "flux9s" ".config/flux9s"
 # opencode
 ############
 if [[ -z "${SAR_SKIP_OPENCODE}" ]]; then
-  link_file "opencode/opencode.jsonc" ".config/opencode/opencode.jsonc"
-  link_file "opencode/tui.jsonc" ".config/opencode/tui.jsonc"
+  link_file "ai/opencode/opencode.jsonc" ".config/opencode/opencode.jsonc"
+  link_file "ai/opencode/tui.jsonc" ".config/opencode/tui.jsonc"
 fi
+
+############
+#  herdr
+############
+link_file "ai/herdr/config.toml" ".config/herdr/config.toml"
 
 ################
 #  aerospace
