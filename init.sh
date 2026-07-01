@@ -86,7 +86,7 @@ link_file ".profile" ".profile"
 ############
 # Starship
 ############
-link_file "starship/starship.toml" ".config/starship.toml"
+link_file "shell/util/starship/starship.toml" ".config/starship.toml"
 
 ############
 #  FONTS
@@ -116,7 +116,7 @@ link_file "ranger" ".config/ranger"
 ############
 # ALACRITTY
 ############
-link_file "alacritty" ".config/alacritty"
+link_file "shell/emu/alacritty" ".config/alacritty"
 
 ############
 #  HALLOY
@@ -158,7 +158,7 @@ link_file "htop/htoprc" ".config/htop/htoprc"
 ############
 #  LINEAR MOUSE
 ############
-link_file "linearmouse" ".config/linearmouse"
+link_file "mac/linearmouse" ".config/linearmouse"
 
 ############
 #  npm
@@ -173,15 +173,15 @@ if [[ -z "${SAR_SKIP_K9S}" ]]; then
   case $machine in
 
       Mac)
-          link_file "k9s/aliases.yaml" "Library/Application Support/k9s/aliases.yaml"
-          link_file "k9s/config.yaml" "Library/Application Support/k9s/config.yaml"
-          link_file "k9s/views.yaml" "Library/Application Support/k9s/views.yaml"
+          link_file "ctr/k9s/aliases.yaml" "Library/Application Support/k9s/aliases.yaml"
+          link_file "ctr/k9s/config.yaml" "Library/Application Support/k9s/config.yaml"
+          link_file "ctr/k9s/views.yaml" "Library/Application Support/k9s/views.yaml"
       ;;
 
       Linux)
-          link_file "k9s/aliases.yaml" ".config/k9s/aliases.yaml"
-          link_file "k9s/config.yaml" ".config/k9s/config.yaml"
-          link_file "k9s/views.yaml" ".config/k9s/views.yaml"
+          link_file "ctr/k9s/aliases.yaml" ".config/k9s/aliases.yaml"
+          link_file "ctr/k9s/config.yaml" ".config/k9s/config.yaml"
+          link_file "ctr/k9s/views.yaml" ".config/k9s/views.yaml"
       ;;
 
   esac
@@ -190,7 +190,7 @@ fi
 ############
 #  flux9s
 ############
-link_file "flux9s" ".config/flux9s"
+link_file "ctr/flux9s" ".config/flux9s"
 
 ############
 # opencode
@@ -208,7 +208,7 @@ link_file "ai/herdr/config.toml" ".config/herdr/config.toml"
 ################
 #  aerospace
 ################
-link_file "aerospace/.aerospace.toml" ".aerospace.toml"
+link_file "mac/aerospace/.aerospace.toml" ".aerospace.toml"
 
 ################
 #   tmux
@@ -244,4 +244,4 @@ link_file "wm/niri/config.kdl" ".config/niri/config.kdl"
 ################
 #  distrobox
 ################
-link_file "distrobox/distrobox.conf" ".config/distrobox/distrobox.conf"
+link_file "ctr/distrobox/distrobox.conf" ".config/distrobox/distrobox.conf"
