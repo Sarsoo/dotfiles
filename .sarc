@@ -67,7 +67,7 @@ if [[ -d "${HOME}/.local/rc.d" ]]; then
 
   while IFS= read -r -d '' line; do
       source "${line}"
-  done < <(find "${HOME}/.local/rc.d" -type f -name '*.sh' -print0)
+  done < <(find "${HOME}/.local/rc.d" -type f,l -name '*.sh' -print0)
 fi
 
 [[ -d "${HOME}/dev/infra/ansible" ]] && alias cdans='cd "${HOME}/dev/infra/ansible"'
