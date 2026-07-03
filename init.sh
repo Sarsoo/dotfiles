@@ -67,23 +67,6 @@ link_file ".sarc" ".sarc"
 link_file ".profile" ".profile"
 
 ############
-# SSH
-############
-
-# # Check if the directory does not exist
-# if [ ! -d "$HOME/.ssh" ]; then
-#     # Directory does not exist, so create it
-#     mkdir "$HOME/.ssh"
-#     chmod 700 "$HOME/.ssh"
-# fi
-
-# if [ -e "$HOME/.ssh/config" ]; then
-#     rm $HOME/.ssh/config
-# fi
-# ln -s $SCRIPT_DIR/ssh_config $HOME/.ssh/config
-# chmod 600 "$HOME/.ssh/config"
-
-############
 # Starship
 ############
 link_file "shell/util/starship/starship.toml" ".config/starship.toml"
@@ -107,6 +90,11 @@ if [ ! -d "$HOME/.vim/bundle" ]; then
     git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 fi
 vim +PluginInstall +qall
+
+############
+#  NEOVIM
+############
+link_file "neovim" ".config/nvim"
 
 ############
 #  RANGER
@@ -245,3 +233,8 @@ link_file "wm/niri/config.kdl" ".config/niri/config.kdl"
 #  distrobox
 ################
 link_file "ctr/distrobox/distrobox.conf" ".config/distrobox/distrobox.conf"
+
+############
+#  GITUI
+############
+link_file "gitui/theme.ron" ".config/gitui/theme.ron"
