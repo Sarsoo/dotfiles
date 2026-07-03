@@ -35,6 +35,7 @@ alias gitlog='git log --graph --all --oneline'
 
 alias rdoc='cargo doc --open'
 
+alias vim='nvim'
 alias dbx='distrobox'
 alias k='kubectl'
 alias tf='terraform'
