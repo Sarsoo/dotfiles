@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "format_on_save": "off",
   "cli_default_open_behavior": "existing_window",
   "proxy": "",
   "preview_tabs": {
@@ -143,6 +144,18 @@
           ]
         }
       ]
+    },
+    {
+      "host": "penfold.sinara.net",
+      "username": "andy.pack",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/andy.pack/iac"
+          ]
+        }
+      ]
     }
   ],
   "disable_ai": false,
@@ -220,6 +233,24 @@
       "**/helmfile.d/**/*.yaml",
       "**/helmfile.d/**/*.yml",
       "**/values*.yaml"
+    ],
+    "Ansible": [
+      "**.ansible.yml",
+      "**.ansible.yaml",
+      "**/defaults/*.yml",
+      "**/defaults/*.yaml",
+      "**/meta/*.yml",
+      "**/meta/*.yaml",
+      "**/tasks/*.yml",
+      "**/tasks/*.yaml",
+      "**/handlers/*.yml",
+      "**/handlers/*.yaml",
+      "**/group_vars/*.yml",
+      "**/group_vars/*.yaml",
+      "**/playbooks/*.yaml",
+      "**/playbooks/*.yml",
+      "**playbook*.yaml",
+      "**playbook*.yml"
     ]
   },
   "lsp": {

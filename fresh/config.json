@@ -1,0 +1,38 @@
+{
+  "theme": "dark",
+  "file_browser": {
+    "show_hidden": true
+  },
+  "file_explorer": {
+    "show_gitignored": true
+  },
+  "editor": {
+    "completion_popup_auto_show": true,
+    "cursor_jump_animation": false,
+    "cursor_style": "blinking_bar"
+  },
+  "plugins": {
+    "dashboard": {
+      "settings": {
+        "autoOpen": false
+      },
+      "enabled": true
+    },
+    "vi_mode": {
+      "enabled": true,
+      "settings": {
+        "autoStart": false,
+        "arrowKeys": true,
+        "searchWordUnderCursor": true
+      }
+    }
+  },
+  "version": 2,
+  "keybindings": [
+    {
+      "key": "o",
+      "modifiers": ["alt"],
+      "action": "orchestrator_dock_toggle"
+    }
+  ]
+}

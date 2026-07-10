@@ -107,6 +107,12 @@ link_file "ranger" ".config/ranger"
 link_file "shell/emu/alacritty" ".config/alacritty"
 
 ############
+#  KITTY
+############
+link_file "shell/emu/kitty/kitty.conf" ".config/kitty/kitty.conf"
+link_file "shell/emu/kitty/themes" ".config/kitty/themes"
+
+############
 #  HALLOY
 ############
 link_file "halloy" ".var/app/org.squidowl.halloy/config/halloy"
@@ -118,6 +124,18 @@ if [[ -z "${SAR_SKIP_ZED}" ]]; then
   link_file "zed/settings.json" ".config/zed/settings.json"
   link_file "zed/keymap.json" ".config/zed/keymap.json"
   link_file "zed/tasks.json" ".config/zed/tasks.json"
+else
+  echo "> Skipping Zed config"
+fi
+
+############
+#  FRESH
+############
+if [[ -z "${SAR_SKIP_FRESH}" ]]; then
+  link_file "fresh/config.json" ".config/fresh/config.json"
+  link_file "fresh/themes" ".config/fresh/themes"
+else
+  echo "> Skipping Fresh config"
 fi
 
 ############
@@ -136,6 +154,8 @@ if [[ -z "${SAR_SKIP_VSCODE}" ]]; then
       ;;
 
   esac
+else
+  echo "> Skipping VSCode config"
 fi
 
 ############
@@ -173,6 +193,8 @@ if [[ -z "${SAR_SKIP_K9S}" ]]; then
       ;;
 
   esac
+else
+  echo "> Skipping K9s config"
 fi
 
 ############
@@ -186,6 +208,8 @@ link_file "ctr/flux9s" ".config/flux9s"
 if [[ -z "${SAR_SKIP_OPENCODE}" ]]; then
   link_file "ai/opencode/opencode.jsonc" ".config/opencode/opencode.jsonc"
   link_file "ai/opencode/tui.jsonc" ".config/opencode/tui.jsonc"
+else
+  echo "> Skipping OpenCode config"
 fi
 
 ############
