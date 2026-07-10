@@ -33,6 +33,90 @@
       "key": "o",
       "modifiers": ["alt"],
       "action": "orchestrator_dock_toggle"
+    },
+    {
+      "key": "o",
+      "modifiers": ["alt"],
+      "action": "orchestrator_dock_toggle",
+      "when": "global"
+    },
+    {
+      "key": "o",
+      "modifiers": ["alt"],
+      "action": "noop",
+      "when": "fileExplorer"
+    },
+    {
+      "key": "o",
+      "modifiers": ["alt"],
+      "action": "noop",
+      "when": "dock"
+    },
+    {
+      "key": "o",
+      "modifiers": ["alt"],
+      "action": "noop",
+      "when": "compositeBuffer"
+    },
+    {
+      "key": "o",
+      "modifiers": ["alt"],
+      "action": "noop",
+      "when": "prompt"
+    },
+    {
+      "key": "o",
+      "modifiers": ["alt"],
+      "action": "noop",
+      "when": "terminal"
+    },
+    {
+      "key": "o",
+      "modifiers": ["alt"],
+      "action": "orchestrator_open",
+      "when": "global"
+    },
+    {
+      "key": "Tab",
+      "modifiers": ["alt"],
+      "action": "next_window",
+      "when": "global"
+    },
+    {
+      "key": "Tab",
+      "modifiers": ["alt"],
+      "action": "next_buffer",
+      "when": "global"
+    },
+    {
+      "key": "{",
+      "modifiers": ["alt"],
+      "action": "prev_buffer",
+      "when": "normal"
+    },
+    {
+      "key": "}",
+      "modifiers": ["alt"],
+      "action": "next_buffer",
+      "when": "global"
+    },
+    {
+      "key": "{",
+      "modifiers": ["alt"],
+      "action": "prev_buffer",
+      "when": "global"
+    },
+    {
+      "key": "e",
+      "modifiers": ["ctrl"],
+      "action": "noop",
+      "when": "normal"
+    },
+    {
+      "key": "n",
+      "modifiers": ["ctrl"],
+      "action": "new",
+      "when": "terminal"
     }
   ]
 }

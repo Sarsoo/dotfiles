@@ -46,6 +46,10 @@ alias tfia='terraform init && terraform apply'
 alias tfip='terraform init && terraform plan'
 alias mtr='mtr -b -o "LSRD NABWV G JMXI"'
 
+if command -v podman >/dev/null 2>&1 && ! command -v docker >/dev/null 2>&1; then
+  alias docker='podman'
+fi
+
 ################
 # MAC
 ################
@@ -53,7 +57,6 @@ if [[ "${machine}" = "Mac" ]]; then
     alias cdicloud='cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs'
     alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 fi
-
 
 paths=(
     '/opt/homebrew/opt/python/bin'
