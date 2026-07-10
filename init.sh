@@ -226,6 +226,18 @@ link_file "mac/aerospace/.aerospace.toml" ".aerospace.toml"
 #   tmux
 ################
 link_file "tmux/tmux.conf" ".tmux.conf"
+catpuccin_version="v2.3.0"
+if [[ ! -d "${HOME}/.config/tmux/plugins/catppuccin" ]]; then
+  mkdir -p ~/.config/tmux/plugins/catppuccin
+  git clone -b "${catpuccin_version}" https://github.com/catppuccin/tmux.git "${HOME}/.config/tmux/plugins/catppuccin/tmux"
+else
+  pushd ~/.config/tmux/plugins/catppuccin
+
+  git fetch
+  git checkout -f "${catpuccin_version}"
+
+  popd
+fi
 
 ################
 #   sway

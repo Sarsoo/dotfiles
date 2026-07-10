@@ -138,6 +138,4 @@ ex ()
 
 . "$HOME/.sarc"
 
-export TERM=xterm-256color
-
 command -v starship >/dev/null 2>&1 && eval "$(starship init bash)"
