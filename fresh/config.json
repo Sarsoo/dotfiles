@@ -107,12 +107,6 @@
       "when": "global"
     },
     {
-      "key": "e",
-      "modifiers": ["ctrl"],
-      "action": "noop",
-      "when": "normal"
-    },
-    {
       "key": "n",
       "modifiers": ["ctrl"],
       "action": "new",

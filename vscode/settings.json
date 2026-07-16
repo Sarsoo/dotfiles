@@ -190,6 +190,23 @@
         "https://schemastore.azurewebsites.net/": true,
         "https://www.schemastore.org/": true
     },
-    "editor.formatOnSave": true,
-    "chat.disableAIFeatures": true
+    "chat.disableAIFeatures": true,
+    "chat.agent.enabled": false,
+    "remote.SSH.experimental.chat": false,
+    "vscode-kubernetes.log-viewer.autorun": true,
+    "scm.defaultViewSortKey": "name",
+    "yaml.kubernetesVersion": "1.36.0",
+    "gitlens.plusFeatures.enabled": false,
+    "yaml.schemas": {
+        "https://raw.githubusercontent.com/grafana/grafana/refs/heads/main/packages/grafana-openapi/src/apis/dashboard.grafana.app-v2beta1.json" : [
+            "**/dashboard.*.yaml"
+        ],
+        "https://raw.githubusercontent.com/grafana/grafana/refs/heads/main/packages/grafana-openapi/src/apis/folder.grafana.app-v1beta1.json": [
+            "**/folder.*.yaml"
+        ]
+    },
+    "scm.defaultViewMode": "tree",
+    "python-envs.terminal.autoActivationType": "shellStartup",
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.cursorStyleInactive": "underline"
 }
