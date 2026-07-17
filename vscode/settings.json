@@ -208,5 +208,6 @@
     "scm.defaultViewMode": "tree",
     "python-envs.terminal.autoActivationType": "shellStartup",
     "terminal.integrated.cursorStyle": "line",
-    "terminal.integrated.cursorStyleInactive": "underline"
+    "terminal.integrated.cursorStyleInactive": "underline",
+    "workbench.experimental.modernUI": true
 }
