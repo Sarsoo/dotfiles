@@ -198,7 +198,7 @@
     "yaml.kubernetesVersion": "1.36.0",
     "gitlens.plusFeatures.enabled": false,
     "yaml.schemas": {
-        "https://raw.githubusercontent.com/grafana/grafana/refs/heads/main/packages/grafana-openapi/src/apis/dashboard.grafana.app-v2beta1.json" : [
+        "https://raw.githubusercontent.com/grafana/grafana/refs/heads/main/packages/grafana-openapi/src/apis/dashboard.grafana.app-v2beta1.json": [
             "**/dashboard.*.yaml"
         ],
         "https://raw.githubusercontent.com/grafana/grafana/refs/heads/main/packages/grafana-openapi/src/apis/folder.grafana.app-v1beta1.json": [
@@ -209,5 +209,7 @@
     "python-envs.terminal.autoActivationType": "shellStartup",
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.cursorStyleInactive": "underline",
-    "workbench.experimental.modernUI": true
+    "workbench.experimental.modernUI": true,
+    "editor.formatOnSave": true,
+    "editor.indentSize": "tabSize"
 }

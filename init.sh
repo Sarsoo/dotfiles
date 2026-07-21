@@ -274,3 +274,8 @@ link_file "ctr/distrobox/distrobox.conf" ".config/distrobox/distrobox.conf"
 #  GITUI
 ############
 link_file "gitui/theme.ron" ".config/gitui/theme.ron"
+
+############
+#   vja
+############
+link_file "vja/config.rc" ".config/vja/config.rc"

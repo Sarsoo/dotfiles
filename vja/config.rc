@@ -1,0 +1,3 @@
+[application]
+frontend_url=https://vikunja.lab.sarsoo.xyz/
+api_url=http://vikunja.lab.sarsoo.xyz/api/v1

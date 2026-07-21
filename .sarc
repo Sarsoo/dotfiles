@@ -12,7 +12,7 @@ export EDITOR=vim
 # PS1='%F{green}%n@%m%f %1/ %F{red}%#%f '
 
 ################
-# LINUX
+# ALIASES
 ################
 
 alias mkdir='mkdir -p'
@@ -22,22 +22,40 @@ alias df='df -h' # human-readable sizes
 alias more=less
 
 alias lasterror='journalctl -p 3 -xb'
-
-################
-# UTIL
-################
-
-alias ytmpv='mpv --hwdec=auto --ytdl-format="bestvideo+bestaudio/best"'
-alias ytmpvqhd='mpv --hwdec=auto --ytdl-format="bestvideo[height<=?1800]+bestaudio/best"'
-alias ytmpvhd='mpv --hwdec=auto --ytdl-format="bestvideo[height<=?1080]+bestaudio/best"'
+alias mtr='mtr -b -o "LSRD NABWV G JMXI"'
 
 alias gitlog='git log --graph --all --oneline'
-
 alias rdoc='cargo doc --open'
-
-alias vim='nvim'
 alias dbx='distrobox'
-alias k='kubectl'
+
+command -v nvim >/dev/null 2>&1 && alias vim='nvim'
+
+##
+# util
+##
+
+if command -v mpv >/dev/null 2>&1; then
+  alias ytmpv='mpv --hwdec=auto --ytdl-format="bestvideo+bestaudio/best"'
+  alias ytmpvqhd='mpv --hwdec=auto --ytdl-format="bestvideo[height<=?1800]+bestaudio/best"'
+  alias ytmpvhd='mpv --hwdec=auto --ytdl-format="bestvideo[height<=?1080]+bestaudio/best"'
+fi
+
+[[ -d "${HOME}/dev/infra/ansible" ]] && alias cdans='cd "${HOME}/dev/infra/ansible"'
+[[ -d "${HOME}/lab/infra/ansible" ]] && alias cdans='cd "${HOME}/lab/infra/ansible"'
+[[ -d "${HOME}/lab/nix" ]] && alias cdnix='cd "${HOME}/lab/nix"'
+
+if command -v podman >/dev/null 2>&1 && ! command -v docker >/dev/null 2>&1; then
+  alias docker='podman'
+fi
+
+if command -v uvx >/dev/null 2>&1; then
+  alias vja='uvx vja'
+fi
+alias vjau='vja ls -u'
+
+##
+# terraform
+##
 alias tf='terraform'
 alias tfi='terraform init'
 alias tfu='terraform init -upgrade'
@@ -46,11 +64,13 @@ alias tfp='terraform plan'
 alias tfg='terraform get -update'
 alias tfia='terraform init && terraform apply'
 alias tfip='terraform init && terraform plan'
-alias mtr='mtr -b -o "LSRD NABWV G JMXI"'
+alias tfv='terraform validate'
+alias tfiv='terraform init -backend=false && terraform validate'
 
-if command -v podman >/dev/null 2>&1 && ! command -v docker >/dev/null 2>&1; then
-  alias docker='podman'
-fi
+##
+# k8s
+##
+alias k='kubectl'
 
 ################
 # MAC
@@ -60,6 +80,10 @@ if [[ "${machine}" = "Mac" ]]; then
     alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 fi
 
+################
+# PATH
+################
+
 paths=(
     '/opt/homebrew/opt/python/bin'
     "${HOME}/bin"
@@ -67,12 +91,17 @@ paths=(
     "${HOME}/.dotnet/tools"
     "${HOME}/.kubectx"
     "${HOME}/.opencode/bin"
+    "${HOME}/.krew/bin"
 )
 for p in "${paths[@]}"; do
     if [ -d "${p}" ]; then
         export PATH="${p}:${PATH}"
     fi
 done
+
+################
+# SUB-RC
+################
 
 if [[ -d "${HOME}/.local/rc.d" ]]; then
 
@@ -81,15 +110,6 @@ if [[ -d "${HOME}/.local/rc.d" ]]; then
   done < <(find "${HOME}/.local/rc.d" -type f,l -name '*.sh' -print0)
 fi
 
-[[ -d "${HOME}/dev/infra/ansible" ]] && alias cdans='cd "${HOME}/dev/infra/ansible"'
-[[ -d "${HOME}/lab/infra/ansible" ]] && alias cdans='cd "${HOME}/lab/infra/ansible"'
-[[ -d "${HOME}/lab/nix" ]] && alias cdnix='cd "${HOME}/lab/nix"'
-
 [[ -e "${HOME}/.cargo/env" ]] && source "${HOME}/.cargo/env"
 [[ -d "${HOME}/.scripts" ]] && source "${HOME}/.scripts/.rc"
-
-if [[ -d "${HOME}/scripts" ]]; then
-    . "${HOME}/scripts/.rc"
-else
-    echo "Scripts repo not installed.."
-fi
+[[ -e "${HOME}/scripts/.rc" ]] && source "${HOME}/scripts/.rc"
