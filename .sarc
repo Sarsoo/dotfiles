@@ -48,9 +48,6 @@ if command -v podman >/dev/null 2>&1 && ! command -v docker >/dev/null 2>&1; the
   alias docker='podman'
 fi
 
-if command -v uvx >/dev/null 2>&1; then
-  alias vja='uvx vja'
-fi
 alias vjau='vja ls -u'
 
 ##
@@ -66,6 +63,7 @@ alias tfia='terraform init && terraform apply'
 alias tfip='terraform init && terraform plan'
 alias tfv='terraform validate'
 alias tfiv='terraform init -backend=false && terraform validate'
+alias tfl='tflint --recursive --init --format compact'
 
 ##
 # k8s
