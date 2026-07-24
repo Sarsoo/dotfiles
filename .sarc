@@ -63,7 +63,7 @@ alias tfia='terraform init && terraform apply'
 alias tfip='terraform init && terraform plan'
 alias tfv='terraform validate'
 alias tfiv='terraform init -backend=false && terraform validate'
-alias tfl='tflint --recursive --init --format compact'
+alias tfl='tflint --recursive --format compact'
 
 ##
 # k8s
