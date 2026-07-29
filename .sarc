@@ -108,6 +108,13 @@ if [[ -d "${HOME}/.local/rc.d" ]]; then
   done < <(find "${HOME}/.local/rc.d" -type f,l -name '*.sh' -print0)
 fi
 
-[[ -e "${HOME}/.cargo/env" ]] && source "${HOME}/.cargo/env"
-[[ -d "${HOME}/.scripts" ]] && source "${HOME}/.scripts/.rc"
-[[ -e "${HOME}/scripts/.rc" ]] && source "${HOME}/scripts/.rc"
+paths=(
+    "${HOME}/.cargo/env"
+    "${HOME}/.scripts/.rc"
+    "${HOME}/scripts/.rc"
+)
+for p in "${paths[@]}"; do
+    if [ -e "${p}" ]; then
+        source "${p}"
+    fi
+done
