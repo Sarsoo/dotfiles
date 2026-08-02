@@ -178,7 +178,6 @@
     "window.newWindowProfile": "Default",
     "terraform.codelens.referenceCount": true,
     "merge-conflict.autoNavigateNextConflict.enabled": true,
-    "terraform.experimentalFeatures.validateOnSave": true,
     "json.schemaDownload.trustedDomains": {
         "https://developer.microsoft.com/json-schemas/": true,
         "https://json-schema.org/": true,
@@ -211,5 +210,7 @@
     "terminal.integrated.cursorStyleInactive": "underline",
     "workbench.experimental.modernUI": true,
     "editor.formatOnSave": true,
-    "editor.indentSize": "tabSize"
+    "editor.indentSize": "tabSize",
+    "terminal.integrated.defaultProfile.linux": "tmux",
+    "git.detectWorktrees": true
 }

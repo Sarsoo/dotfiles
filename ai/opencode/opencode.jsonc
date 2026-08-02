@@ -1,27 +1,67 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "sarsoo-ai/sinara.ai/bedrock/anthropic.claude-sonnet-4-6",
-  "small_model": "sarsoo-ai/sinara.ai/bedrock/google.gemma-3-4b-it",
+  "model": "sarsoo-ai/bedrock/anthropic.claude-sonnet-5",
+  "small_model": "opencode-go/deepseek-v4-flash",
+  "disabled_providers": ["opencode"],
   "provider": {
     "sarsoo-ai": {
       "name": "sarsoo.ai",
       "npm": "@ai-sdk/openai-compatible",
       "models": {
-        "sinara.ai/bedrock/anthropic.claude-sonnet-4-6": {
-          "name": "Claude Sonnet 4.6 [Sinara]",
+        "bedrock/anthropic.claude-opus-5": {
+          "name": "Claude Opus",
+          "tool_call": true,
+          // "reasoning": true,
         },
-        "sinara.ai/bedrock/anthropic.claude-opus-4-8": {
-          "name": "Claude Opus 4.8 [Sinara]",
+        "bedrock/qwen.qwen3-coder-next": {
+          "name": "Qwen 3 Coder",
+          "tool_call": true,
+          "reasoning": false,
         },
-        "sinara.ai/bedrock/qwen.qwen3-coder-next": {
-          "name": "Qwen 3 Coder Next [Sinara]",
+        "opencode-go/qwen3.7-plus": {
+          "name": "Qwen 3.7",
+          "tool_call": true,
+          "reasoning": false,
         },
-        "sinara.ai/bedrock/google.gemma-3-4b-it": {
-          "name": "Gemma 3 [Sinara]",
+        "bedrock/google.gemma-3-4b-it": {
+          "name": "Gemma 3",
+          "tool_call": false,
+          "reasoning": false,
+        },
+        "bedrock/google.gemma-4-e2b": {
+          "name": "Gemma 4",
+          "tool_call": false,
+          "reasoning": false,
+        },
+        "bedrock/anthropic.claude-sonnet-5": {
+          "name": "Claude Sonnet",
+          "tool_call": true,
+          // "reasoning": true,
+          "limit": {
+            "context": 1000000,
+            "output": 128000,
+          },
+        },
+        "opencode-go/glm-5.2": {
+          "name": "GLM 5.2",
+          "tool_call": true,
+          "reasoning": false,
+        },
+        "opencode-go/deepseek-v4-flash": {
+          "name": "Deepseek v4",
+          "tool_call": true,
+          "reasoning": false,
         },
       },
       "options": {
         "baseURL": "https://bifrost.lab.sarsoo.xyz/v1",
+        "headers": {
+          "x-opencode-git-username": "{env:GIT_USERNAME}",
+          "x-opencode-git-branch": "{env:GIT_BRANCH}",
+          "x-opencode-git-repo-url": "{env:GIT_REPO_URL}",
+          "x-opencode-git-repo-fullurl": "{env:GIT_REPO_URL}/{env:GIT_BRANCH}",
+        },
+        "includeUsage": true,
       },
     },
   },
@@ -30,52 +70,55 @@
   "lsp": false,
   "permission": {
     "*": "ask",
+    "external_directory": "ask",
+    "read": "allow",
+    "glob": "allow",
+    "grep": "allow",
+    "list": "allow",
+    "edit": "ask",
+    "lsp": "allow",
+    "webfetch": "allow",
     "bash": {
       "*": "ask",
-      "rm *": "deny",
+      "ls *": "allow",
+      "cat *": "allow",
       "grep *": "allow",
+      "head *": "allow",
+      "sort *": "allow",
+      "rg *": "allow",
+      "find *": "allow",
+      "wc -l *": "allow",
+      "rm *": "ask",
+      "rmdir *": "ask",
+      "terraform plan *": "allow",
+      "terraform fmt *": "allow",
+      "terraform validate *": "allow",
+      "aws *": "ask",
     },
   },
   "agent": {
     "build": {
       "temperature": 0.3,
-      "model": "sarsoo-ai/sinara.ai/bedrock/qwen.qwen3-coder-next",
-      "permission": {
-        "terraform": "deny", // important, no mcp access when you have write access
-      },
     },
     "plan": {
       "temperature": 0.1,
-      "model": "sarsoo-ai/sinara.ai/bedrock/anthropic.claude-opus-4-8",
     },
     "general": {
       "temperature": 0.3,
-      "permission": {
-        "terraform": "deny", // important, no mcp access when you have write access
-      },
     },
     "explore": {},
     "scout": {},
     "compaction": {
-      "model": "sarsoo-ai/sinara.ai/bedrock/google.gemma-3-4b-it",
+      "model": "opencode-go/deepseek-v4-flash",
       "temperature": 0.1,
-      "permission": {
-        "terraform": "deny",
-      },
     },
     "title": {
-      "model": "sarsoo-ai/sinara.ai/bedrock/google.gemma-3-4b-it",
+      "model": "opencode-go/deepseek-v4-flash",
       "temperature": 0.3,
-      "permission": {
-        "terraform": "deny",
-      },
     },
     "summary": {
-      "model": "sarsoo-ai/sinara.ai/bedrock/google.gemma-3-4b-it",
+      "model": "opencode-go/deepseek-v4-flash",
       "temperature": 0.1,
-      "permission": {
-        "terraform": "deny",
-      },
     },
   },
   "share": "disabled",
