@@ -24,18 +24,31 @@
       "args": ["herm", "/home/hermes/.local/bin/hermes", "acp"],
     },
     "opencode": {
-      "favorite_models": ["sarsoo-ai/sinara.ai/bedrock/qwen.qwen3-coder-next"],
+      "env": {
+        "AWS_CONFIG_FILE": "~/.aws/config.readonly",
+      },
+      "favorite_config_option_values": {
+        "model": [
+          "sarsoo-ai/opencode-go/deepseek-v4-flash",
+          "sarsoo-ai/bedrock/anthropic.claude-sonnet-5",
+          "sarsoo-ai/opencode-go/qwen3.7-plus",
+          "sarsoo-ai/opencode-go/glm-5.2",
+        ],
+      },
+      "default_config_options": {
+        "model": "sarsoo-ai/opencode-go/qwen3.7-plus",
+      },
       "type": "registry",
     },
   },
   "show_edit_predictions": true,
   "edit_predictions": {
     "allow_data_collection": "no",
-    "enabled_in_text_threads": true,
     "open_ai_compatible_api": {
-      "model": "sinara.ai/bedrock/qwen.qwen3-coder-next",
+      "max_output_tokens": 64,
+      "model": "opencode-go/qwen3.7-plus",
       "api_url": "https://bifrost.lab.sarsoo.xyz/v1",
-      "prompt_format": "infer",
+      "prompt_format": "qwen",
     },
     // "provider": "open_ai_compatible_api",
     "provider": "none",
@@ -87,9 +100,11 @@
   },
   "relative_line_numbers": "disabled",
   "vim_mode": false,
-  "ui_font_family": ".ZedSans",
+  "ui_font_family": "Fraunces",
+  "ui_font_fallbacks": [".ZedSans"],
   "buffer_line_height": "comfortable",
-  "buffer_font_family": ".ZedMono",
+  "buffer_font_family": "JetBrains Mono",
+  "buffer_font_fallbacks": [".ZedMono"],
   "languages": {
     "PowerShell": {
       "tab_size": 4,
@@ -99,6 +114,9 @@
       "inlay_hints": {
         "enabled": true,
       },
+    },
+    "Ansible": {
+      "semantic_tokens": "combined",
     },
   },
   "diagnostics": {
@@ -122,51 +140,54 @@
   "tab_size": 2,
   "ssh_connections": [
     {
-      "host": "penfold",
-      "args": [],
-      "projects": [
-        {
-          "paths": [
-            "/home/admin_ajp/dev"
-          ]
-        },
-        {
-          "paths": [
-            "/home/andy.pack/iac"
-          ]
-        }
-      ]
-    },
-    {
       "host": "annex.sinara.net",
       "username": "admin_ajp",
       "args": [],
       "projects": [
         {
           "paths": [
+            "/home/admin_ajp/dev/scripts"
+          ]
+        },
+        {
+          "paths": [
+            "/home/admin_ajp/dev/tlc/comet"
+          ]
+        },
+        {
+          "paths": [
+            "/home/admin_ajp/dotfiles"
+          ]
+        },
+        {
+          "paths": [
             "/home/admin_ajp/iac"
+          ]
+        },
+        {
+          "paths": [
+            "/home/admin_ajp/iac/lib/aws"
+          ]
+        },
+        {
+          "paths": [
+            "/home/admin_ajp/iac/sales-iac"
+          ]
+        },
+        {
+          "paths": [
+            "/home/admin_ajp/scripts"
           ]
         }
       ],
       "nickname": "annex"
-    },
-    {
-      "host": "penfold.sinara.net",
-      "username": "andy.pack",
-      "args": [],
-      "projects": [
-        {
-          "paths": [
-            "/home/andy.pack/iac"
-          ]
-        }
-      ]
     }
   ],
   "disable_ai": false,
   "terminal": {
     "cursor_shape": "bar",
-    "font_family": ".ZedMono",
+    "font_family": "JetBrains Mono",
+    "font_fallbacks": [".ZedMono"],
     "working_directory": "current_file_directory",
     "dock": "bottom",
     "toolbar": {
@@ -181,14 +202,14 @@
     "dock": "right",
     "default_model": {
       "provider": "sarsoo-ai",
-      "model": "sinara.ai/bedrock/qwen.qwen3-coder-next",
+      "model": "opencode-go/qwen3.7-plus",
       "enable_thinking": true,
     },
     "button": true,
     "favorite_models": [
       {
         "provider": "sarsoo-ai",
-        "model": "sinara.ai/bedrock/qwen.qwen3-coder-next",
+        "model": "opencode-go/qwen3.7-plus",
         "enable_thinking": true,
       },
     ],
@@ -228,18 +249,24 @@
   "ui_font_size": 15.0,
   "buffer_font_size": 11.0,
   "theme": {
-    "mode": "dark",
-    "light": "Catppuccin Frappé",
+    "mode": "system",
+    "light": "Catppuccin Latte",
     "dark": "Catppuccin Frappé",
   },
   "file_types": {
     "Helm": [
+      "helmfile.yaml",
+      "helmfile.yml",
+      "Chart.yaml",
+      "Chart.yml",
+      "Chart.lock",
+      "requirements.yaml",
+      "requirements.yml",
       "**/templates/**/*.tpl",
       "**/templates/**/*.yaml",
       "**/templates/**/*.yml",
       "**/helmfile.d/**/*.yaml",
       "**/helmfile.d/**/*.yml",
-      "**/values*.yaml",
     ],
     "Ansible": [
       "**.ansible.yml",
@@ -259,6 +286,7 @@
       "**playbook*.yaml",
       "**playbook*.yml",
     ],
+    "Dockerfile": ["Dockerfile.*", "*.Dockerfile", "*.dockerfile", "*.Docker"],
   },
   "lsp": {
     "terraform-ls": {
@@ -273,6 +301,20 @@
         "yaml": {
           "schemas": {
             "https://raw.githubusercontent.com/compose-spec/compose-go/master/schema/compose-spec.json": "docker-compose*.yml",
+          },
+          "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/inventory.json": [
+            "./inventory/*.yaml",
+            "hosts.yml",
+          ],
+        },
+      },
+    },
+    "helm": {
+      "settings": {
+        "helm-ls": {
+          "logLevel": "info",
+          "yamlls": {
+            "enabled": true,
           },
         },
       },
@@ -307,11 +349,11 @@
         "api_url": "https://bifrost.lab.sarsoo.xyz/v1",
         "available_models": [
           {
-            "name": "sarsoo-ai/sinara.ai/bedrock/qwen.qwen3-coder-next",
-            "display_name": "Qwen 3 Coder Next [Sinara]",
-            "max_tokens": 200000,
-            "max_output_tokens": 32000,
-            "max_completion_tokens": 200000,
+            "name": "sarsoo-ai/opencode-go/qwen3.7-plus",
+            "display_name": "Qwen 3.7",
+            "max_tokens": 64000,
+            "max_output_tokens": 64000,
+            "max_completion_tokens": 64000,
             "capabilities": {
               "tools": true,
               "images": false,
