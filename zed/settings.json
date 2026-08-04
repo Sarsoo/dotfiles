@@ -7,6 +7,38 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "diff_view_style": "split",
+  "scrollbar": {
+    "axes": {
+      "horizontal": false,
+    },
+  },
+  "use_system_window_tabs": false,
+  "focus_follows_mouse": {
+    "debounce_ms": 0,
+    "enabled": true,
+  },
+  "seed_search_query_from_cursor": "selection",
+  "completions": {
+    "lsp_insert_mode": "replace",
+  },
+  "lsp_results_location": "multi_buffer",
+  "middle_click_paste": false,
+  "code_lens": "on",
+  "completion_menu_item_kind": "symbol",
+  "line_ending": "prefer_lf",
+  "toolbar": {
+    "code_actions": true,
+  },
+  "gutter": {
+    "min_line_number_digits": 4,
+  },
+  "drag_and_drop_selection": {
+    "enabled": false,
+  },
+  "show_signature_help_after_edits": true,
+  "auto_signature_help": true,
+  "default_open_behavior": "new_window",
   "format_on_save": "on",
   "cli_default_open_behavior": "existing_window",
   "proxy": "",
@@ -36,6 +68,7 @@
         ],
       },
       "default_config_options": {
+        "mode": "plan",
         "model": "sarsoo-ai/opencode-go/qwen3.7-plus",
       },
       "type": "registry",
@@ -93,6 +126,8 @@
   },
   "use_smartcase_search": true,
   "inlay_hints": {
+    "edit_debounce_ms": 200,
+    "show_background": true,
     "enabled": true,
   },
   "vim": {
@@ -102,7 +137,7 @@
   "vim_mode": false,
   "ui_font_family": "Fraunces",
   "ui_font_fallbacks": [".ZedSans"],
-  "buffer_line_height": "comfortable",
+  "buffer_line_height": "standard",
   "buffer_font_family": "JetBrains Mono",
   "buffer_font_fallbacks": [".ZedMono"],
   "languages": {
@@ -132,8 +167,15 @@
   "document_folding_ranges": "on",
   "semantic_tokens": "combined",
   "git": {
+    "file_diff": {
+      "show_full_file": false,
+    },
+    "blame": {
+      "show_avatar": false,
+    },
     "enable_diff": true,
     "inline_blame": {
+      "location": "inline",
       "show_commit_summary": true,
     },
   },
@@ -145,56 +187,85 @@
       "args": [],
       "projects": [
         {
-          "paths": [
-            "/home/admin_ajp/dev/scripts"
-          ]
+          "paths": ["/home/admin_ajp/dev/scripts"],
+        },
+        {
+          "paths": ["/home/admin_ajp/iac/ansible"],
         },
         {
           "paths": [
-            "/home/admin_ajp/dev/tlc/comet"
-          ]
+            "/home/admin_ajp/dev/tlc/redkite",
+            "/home/admin_ajp/iac/redkite-iac",
+          ],
         },
         {
           "paths": [
-            "/home/admin_ajp/dotfiles"
-          ]
+            "/home/admin_ajp/dev/tlc/comet",
+            "/home/admin_ajp/iac/comet-iac",
+          ],
         },
         {
           "paths": [
-            "/home/admin_ajp/iac"
-          ]
+            "/home/admin_ajp/iac/aws-artifacts",
+            "/home/admin_ajp/iac/aws-identity",
+            "/home/admin_ajp/iac/aws-monitoring",
+            "/home/admin_ajp/iac/aws-networking",
+            "/home/admin_ajp/iac/aws-org",
+            "/home/admin_ajp/iac/aws-sandbox",
+            "/home/admin_ajp/iac/aws-secops",
+            "/home/admin_ajp/iac/aws-terraform",
+          ],
         },
         {
           "paths": [
-            "/home/admin_ajp/iac/lib/aws"
-          ]
+            "/home/admin_ajp/iac/onprem-artifacts",
+            "/home/admin_ajp/iac/onprem-cicd",
+            "/home/admin_ajp/iac/onprem-monitoring",
+            "/home/admin_ajp/iac/onprem-k8s",
+          ],
         },
         {
-          "paths": [
-            "/home/admin_ajp/iac/sales-iac"
-          ]
+          "paths": ["/home/admin_ajp/dev/lme/smart"],
         },
         {
-          "paths": [
-            "/home/admin_ajp/scripts"
-          ]
-        }
+          "paths": ["/home/admin_ajp/dotfiles"],
+        },
+        {
+          "paths": ["/home/admin_ajp/iac"],
+        },
+        {
+          "paths": ["/home/admin_ajp/iac/lib/aws"],
+        },
+        {
+          "paths": ["/home/admin_ajp/iac/lib/observability"],
+        },
+        {
+          "paths": ["/home/admin_ajp/iac/sales-iac"],
+        },
+        {
+          "paths": ["/home/admin_ajp/scripts"],
+        },
       ],
-      "nickname": "annex"
-    }
+      "nickname": "annex",
+    },
   ],
   "disable_ai": false,
   "terminal": {
+    "shell": {
+      "with_arguments": {
+        "program": "/bin/bash", // or path to your preferred shell
+        "args": ["-c", "tmux new-session -A -s \"zed-$(basename \"$PWD\")\""],
+      },
+    },
     "cursor_shape": "bar",
     "font_family": "JetBrains Mono",
-    "font_fallbacks": [".ZedMono"],
+    "font_fallbacks": ["JetBrains Mono", ".ZedMono"],
     "working_directory": "current_file_directory",
     "dock": "bottom",
-    "toolbar": {
-      "breadcrumbs": true,
-    },
+    "toolbar": {},
   },
   "agent": {
+    "notify_when_agent_waiting": "all_screens",
     "sidebar_side": "right",
     "auto_compact": {
       "threshold": "90%",
@@ -216,24 +287,26 @@
     "model_parameters": [],
   },
   "git_panel": {
+    "entry_primary_click_action": "file_diff",
     "group_by": "staging",
     "show_count_badge": true,
     "file_icons": true,
     "diff_stats": true,
     "sort_by_path": true,
-    "status_style": "icon",
+    "status_style": "label_color",
     "button": true,
     "tree_view": true,
     "dock": "right",
   },
   "bottom_dock_layout": "contained",
-  "show_whitespaces": "selection",
+  "show_whitespaces": "all",
   "indent_guides": {
+    "coloring": "indent_aware",
     "background_coloring": "indent_aware",
   },
   "soft_wrap": "editor_width",
   "minimap": {
-    "display_in": "active_editor",
+    "display_in": "all_editors",
     "show": "always",
   },
   "autosave": "off",
@@ -366,4 +439,20 @@
       },
     },
   },
+  "file_scan_exclusions": [
+    "**/.git",
+    "**/.svn",
+    "**/.hg",
+    "**/.jj",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/Thumbs.db",
+    "**/.classpath",
+    "**/.settings",
+    "**/bin",
+    "**/obj",
+    "**/.terraform",
+    "**/.venv",
+    "**/.env/**",
+  ],
 }

@@ -54,4 +54,22 @@
       "ctrl-alt-b": "workspace::ToggleRightDock",
     },
   },
+  {
+    "context": "Editor",
+    "unbind": {
+      "shift-f12": "editor::GoToImplementation"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "shift-f12": "editor::FindAllReferences"
+    }
+  },
+  {
+    "context": "Editor",
+    "unbind": {
+      "alt-shift-f12": "editor::FindAllReferences"
+    }
+  }
 ]
