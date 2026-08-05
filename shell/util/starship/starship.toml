@@ -4,15 +4,27 @@
 add_newline = false
 palette = 'catppuccin_mocha'
 
+# format = '''
+# [┌─────────────────[$shell]()──>](bold green)
+# [│](bold green)$username$directory
+# [└─$character](bold green) '''
+
+# format = '> $all >'
+
+format = '$shell$username$hostname$directory$git_branch$character'
+
 [character]
 success_symbol = '[➜](bold green)'
 error_symbol = '[✗](bold red)'
+format = ' $symbol '
 
 [directory]
-truncation_length = 3
-truncation_symbol = '…/'
+truncation_length = 1
+# truncation_symbol = '…/'
 home_symbol = '🏠'
-format = '[$path]($style)[$read_only]($read_only_style) '
+# format = '\([$path]($style)\)[$read_only]($read_only_style) '
+format = '[\($path\)]($style)[$read_only]($read_only_style)'
+style = 'inverted bold lavender'
 
 [aws]
 disabled = true
@@ -21,17 +33,23 @@ disabled = true
 disabled = true
 
 [hostname]
-ssh_symbol = ' 🛜'
+# ssh_symbol = ' 🛜'
 # format = '@[$hostname$ssh_symbol]($style)'
-format = '@[$hostname]($style)'
+format = '[@$hostname]($style)'
+ssh_only = false
+style = 'inverted pink'
 
 [username]
 format = '[$user]($style)'
+show_always = true
 # aliases = { "aj" = "matchai" }
+style_user = 'inverted rosewater'
 
 [git_branch]
-format = '[$symbol$branch(:$remote_branch)]($style) '
-symbol = '🌱'
+format = '[\($branch(:$remote_branch)\)]($style)'
+# format = '[$symbol\($branch(:$remote_branch)\)]($style) '
+# symbol = '🌱'
+style = 'inverted rosewater'
 
 [git_status]
 disabled = true
@@ -52,13 +70,16 @@ disabled = false
 
 [shell]
 disabled = false
-zsh_indicator = ''
-bash_indicator = ''
-powershell_indicator = '⌗'
+# zsh_indicator = ''
+# bash_indicator = ''
+# powershell_indicator = '⌗'
+format = '[$indicator>]($style)'
+style = 'inverted dimmed lavender'
 
 [package]
-format = '[pkg:\($symbol$version\)]($style) '
-symbol = '📦'
+disabled = true
+
+[status]
 disabled = true
 
 [palettes.catppuccin_mocha]
