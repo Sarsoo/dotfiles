@@ -45,12 +45,16 @@
         "opencode-go/glm-5.2": {
           "name": "GLM 5.2",
           "tool_call": true,
-          "reasoning": false,
+          "reasoning": true,
         },
         "opencode-go/deepseek-v4-flash": {
           "name": "Deepseek v4",
           "tool_call": true,
-          "reasoning": false,
+          "reasoning": true,
+          "limit": {
+            "context": 1000000,
+            "output": 384000,
+          },
         },
       },
       "options": {

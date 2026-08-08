@@ -95,6 +95,7 @@
     "file_icons": true,
   },
   "project_panel": {
+    "hide_hidden": false,
     "sort_mode": "directories_first",
     "hide_root": true,
     "diagnostic_badges": true,
@@ -141,6 +142,12 @@
   "buffer_font_family": "JetBrains Mono",
   "buffer_font_fallbacks": [".ZedMono"],
   "languages": {
+    "YAML": {
+      "format_on_save": "off"
+    },
+    "Helm": {
+      "format_on_save": "on"
+    },
     "PowerShell": {
       "tab_size": 4,
     },
@@ -187,9 +194,6 @@
       "args": [],
       "projects": [
         {
-          "paths": ["/home/admin_ajp/dev/scripts"],
-        },
-        {
           "paths": ["/home/admin_ajp/iac/ansible"],
         },
         {
@@ -225,25 +229,33 @@
           ],
         },
         {
-          "paths": ["/home/admin_ajp/dev/lme/smart"],
+          "paths": [
+            "/home/admin_ajp/dev/lme/smart",
+            "/home/admin_ajp/iac/lmesmart-iac",
+          ],
         },
         {
-          "paths": ["/home/admin_ajp/dotfiles"],
+          "paths": [
+            "/home/admin_ajp/dotfiles",
+            "/home/admin_ajp/dev/scripts",
+            "/home/admin_ajp/scripts",
+          ],
+        },
+        {
+          "paths": ["/home/admin_ajp/dev"],
         },
         {
           "paths": ["/home/admin_ajp/iac"],
         },
         {
-          "paths": ["/home/admin_ajp/iac/lib/aws"],
-        },
-        {
-          "paths": ["/home/admin_ajp/iac/lib/observability"],
+          "paths": [
+            "/home/admin_ajp/iac/lib/aws",
+            "/home/admin_ajp/iac/lib/observability",
+            "/home/admin_ajp/iac/lib/k8s",
+          ],
         },
         {
           "paths": ["/home/admin_ajp/iac/sales-iac"],
-        },
-        {
-          "paths": ["/home/admin_ajp/scripts"],
         },
       ],
       "nickname": "annex",
