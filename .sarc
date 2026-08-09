@@ -86,6 +86,7 @@ paths=(
     '/opt/homebrew/opt/python/bin'
     "${HOME}/bin"
     "${HOME}/.local/bin"
+    "${HOME}/.dotnet"
     "${HOME}/.dotnet/tools"
     "${HOME}/.kubectx"
     "${HOME}/.opencode/bin"
