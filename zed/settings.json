@@ -143,10 +143,13 @@
   "buffer_font_fallbacks": [".ZedMono"],
   "languages": {
     "YAML": {
-      "format_on_save": "off"
+      "format_on_save": "off",
+      "prettier": {
+        "bracketSpacing": false,
+      },
     },
     "Helm": {
-      "format_on_save": "on"
+      "format_on_save": "on",
     },
     "PowerShell": {
       "tab_size": 4,
@@ -206,6 +209,7 @@
           "paths": [
             "/home/admin_ajp/dev/tlc/comet",
             "/home/admin_ajp/iac/comet-iac",
+            "/home/admin_ajp/dev/tlc/comet-qa",
           ],
         },
         {
@@ -252,6 +256,7 @@
             "/home/admin_ajp/iac/lib/aws",
             "/home/admin_ajp/iac/lib/observability",
             "/home/admin_ajp/iac/lib/k8s",
+            "/home/admin_ajp/iac/lib/helm",
           ],
         },
         {
@@ -386,11 +391,14 @@
         "yaml": {
           "schemas": {
             "https://raw.githubusercontent.com/compose-spec/compose-go/master/schema/compose-spec.json": "docker-compose*.yml",
+            "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/inventory.json": [
+              "./inventory/*.yaml",
+              "hosts.yml",
+            ],
           },
-          "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/inventory.json": [
-            "./inventory/*.yaml",
-            "hosts.yml",
-          ],
+          "format": {
+            "bracketSpacing": false,
+          },
         },
       },
     },

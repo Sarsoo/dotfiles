@@ -91,6 +91,7 @@ paths=(
     "${HOME}/.kubectx"
     "${HOME}/.opencode/bin"
     "${HOME}/.krew/bin"
+    "${HOME}/.aspire/bin"
 )
 for p in "${paths[@]}"; do
     if [ -d "${p}" ]; then

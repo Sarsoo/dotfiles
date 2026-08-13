@@ -214,6 +214,18 @@ else
 fi
 
 ############
+#   pi
+############
+if [[ -z "${SAR_SKIP_PI}" ]]; then
+  link_file "ai/pi/models.json" ".pi/agent/models.json"
+  link_file "ai/pi/settings.json" ".pi/agent/settings.json"
+  link_file "ai/pi/catpuccin-frappe.json" ".pi/agent/themes/catpuccin-frappe.json"
+else
+  echo "> Skipping Pi config"
+fi
+
+
+############
 #  herdr
 ############
 link_file "ai/herdr/config.toml" ".config/herdr/config.toml"

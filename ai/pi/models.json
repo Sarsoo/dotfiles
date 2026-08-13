@@ -1,0 +1,22 @@
+{
+  "providers": {
+    "sarsoo-ai": {
+      "baseUrl": "http://bifrost.lab.sarsoo.xyz/openai",
+      "api": "openai-completions",
+      "compat": {
+        "supportsDeveloperRole": false
+      },
+      "models": [
+        {
+          "id": "opencode-go/deepseek-v4-flash",
+          "name": "DeepSeek v4 Flash",
+          "reasoning": true,
+          "input": ["text"],
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }
+        }
+      ]
+    }
+  }
+}
