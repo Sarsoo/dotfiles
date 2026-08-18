@@ -197,7 +197,20 @@
       "args": [],
       "projects": [
         {
-          "paths": ["/home/admin_ajp/iac/ansible"],
+          "paths": ["/home/admin_ajp/dev"],
+        },
+        {
+          "paths": [
+            "/home/admin_ajp/dev/lme/smart",
+            "/home/admin_ajp/iac/lmesmart-iac",
+          ],
+        },
+        {
+          "paths": [
+            "/home/admin_ajp/dev/tlc/comet",
+            "/home/admin_ajp/iac/comet-iac",
+            "/home/admin_ajp/dev/tlc/comet-qa",
+          ],
         },
         {
           "paths": [
@@ -207,10 +220,16 @@
         },
         {
           "paths": [
-            "/home/admin_ajp/dev/tlc/comet",
-            "/home/admin_ajp/iac/comet-iac",
-            "/home/admin_ajp/dev/tlc/comet-qa",
+            "/home/admin_ajp/dotfiles",
+            "/home/admin_ajp/dev/scripts",
+            "/home/admin_ajp/scripts",
           ],
+        },
+        {
+          "paths": ["/home/admin_ajp/iac"],
+        },
+        {
+          "paths": ["/home/admin_ajp/iac/ansible"],
         },
         {
           "paths": [
@@ -226,30 +245,10 @@
         },
         {
           "paths": [
-            "/home/admin_ajp/iac/onprem-artifacts",
-            "/home/admin_ajp/iac/onprem-cicd",
-            "/home/admin_ajp/iac/onprem-monitoring",
-            "/home/admin_ajp/iac/onprem-k8s",
+            "/home/admin_ajp/iac/aws-monitoring",
+            "/home/admin_ajp/iac/grafana",
+            "/home/admin_ajp/.config/gcx/config.yaml",
           ],
-        },
-        {
-          "paths": [
-            "/home/admin_ajp/dev/lme/smart",
-            "/home/admin_ajp/iac/lmesmart-iac",
-          ],
-        },
-        {
-          "paths": [
-            "/home/admin_ajp/dotfiles",
-            "/home/admin_ajp/dev/scripts",
-            "/home/admin_ajp/scripts",
-          ],
-        },
-        {
-          "paths": ["/home/admin_ajp/dev"],
-        },
-        {
-          "paths": ["/home/admin_ajp/iac"],
         },
         {
           "paths": [
@@ -257,6 +256,14 @@
             "/home/admin_ajp/iac/lib/observability",
             "/home/admin_ajp/iac/lib/k8s",
             "/home/admin_ajp/iac/lib/helm",
+          ],
+        },
+        {
+          "paths": [
+            "/home/admin_ajp/iac/onprem-artifacts",
+            "/home/admin_ajp/iac/onprem-cicd",
+            "/home/admin_ajp/iac/onprem-monitoring",
+            "/home/admin_ajp/iac/onprem-k8s",
           ],
         },
         {
@@ -376,6 +383,7 @@
       "**playbook*.yaml",
       "**playbook*.yml",
     ],
+    "Jinja2": ["*.j2"],
     "Dockerfile": ["Dockerfile.*", "*.Dockerfile", "*.dockerfile", "*.Docker"],
   },
   "lsp": {

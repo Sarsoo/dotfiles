@@ -12,3 +12,4 @@ aliases:
   ds: daemonsets
   xd: xray deploy all
   xs: xray statefulsets all
+  vwc: validatingwebhookconfigurations
