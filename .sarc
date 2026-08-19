@@ -71,6 +71,13 @@ alias tfl='tflint --recursive --format compact'
 alias k='kubectl'
 
 ################
+# FUNCs
+################
+tssh() {
+  ssh -t -o RemoteCommand='tmux new -A -s ssh' "$@"
+}
+
+################
 # MAC
 ################
 if [[ "${machine}" = "Mac" ]]; then
