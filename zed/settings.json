@@ -69,7 +69,7 @@
       },
       "default_config_options": {
         "mode": "plan",
-        "model": "sarsoo-ai/opencode-go/qwen3.7-plus",
+        "model": "sarsoo-ai/opencode-go/deepseek-v4-flash",
       },
       "type": "registry",
     },
