@@ -290,6 +290,17 @@ link_file "ctr/distrobox/distrobox.conf" ".config/distrobox/distrobox.conf"
 link_file "gitui/theme.ron" ".config/gitui/theme.ron"
 
 ############
+#  GIT
+############
+case $machine in
+
+    Mac)
+        link_file "git/mac.gitconfig" ".gitconfig"
+    ;;
+
+esac
+
+############
 #   vja
 ############
 link_file "vja/config.rc" ".config/vja/config.rc"

@@ -1,0 +1,16 @@
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true
+[user]
+	signingkey = BBAE4BE5134601F24A6804D89D6060F20A0A0406
+	name = Andy Pack
+	email = andy@sarsoo.xyz
+[gpg]
+	program = /opt/homebrew/bin/gpg
+[core]
+  ignoreCase = false
+  excludesFile = ~/.gitignore
+	autocrlf = input
+[push]
+  autoSetupRemote = true
