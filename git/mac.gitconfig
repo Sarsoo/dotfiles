@@ -1,3 +1,8 @@
+[core]
+  ignoreCase = false
+  excludesFile = ~/.gitignore
+	autocrlf = input
+	pager = delta
 [commit]
 	gpgsign = true
 [tag]
@@ -8,9 +13,12 @@
 	email = andy@sarsoo.xyz
 [gpg]
 	program = /opt/homebrew/bin/gpg
-[core]
-  ignoreCase = false
-  excludesFile = ~/.gitignore
-	autocrlf = input
 [push]
   autoSetupRemote = true
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true  # use n and N to move between diff sections
+  dark = true      # or light = true, or omit for auto-detection
+[merge]
+  conflictStyle = zdiff3
