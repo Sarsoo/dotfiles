@@ -23,6 +23,6 @@
       "maxRetryDelayMs": 60000
     }
   },
-  "lastChangelogVersion": "0.84.1",
+  "lastChangelogVersion": "0.84.2",
   "packages": []
 }
