@@ -1,5 +1,5 @@
 ---
-name: c#-blazor-conventions
+name: csharp-blazor-conventions
 description: >-
   Use when writing or reviewing C# UIs in Blazor/Razor. Guardrails against HTML/JS/React leaks: correct @onclick/@bind/[Parameter] idioms, no <script> in components, C# not JS in @code, pre-submit checklist.
 ---
