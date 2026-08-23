@@ -208,7 +208,6 @@ link_file "ctr/flux9s" ".config/flux9s"
 if [[ -z "${SAR_SKIP_OPENCODE}" ]]; then
   link_file "ai/opencode/opencode.jsonc" ".config/opencode/opencode.jsonc"
   link_file "ai/opencode/tui.jsonc" ".config/opencode/tui.jsonc"
-  link_file "ai/opencode/skills" ".config/opencode/skills"
 else
   echo "> Skipping OpenCode config"
 fi
@@ -224,6 +223,11 @@ else
   echo "> Skipping Pi config"
 fi
 
+############
+# skills
+############
+
+link_file "ai/agents/skills" ".agents/skills"
 
 ############
 #  herdr

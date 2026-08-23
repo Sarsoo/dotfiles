@@ -1,7 +1,7 @@
 {
   "providers": {
     "sarsoo-ai": {
-      "baseUrl": "http://bifrost.lab.sarsoo.xyz/openai",
+      "baseUrl": "https://bifrost.lab.sarsoo.xyz/openai",
       "api": "openai-completions",
       "compat": {
         "supportsDeveloperRole": false

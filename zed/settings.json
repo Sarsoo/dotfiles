@@ -50,6 +50,13 @@
   },
   "colorize_brackets": true,
   "agent_servers": {
+    "pi-acp": {
+      "default_config_options": {
+        "thought_level": "medium",
+        "model": "sarsoo-ai/opencode-go/deepseek-v4-flash",
+      },
+      "type": "registry",
+    },
     "herm": {
       "type": "custom",
       "command": "ssh",
@@ -216,6 +223,7 @@
           "paths": [
             "/home/admin_ajp/dev/tlc/redkite",
             "/home/admin_ajp/iac/redkite-iac",
+            "/home/admin_ajp/dev/tlc/sidp",
           ],
         },
         {
@@ -256,6 +264,7 @@
             "/home/admin_ajp/iac/lib/observability",
             "/home/admin_ajp/iac/lib/k8s",
             "/home/admin_ajp/iac/lib/helm",
+            "/home/admin_ajp/iac/lib/container",
           ],
         },
         {
