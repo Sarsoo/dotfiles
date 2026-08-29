@@ -23,6 +23,11 @@
       "maxRetryDelayMs": 60000
     }
   },
-  "lastChangelogVersion": "0.84.2",
-  "packages": []
+  "lastChangelogVersion": "0.84.3",
+  "packages": [
+    "npm:pi-hermes-memory",
+    "npm:pi-context-view",
+    "npm:@juicesharp/rpiv-ask-user-question",
+    "npm:@narumitw/pi-plan-mode"
+  ]
 }

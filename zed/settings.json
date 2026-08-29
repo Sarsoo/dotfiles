@@ -184,6 +184,7 @@
   "document_folding_ranges": "on",
   "semantic_tokens": "combined",
   "git": {
+    "diff_base": "head",
     "file_diff": {
       "show_full_file": false,
     },
@@ -199,12 +200,18 @@
   "tab_size": 2,
   "ssh_connections": [
     {
-      "host": "annex.sinara.net",
+      "host": "annexraw",
       "username": "admin_ajp",
       "args": [],
       "projects": [
         {
           "paths": ["/home/admin_ajp/dev"],
+        },
+        {
+          "paths": ["/home/admin_ajp/dev/sinara-devops"],
+        },
+        {
+          "paths": ["/home/admin_ajp/dev/Sinara-DevOps-Analyst"],
         },
         {
           "paths": [
@@ -273,6 +280,7 @@
             "/home/admin_ajp/iac/onprem-cicd",
             "/home/admin_ajp/iac/onprem-monitoring",
             "/home/admin_ajp/iac/onprem-k8s",
+            "/home/admin_ajp/iac/ai",
           ],
         },
         {
