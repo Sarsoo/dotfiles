@@ -1,0 +1,54 @@
+{
+  "permission": {
+    "*": "ask",
+    "path": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.env.example": "allow"
+    },
+    "bash": {
+      "*": "ask",
+      "sudo *": "ask",
+      "ls *": "allow",
+      "cat *": "allow",
+      "grep *": "allow",
+      "head *": "allow",
+      "sort *": "allow",
+      "rg *": "allow",
+      "find *": "allow",
+      "wc -l *": "allow",
+      "rm *": "ask",
+      "rmdir *": "ask",
+      "terraform plan *": "allow",
+      "terraform fmt *": "allow",
+      "terraform validate *": "allow",
+      "aws *": "ask",
+
+      "git *": "deny",
+      "git status": "allow",
+      "git status *": "allow",
+      "git log *": "allow",
+      "git log": "allow",
+      "git diff *": "allow",
+      "git diff": "allow",
+      "git show *": "allow",
+      "git show": "allow",
+      "git branch": "allow",
+      "git remote": "allow",
+      "git remote *": "allow",
+      "git tag": "allow",
+      "git rev-parse": "allow",
+      "git rev-parse *": "allow",
+      "git describe": "allow",
+      "git describe *": "allow",
+      "git ls-files": "allow",
+      "git ls-files *": "allow",
+      "git blame": "allow",
+      "git blame *": "allow",
+      "git grep": "allow",
+      "git grep *": "allow"
+    },
+    "external_directory": "ask"
+  }
+}
