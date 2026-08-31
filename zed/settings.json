@@ -51,9 +51,12 @@
   "colorize_brackets": true,
   "agent_servers": {
     "pi-acp": {
+      "favorite_config_option_values": {
+        "model": ["openai.sarsoo/deepseek-v4-flash"],
+      },
       "default_config_options": {
         "thought_level": "medium",
-        "model": "sarsoo-ai/opencode-go/deepseek-v4-flash",
+        "model": "openai.sarsoo/deepseek-v4-flash",
       },
       "type": "registry",
     },
@@ -68,15 +71,16 @@
       },
       "favorite_config_option_values": {
         "model": [
-          "sarsoo-ai/opencode-go/deepseek-v4-flash",
-          "sarsoo-ai/bedrock/anthropic.claude-sonnet-5",
-          "sarsoo-ai/opencode-go/qwen3.7-plus",
-          "sarsoo-ai/opencode-go/glm-5.2",
+          "openai.sarsoo/deepseek-v4-flash",
+          "openai.sarsoo/claude-sonnet-5",
+          "openai.sarsoo/qwen3.7-plus",
+          "openai.sarsoo/glm-5.2",
         ],
       },
       "default_config_options": {
+        "effort": "medium",
         "mode": "plan",
-        "model": "sarsoo-ai/opencode-go/deepseek-v4-flash",
+        "model": "openai/deepseek-v4-flash",
       },
       "type": "registry",
     },
@@ -86,12 +90,12 @@
     "allow_data_collection": "no",
     "open_ai_compatible_api": {
       "max_output_tokens": 64,
-      "model": "opencode-go/qwen3.7-plus",
+      "model": "deepseek-v4-flash",
       "api_url": "https://bifrost.lab.sarsoo.xyz/v1",
-      "prompt_format": "qwen",
+      "prompt_format": "deepseek_coder",
     },
     // "provider": "open_ai_compatible_api",
-    "provider": "none",
+    "provider": "open_ai_compatible_api",
   },
   "collaboration_panel": {
     "dock": "left",
@@ -306,6 +310,8 @@
     "toolbar": {},
   },
   "agent": {
+    "single_file_review": true,
+    "enable_feedback": false,
     "notify_when_agent_waiting": "all_screens",
     "sidebar_side": "right",
     "auto_compact": {
@@ -462,13 +468,12 @@
   },
   "language_models": {
     "openai_compatible": {
-      // Using Together AI as an example
-      "sarsoo.chat": {
+      "sarsoo": {
         "api_url": "https://bifrost.lab.sarsoo.xyz/v1",
         "available_models": [
           {
-            "name": "sarsoo-ai/opencode-go/qwen3.7-plus",
-            "display_name": "Qwen 3.7",
+            "name": "deepseek-v4-flash",
+            "display_name": "Deepseek V4 Flash",
             "max_tokens": 64000,
             "max_output_tokens": 64000,
             "max_completion_tokens": 64000,
