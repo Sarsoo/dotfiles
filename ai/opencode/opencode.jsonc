@@ -1,54 +1,117 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "sarsoo-ai/opencode-go/qwen3.7-plus",
-  "small_model": "sarsoo-ai/opencode-go/deepseek-v4-flash",
+  "model": "openai/qwen3.7-plus",
+  "small_model": "openai/deepseek-v4-flash",
   "disabled_providers": ["opencode"],
   "provider": {
-    "sarsoo-ai": {
-      "name": "sarsoo.ai",
-      "npm": "@ai-sdk/openai-compatible",
-      "models": {
-        "bedrock/anthropic.claude-opus-5": {
-          "name": "Claude Opus",
-          "tool_call": true,
-          // "reasoning": true,
+    "openai": {
+      "name": "openai.sarsoo",
+      "options": {
+        "baseURL": "https://bifrost.lab.sarsoo.xyz/openai",
+        "headers": {
+          "x-opencode-git-username": "{env:GIT_USERNAME}",
+          "x-opencode-git-branch": "{env:GIT_BRANCH}",
+          "x-opencode-git-repo-url": "{env:GIT_REPO_URL}",
+          "x-opencode-git-repo-fullurl": "{env:GIT_REPO_URL}/{env:GIT_BRANCH}",
         },
-        "bedrock/qwen.qwen3-coder-next": {
+        "includeUsage": true,
+      },
+      "whitelist": [
+        "gpt-5.6-luna",
+        "qwen3-coder-next",
+        "qwen3.7-plus",
+        "gemma-3-4b-it",
+        "gemma-4-e2b",
+        "glm-5",
+        "glm-5.1",
+        "glm-5.2",
+        "glm-5.3",
+        "glm-5.3-flash",
+        "kimi-k2.5",
+        "kimi-k2.6",
+        "kimi-k2.7-code",
+        "kimi-k3",
+        "deepseek-v4-flash",
+      ],
+      "models": {
+        // OPENAI
+        "gpt-5.6-luna": {
+          "name": "GPT 5.6 Luna",
+          "tool_call": true,
+          "reasoning": true,
+        },
+        // QWEN
+        "qwen3-coder-next": {
           "name": "Qwen 3 Coder",
           "tool_call": true,
           "reasoning": false,
         },
-        "opencode-go/qwen3.7-plus": {
+        "qwen3.7-plus": {
           "name": "Qwen 3.7",
           "tool_call": true,
           "reasoning": false,
         },
-        "bedrock/google.gemma-3-4b-it": {
+        // GOOGLE
+        "gemma-3-4b-it": {
           "name": "Gemma 3",
           "tool_call": false,
           "reasoning": false,
         },
-        "bedrock/google.gemma-4-e2b": {
+        "gemma-4-e2b": {
           "name": "Gemma 4",
           "tool_call": false,
           "reasoning": false,
         },
-        "bedrock/anthropic.claude-sonnet-5": {
-          "name": "Claude Sonnet",
+        // GLM
+        "glm-5": {
+          "name": "GLM 5",
           "tool_call": true,
-          // "reasoning": true,
-          "limit": {
-            "context": 1000000,
-            "output": 128000,
-          },
+          "reasoning": true,
         },
-        "opencode-go/glm-5.2": {
+        "glm-5.1": {
+          "name": "GLM 5.1",
+          "tool_call": true,
+          "reasoning": true,
+        },
+        "glm-5.2": {
           "name": "GLM 5.2",
           "tool_call": true,
           "reasoning": true,
         },
-        "opencode-go/deepseek-v4-flash": {
-          "name": "Deepseek v4",
+        "glm-5.3": {
+          "name": "GLM 5.3",
+          "tool_call": true,
+          "reasoning": true,
+        },
+        "glm-5.3-flash": {
+          "name": "GLM 5.3 Flash",
+          "tool_call": true,
+          "reasoning": true,
+        },
+        // MOONSHOT
+        "kimi-k2.5": {
+          "name": "Kimi K2.5",
+          "tool_call": true,
+          "reasoning": true,
+        },
+        "kimi-k2.6": {
+          "name": "Kimi K2.6",
+          "tool_call": true,
+          "reasoning": true,
+        },
+        "kimi-k2.7-code": {
+          "name": "Kimi K2.7 Code",
+          "tool_call": true,
+          "reasoning": true,
+        },
+        "kimi-k3": {
+          "name": "Kimi K3",
+          "tool_call": true,
+          "reasoning": true,
+        },
+        // DEEPSEEK
+        "deepseek-v4-flash": {
+          "name": "Deepseek v4 Flash",
           "tool_call": true,
           "reasoning": true,
           "limit": {
@@ -57,15 +120,62 @@
           },
         },
       },
+    },
+    "anthropic": {
+      "name": "anthropic.sarsoo",
       "options": {
-        "baseURL": "https://bifrost.lab.sarsoo.xyz/v1",
+        "baseURL": "https://bifrost.lab.sarsoo.xyz/anthropic/v1",
         "headers": {
+          "anthropic-version": "2023-06-01",
           "x-opencode-git-username": "{env:GIT_USERNAME}",
           "x-opencode-git-branch": "{env:GIT_BRANCH}",
           "x-opencode-git-repo-url": "{env:GIT_REPO_URL}",
           "x-opencode-git-repo-fullurl": "{env:GIT_REPO_URL}/{env:GIT_BRANCH}",
         },
-        "includeUsage": true,
+      },
+      "whitelist": ["claude-opus-5", "claude-sonnet-5", "claude-haiku-4-5"],
+      "models": {
+        "claude-opus-5": {
+          "name": "Claude Opus 5",
+          "cost": {
+            "input": 5,
+            "output": 25,
+            "cache_read": 0.5,
+            "cache_write": 6.25,
+          },
+          "thinking": { "type": "adaptive" },
+          "variants": {
+            "Low": { "output_config": { "effort": "low" } },
+            "Medium": { "output_config": { "effort": "medium" } },
+            "High": { "output_config": { "effort": "high" } },
+            "Max": { "output_config": { "effort": "max" } },
+          },
+        },
+        "claude-sonnet-5": {
+          "name": "Claude Sonnet 5",
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cache_read": 0.3,
+            "cache_write": 3.75,
+          },
+          "thinking": { "type": "adaptive" },
+          "variants": {
+            "Low": { "output_config": { "effort": "low" } },
+            "Medium": { "output_config": { "effort": "medium" } },
+            "High": { "output_config": { "effort": "high" } },
+            "Max": { "output_config": { "effort": "max" } },
+          },
+        },
+        "claude-haiku-4-5": {
+          "name": "Claude Haiku 4.5",
+          "cost": {
+            "input": 1,
+            "output": 5,
+            "cache_read": 0.1,
+            "cache_write": 1.25,
+          },
+        },
       },
     },
   },
@@ -113,15 +223,15 @@
     "explore": {},
     "scout": {},
     "compaction": {
-      "model": "opencode-go/deepseek-v4-flash",
+      "model": "openai/deepseek-v4-flash",
       "temperature": 0.1,
     },
     "title": {
-      "model": "opencode-go/deepseek-v4-flash",
+      "model": "openai/deepseek-v4-flash",
       "temperature": 0.3,
     },
     "summary": {
-      "model": "opencode-go/deepseek-v4-flash",
+      "model": "openai/deepseek-v4-flash",
       "temperature": 0.1,
     },
   },

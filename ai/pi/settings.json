@@ -1,6 +1,6 @@
 {
-  "defaultProvider": "sarsoo-ai",
-  "defaultModel": "opencode-go/deepseek-v4-flash",
+  "defaultProvider": "openai.sarsoo",
+  "defaultModel": "deepseek-v4-flash",
   "defaultThinkingLevel": "medium",
   "hideThinkingBlock": false,
   "showCacheMissNotices": false,
