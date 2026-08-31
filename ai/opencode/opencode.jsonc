@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "openai/qwen3.7-plus",
+  "model": "openai/qwen3.8-flash",
   "small_model": "openai/deepseek-v4-flash",
   "disabled_providers": ["opencode"],
   "provider": {
@@ -20,6 +20,7 @@
         "gpt-5.6-luna",
         "qwen3-coder-next",
         "qwen3.7-plus",
+        "qwen3.8-flash",
         "gemma-3-4b-it",
         "gemma-4-e2b",
         "glm-5",
@@ -48,6 +49,11 @@
         },
         "qwen3.7-plus": {
           "name": "Qwen 3.7",
+          "tool_call": true,
+          "reasoning": false,
+        },
+        "qwen3.8-flash": {
+          "name": "Qwen 3.8 Flash",
           "tool_call": true,
           "reasoning": false,
         },
@@ -223,15 +229,15 @@
     "explore": {},
     "scout": {},
     "compaction": {
-      "model": "openai/deepseek-v4-flash",
+      "model": "openai/gemma-4-e2b",
       "temperature": 0.1,
     },
     "title": {
-      "model": "openai/deepseek-v4-flash",
+      "model": "openai/gemma-4-e2b",
       "temperature": 0.3,
     },
     "summary": {
-      "model": "openai/deepseek-v4-flash",
+      "model": "openai/gemma-4-e2b",
       "temperature": 0.1,
     },
   },
