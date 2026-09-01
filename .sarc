@@ -8,7 +8,7 @@ case "${unameOut}" in
     *)          machine="UNKNOWN:${unameOut}"
 esac
 
-export EDITOR=vim
+command -v nvim >/dev/null 2>&1 && export EDITOR=nvim || export EDITOR=vim
 # PS1='%F{green}%n@%m%f %1/ %F{red}%#%f '
 
 ################

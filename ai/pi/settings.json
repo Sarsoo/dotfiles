@@ -2,10 +2,6 @@
   "defaultProvider": "openai.sarsoo",
   "defaultModel": "glm-5.3-flash",
   "defaultThinkingLevel": "medium",
-  "hideThinkingBlock": false,
-  "showCacheMissNotices": false,
-  "theme": "catppuccin-frappe",
-  "quietStartup": true,
   "enableInstallTelemetry": false,
   "enableAnalytics": false,
   "compaction": {
@@ -23,6 +19,14 @@
       "maxRetryDelayMs": 60000
     }
   },
+  "theme": "catppuccin-frappe",
+  "quietStartup": true,
+  "hideThinkingBlock": false,
+  "showCacheMissNotices": false,
+  "editorPaddingX": 0,
+  "outputPad": 1,
+  "autocompleteMaxVisible": 8,
+  "tuiMode": "normal",
   "lastChangelogVersion": "0.84.4",
   "packages": [
     "npm:pi-hermes-memory",
