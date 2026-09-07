@@ -22,7 +22,7 @@
   "completions": {
     "lsp_insert_mode": "replace",
   },
-  "lsp_results_location": "multi_buffer",
+  "lsp_results_location": "picker",
   "middle_click_paste": false,
   "code_lens": "on",
   "completion_menu_item_kind": "symbol",
@@ -178,7 +178,7 @@
   "diagnostics": {
     "button": true,
     "inline": {
-      "enabled": false,
+      "enabled": true,
     },
   },
   "prettier": {
@@ -276,6 +276,7 @@
             "/home/admin_ajp/iac/lib/k8s",
             "/home/admin_ajp/iac/lib/helm",
             "/home/admin_ajp/iac/lib/container",
+            "/home/admin_ajp/iac/lib/jenkins",
           ],
         },
         {
@@ -408,6 +409,7 @@
     ],
     "Jinja2": ["*.j2"],
     "Dockerfile": ["Dockerfile.*", "*.Dockerfile", "*.dockerfile", "*.Docker"],
+    "Terraform": ["*.tf"],
   },
   "lsp": {
     "terraform-ls": {

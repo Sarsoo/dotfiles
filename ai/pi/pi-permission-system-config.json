@@ -7,6 +7,8 @@
       "*.env.*": "deny",
       "*.env.example": "allow"
     },
+    "read": "allow",
+    "plan_mode_complete": "allow",
     "bash": {
       "*": "ask",
       "sudo *": "ask",
