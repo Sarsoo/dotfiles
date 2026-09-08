@@ -122,6 +122,8 @@ paths=(
     "${HOME}/.cargo/env"
     "${HOME}/.scripts/.rc"
     "${HOME}/scripts/.rc"
+    "${HOME}/.nvm/nvm.sh"
+    "${HOME}/.nvm/bash_completion"
 )
 for p in "${paths[@]}"; do
     if [ -e "${p}" ]; then
