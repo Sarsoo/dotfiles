@@ -106,6 +106,7 @@
     "file_icons": true,
   },
   "project_panel": {
+    "folder_indicator": "chevron",
     "hide_hidden": false,
     "sort_mode": "directories_first",
     "hide_root": true,
@@ -113,7 +114,6 @@
     "bold_folder_labels": true,
     "indent_size": 15.0,
     "git_status": true,
-    "folder_icons": false,
     "file_icons": true,
     "entry_spacing": "standard",
     "dock": "left",
@@ -155,11 +155,11 @@
   "languages": {
     "YAML": {
       "format_on_save": "off",
-      "prettier": {
-        "bracketSpacing": false,
-      },
     },
     "Helm": {
+      "format_on_save": "on",
+    },
+    "Terraform": {
       "format_on_save": "on",
     },
     "PowerShell": {
@@ -180,9 +180,6 @@
     "inline": {
       "enabled": true,
     },
-  },
-  "prettier": {
-    "allowed": true,
   },
   "document_symbols": "on",
   "document_folding_ranges": "on",
@@ -212,9 +209,6 @@
           "paths": ["/home/admin_ajp/dev"],
         },
         {
-          "paths": ["/home/admin_ajp/dev/sinara-devops"],
-        },
-        {
           "paths": ["/home/admin_ajp/dev/Sinara-DevOps-Analyst"],
         },
         {
@@ -222,6 +216,9 @@
             "/home/admin_ajp/dev/lme/smart",
             "/home/admin_ajp/iac/lmesmart-iac",
           ],
+        },
+        {
+          "paths": ["/home/admin_ajp/dev/sinara-devops"],
         },
         {
           "paths": [
@@ -267,6 +264,12 @@
             "/home/admin_ajp/iac/aws-monitoring",
             "/home/admin_ajp/iac/grafana",
             "/home/admin_ajp/.config/gcx/config.yaml",
+          ],
+        },
+        {
+          "paths": [
+            "/home/admin_ajp/iac/sparrow-iac",
+            "/home/admin_ajp/dev/tlc/sparrow",
           ],
         },
         {
@@ -416,6 +419,7 @@
       "initialization_options": {
         "experimentalFeatures": {
           "prefillRequiredFields": true,
+          "validateOnSave": true,
         },
       },
     },
