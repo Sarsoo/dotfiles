@@ -229,6 +229,10 @@ fi
 ############
 if [[ -z "${SAR_SKIP_SKILLS}" ]]; then
   link_file "ai/agents/skill-lock.json" ".agents/.skill-lock.json"
+  link_file "ai/agents/skill-lock.json" "skills-lock.json"
+  pushd ~
+  npx skills experimental_install
+  popd
 else
   echo "> Skipping agent skills"
 fi
