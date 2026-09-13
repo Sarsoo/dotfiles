@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/gotgenes/pi-packages/main/packages/pi-permission-system/schemas/permissions.schema.json",
   "permission": {
     "*": "ask",
     "path": {
@@ -8,18 +9,69 @@
       "*.env.example": "allow"
     },
     "read": "allow",
+    "write": {
+      "*": "ask",
+      "*.lock": "deny"
+    },
+    "edit": "ask",
+    "grep": "allow",
+    "find": "allow",
+    "ls": "allow",
+    "third_party_tool": "allow",
+    "plan_mode_question": "allow",
     "plan_mode_complete": "allow",
+    "ask_user_question": "allow",
+    "memory_add": "allow",
+    "memory_search": "allow",
     "bash": {
       "*": "ask",
+
       "sudo *": "ask",
-      "ls *": "allow",
+
       "cat *": "allow",
-      "grep *": "allow",
       "head *": "allow",
+      "tail *": "allow",
+      "less *": "allow",
+      "more *": "allow",
+
       "sort *": "allow",
+      "wc -l *": "allow",
+
+      "ls *": "allow",
+      "tree *": "allow",
+      "stat *": "allow",
+      "file *": "allow",
+      "wc *": "allow",
+      "du *": "allow",
+      "df *": "allow",
+
+      "grep *": "allow",
+      "egrep *": "allow",
+      "fgrep *": "allow",
       "rg *": "allow",
       "find *": "allow",
-      "wc -l *": "allow",
+      "fd *": "allow",
+
+      "diff *": "allow",
+      "cmp *": "allow",
+      "comm *": "allow",
+      "md5sum *": "allow",
+      "sha1sum *": "allow",
+      "sha256sum *": "allow",
+      "cksum *": "allow",
+
+      "pwd": "allow",
+      "whoami": "allow",
+      "id": "allow",
+      "hostname": "allow",
+      "uname *": "allow",
+      "date": "allow",
+      "uptime": "allow",
+      "ps *": "allow",
+      "printenv *": "allow",
+      "which *": "allow",
+      "type *": "allow",
+
       "rm *": "ask",
       "rmdir *": "ask",
       "terraform plan *": "allow",

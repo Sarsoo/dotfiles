@@ -16,6 +16,14 @@
           "maxTokens": 384000
         },
         {
+          "id": "deepseek-v4.1-flash",
+          "name": "DeepSeek v4.1 Flash",
+          "reasoning": true,
+          "input": ["text"],
+          "contextWindow": 1000000,
+          "maxTokens": 384000
+        },
+        {
           "id": "minimax-m3",
           "name": "MiniMax M3",
           "reasoning": true,

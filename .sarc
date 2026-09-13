@@ -70,6 +70,11 @@ alias tfl='tflint --recursive --format compact'
 ##
 alias k='kubectl'
 
+##
+# herdr
+##
+alias hr='herdr'
+
 ################
 # FUNCs
 ################
@@ -100,6 +105,7 @@ paths=(
     "${HOME}/.krew/bin"
     "${HOME}/.aspire/bin"
     "${HOME}/go/bin"
+    "${HOME}/.tfenv/bin"
 )
 for p in "${paths[@]}"; do
     if [ -d "${p}" ]; then
