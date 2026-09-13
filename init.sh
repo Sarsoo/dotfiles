@@ -227,8 +227,11 @@ fi
 ############
 # skills
 ############
-
-link_file "ai/agents/skills" ".agents/skills"
+if [[ -z "${SAR_SKIP_SKILLS}" ]]; then
+  link_file "ai/agents/skill-lock.json" ".agents/.skill-lock.json"
+else
+  echo "> Skipping agent skills"
+fi
 
 ############
 #  herdr
