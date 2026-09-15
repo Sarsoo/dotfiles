@@ -41,6 +41,33 @@ function link_file(){
   ln -s "${source}" "${destination}"
 }
 
+function hard_link_file(){
+  local source="${SCRIPT_DIR}/${1}"
+  local destination="${HOME}/${2}"
+
+  mkdir -p "$(dirname "${destination}")"
+
+  if [ -d "${destination}" ]; then
+
+    echo "removing dir (${destination})"
+    rm -rf "${destination}"
+
+  elif [ -f "${destination}" ]; then
+
+    echo "removing file (${destination})"
+    rm "${destination}"
+
+  elif [ -L "${destination}" ]; then
+
+    echo "removing link (${destination})"
+    rm "${destination}"
+
+  fi
+
+  echo "hard linking (${source}) -> (${destination})"
+  ln "${source}" "${destination}"
+}
+
 mkdir -p "${HOME}/.config"
 mkdir -p "${HOME}/.config/systemd/user"
 
@@ -219,7 +246,8 @@ if [[ -z "${SAR_SKIP_PI}" ]]; then
   link_file "ai/pi/models.json" ".pi/agent/models.json"
   link_file "ai/pi/settings.json" ".pi/agent/settings.json"
   link_file "ai/pi/catpuccin-frappe.json" ".pi/agent/themes/catpuccin-frappe.json"
-  link_file "pi/pi-permission-system-config.json" ".pi/agent/extensions/pi-permission-system/config.json"
+  link_file "ai/pi/pi-permission-system-config.json" ".pi/agent/extensions/pi-permission-system/config.json"
+  hard_link_file "ai/pi/pi-plan-mode.json" ".pi/agent/pi-plan-mode.json"
 else
   echo "> Skipping Pi config"
 fi

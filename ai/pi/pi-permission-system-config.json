@@ -23,6 +23,7 @@
     "ask_user_question": "allow",
     "memory_add": "allow",
     "memory_search": "allow",
+    "skill": "allow",
     "bash": {
       "*": "ask",
 

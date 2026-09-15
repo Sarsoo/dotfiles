@@ -1,0 +1,18 @@
+{
+  "thinkingLevel": "inherit",
+  "implementationPlanRetention": "clear-on-start",
+  "defaultImplementationThinkingLevel": "low",
+  "defaultPlanExportPath": "PLAN.md",
+  "defaultPlanTools": [
+    "bash",
+    "find",
+    "grep",
+    "ls",
+    "powershell",
+    "read",
+    "ask_user_question",
+    "memory_add",
+    "memory_search",
+    "session_search"
+  ]
+}
