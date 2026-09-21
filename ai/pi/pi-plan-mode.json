@@ -13,6 +13,7 @@
     "ask_user_question",
     "memory_add",
     "memory_search",
-    "session_search"
+    "session_search",
+    "codegraph_codegraph_explore"
   ]
 }

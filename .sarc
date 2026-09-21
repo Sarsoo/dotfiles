@@ -96,6 +96,7 @@ fi
 
 paths=(
     '/opt/homebrew/opt/python/bin'
+    "/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/universal"
     "${HOME}/bin"
     "${HOME}/.local/bin"
     "${HOME}/.dotnet"

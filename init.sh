@@ -253,6 +253,15 @@ else
 fi
 
 ############
+#   mcp
+############
+if [[ -z "${SAR_SKIP_MCP}" ]]; then
+  link_file "ai/mcp/mcp.json" ".config/mcp/mcp.json"
+else
+  echo "> Skipping MCP config"
+fi
+
+############
 # skills
 ############
 if [[ -z "${SAR_SKIP_SKILLS}" ]]; then
