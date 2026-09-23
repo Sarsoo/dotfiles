@@ -173,7 +173,7 @@
     "resharper.dataSharing.allowDataSharing": false,
     "workbench.preferredDarkColorTheme": "Catppuccin Frappé",
     "workbench.colorTheme": "Catppuccin Mocha",
-    "workbench.iconTheme": "catppuccin-frappe",
+    "workbench.iconTheme": "catppuccin-latte",
     "workbench.activityBar.location": "bottom",
     "window.newWindowProfile": "Default",
     "terraform.codelens.referenceCount": true,
@@ -212,5 +212,17 @@
     "editor.formatOnSave": true,
     "editor.indentSize": "tabSize",
     "terminal.integrated.defaultProfile.linux": "tmux",
-    "git.detectWorktrees": true
+    "git.detectWorktrees": true,
+    "editor.fontSize": 11,
+    "editor.fontFamily": "'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
+    "task.allowAutomaticTasks": "on",
+    "window.density.layout": "compact",
+    "yaml.disableSchemaDetection": [
+        "**/.github/workflows/*.yml",
+        "**/.github/workflows/*.yaml",
+        "**/.gitea/workflows/*.yml",
+        "**/.gitea/workflows/*.yaml",
+        "**/.forgejo/workflows/*.yml",
+        "**/.forgejo/workflows/*.yaml"
+    ]
 }

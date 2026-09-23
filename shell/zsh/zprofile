@@ -12,8 +12,5 @@ export PATH="$PATH:/Users/andy/.dotnet/tools"
 # Added by Toolbox App
 export PATH="$PATH:/Users/andy/Library/Application Support/JetBrains/Toolbox/scripts"
 
-export EMSDK_QUIET=1
-source "/Users/andy/dev/sdks/emsdk/emsdk_env.sh"
-
 # Added by Obsidian
 export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"
