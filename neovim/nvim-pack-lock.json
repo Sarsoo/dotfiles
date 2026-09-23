@@ -8,6 +8,10 @@
       "rev": "39da6060d53659acf3ec118200bc48721b29b8fd",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
+    "gitsigns.nvim": {
+      "rev": "070a5d7b985546cc57e1fc61e5bc507fecac6045",
+      "src": "https://github.com/lewis6991/gitsigns.nvim"
+    },
     "lualine.nvim": {
       "rev": "221ce6b2d999187044529f49da6554a92f740a96",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
@@ -15,6 +19,10 @@
     "mini.nvim": {
       "rev": "c5cdbadeb423ff724e27a42ab2d1c504d1d6fc5a",
       "src": "https://github.com/nvim-mini/mini.nvim"
+    },
+    "nvim-lspconfig": {
+      "rev": "046b1a797af1effe8e0474b9af9657a3761ec58a",
+      "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-web-devicons": {
       "rev": "dad71387de386a946b123079d0e53f23028f3abd",

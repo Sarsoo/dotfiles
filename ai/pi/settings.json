@@ -27,7 +27,7 @@
   "outputPad": 1,
   "autocompleteMaxVisible": 8,
   "tuiMode": "normal",
-  "lastChangelogVersion": "0.86.1",
+  "lastChangelogVersion": "0.87.0",
   "packages": [
     "npm:pi-hermes-memory",
     "npm:pi-context-view",
