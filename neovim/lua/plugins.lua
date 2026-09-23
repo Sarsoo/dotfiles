@@ -7,6 +7,8 @@ vim.pack.add {
   { src = "https://github.com/lewis6991/gitsigns.nvim" },
   -- lsp configs, https://github.com/neovim/nvim-lspconfig/tree/master/lsp
   { src = 'https://github.com/neovim/nvim-lspconfig' },
+  -- highlight other uses of symbols
+  { src = 'https://github.com/RRethy/vim-illuminate' },
 }
 
 -- fuzzy finder

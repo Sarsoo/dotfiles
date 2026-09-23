@@ -1,5 +1,8 @@
 -- https://github.com/neovim/nvim-lspconfig/tree/master/lsp
 
+vim.lsp.codelens.enable(true)
+vim.lsp.inlay_hint.enable(true)
+vim.lsp.inline_completion.enable()
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/bashls.lua
 -- https://github.com/bash-lsp/bash-language-server

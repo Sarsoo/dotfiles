@@ -1,2 +1,2 @@
-
-vim.keymap.set("n", "<leader>f", "<cmd>FzfLua files<cr>", { desc = "Open vertical terminal split" })
+-- show fzf
+vim.keymap.set("n", "<leader>f", "<cmd>FzfLua files<cr>", { desc = "Show fzf" })
