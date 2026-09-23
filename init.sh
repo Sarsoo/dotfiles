@@ -129,6 +129,11 @@ link_file "neovim" ".config/nvim"
 link_file "ranger" ".config/ranger"
 
 ############
+#  YAZI
+############
+link_file "yazi" ".config/yazi"
+
+############
 # ALACRITTY
 ############
 link_file "shell/emu/alacritty" ".config/alacritty"
