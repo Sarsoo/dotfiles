@@ -1,6 +1,6 @@
 [application]
 frontend_url=https://vikunja.lab.sarsoo.xyz/
-api_url=http://vikunja.lab.sarsoo.xyz/api/v1
+api_url=http://vikunja.lab.sarsoo.xyz/api/v2
 
 [output]
 # This section allows to specify custom output formats (i.e. selecting displayed columns).

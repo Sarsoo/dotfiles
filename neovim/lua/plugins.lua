@@ -9,6 +9,8 @@ vim.pack.add {
   { src = 'https://github.com/neovim/nvim-lspconfig' },
   -- highlight other uses of symbols
   { src = 'https://github.com/RRethy/vim-illuminate' },
+  -- indent guides
+  { src = 'https://github.com/lukas-reineke/indent-blankline.nvim' }
 }
 
 -- fuzzy finder
@@ -24,3 +26,6 @@ require('lualine').setup()
 
 -- git integration with gutters
 require('gitsigns').setup()
+
+-- indent guides
+require("ibl").setup()
