@@ -1,7 +1,7 @@
 {
   "providers": {
     "openai.sarsoo": {
-      "baseUrl": "http://bifrost.lab.sarsoo.xyz/openai",
+      "baseUrl": "https://bifrost.lab.sarsoo.xyz/openai",
       "api": "openai-completions",
       "compat": {
         "supportsDeveloperRole": false
@@ -75,7 +75,7 @@
       ]
     },
     "openai.sinara": {
-      "baseUrl": "http://bifrost.lab.sarsoo.xyz/openai",
+      "baseUrl": "https://bifrost.lab.sarsoo.xyz/openai",
       "api": "openai-completions",
       "compat": {
         "supportsDeveloperRole": false
@@ -126,7 +126,7 @@
       ]
     },
     "anthropic.sarsoo": {
-      "baseUrl": "http://bifrost.lab.sarsoo.xyz/anthropic/v1",
+      "baseUrl": "https://bifrost.lab.sarsoo.xyz/anthropic/v1",
       "api": "anthropic-messages",
       "compat": {
         "supportsDeveloperRole": false
