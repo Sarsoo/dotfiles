@@ -22,11 +22,11 @@
   "theme": "catppuccin-frappe",
   "quietStartup": true,
   "hideThinkingBlock": false,
-  "showCacheMissNotices": false,
+  "showCacheMissNotices": true,
   "editorPaddingX": 0,
   "outputPad": 1,
   "autocompleteMaxVisible": 8,
-  "tuiMode": "normal",
+  "tuiMode": "fullscreen",
   "lastChangelogVersion": "0.87.1",
   "packages": [
     "npm:pi-hermes-memory",
@@ -34,6 +34,12 @@
     "npm:@juicesharp/rpiv-ask-user-question",
     "npm:@narumitw/pi-plan-mode",
     "npm:@gotgenes/pi-permission-system",
-    "npm:pi-mcp-adapter"
-  ]
+    "npm:pi-mcp-adapter",
+    "npm:pi-powerline-footer"
+  ],
+  "powerline": {
+    "preset": "default",
+    "placement": "above",
+    "welcome": true
+  }
 }

@@ -14,7 +14,8 @@
     "memory_add",
     "memory_search",
     "session_search",
-    "codegraph_codegraph_explore",
-    "mcp__codegraph"
+    "mcp",
+    "mcpScript",
+    "codegraph_explore"
   ]
 }

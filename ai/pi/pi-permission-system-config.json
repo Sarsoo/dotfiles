@@ -23,7 +23,8 @@
     "ask_user_question": "allow",
     "memory_add": "allow",
     "memory_search": "allow",
-    "codegraph_codegraph_explore": "allow",
+    "codegraph_explore": "allow",
+    "mcp": "allow",
     "skill": "allow",
     "bash": {
       "*": "ask",
