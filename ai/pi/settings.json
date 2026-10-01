@@ -4,6 +4,7 @@
   "defaultThinkingLevel": "medium",
   "enableInstallTelemetry": false,
   "enableAnalytics": false,
+  "defaultTools": ["+codemode"],
   "compaction": {
     "enabled": true,
     "reserveTokens": 16384,
@@ -27,15 +28,15 @@
   "outputPad": 1,
   "autocompleteMaxVisible": 8,
   "tuiMode": "fullscreen",
-  "lastChangelogVersion": "0.87.1",
+  "lastChangelogVersion": "0.99.2",
   "packages": [
     "npm:pi-hermes-memory",
     "npm:pi-context-view",
     "npm:@juicesharp/rpiv-ask-user-question",
     "npm:@narumitw/pi-plan-mode",
     "npm:@gotgenes/pi-permission-system",
-    "npm:pi-mcp-adapter",
-    "npm:pi-powerline-footer"
+    "npm:pi-powerline-footer",
+    "npm:pi-advisor-flow"
   ],
   "powerline": {
     "preset": "default",

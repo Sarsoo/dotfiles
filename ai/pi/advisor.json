@@ -1,0 +1,12 @@
+{
+  "simpleMode": false,
+  "advisorOutcomeLogging": false,
+  "advisorEffort": "high",
+  "showUsageFooter": true,
+  "advisorSessionSummary": true,
+  "advisor": "openai.sarsoo/dev",
+  "executor": "openai.sarsoo/dev",
+  "executorEffort": "low",
+  "alwaysOn": true,
+  "advisorDisableSameModel": false
+}

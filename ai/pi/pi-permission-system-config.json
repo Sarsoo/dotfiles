@@ -23,8 +23,10 @@
     "ask_user_question": "allow",
     "memory_add": "allow",
     "memory_search": "allow",
-    "codegraph_explore": "allow",
-    "mcp": "allow",
+    "tool_search": "allow",
+    "mcp__codegraph__codegraph_explore": "allow",
+    "ask_advisor": "allow",
+    "record_advisor_outcome": "allow",
     "skill": "allow",
     "bash": {
       "*": "ask",
@@ -106,6 +108,9 @@
       "git grep": "allow",
       "git grep *": "allow"
     },
-    "external_directory": "ask"
+    "external_directory": {
+      "*": "ask",
+      "~/.agents/skills/*": "allow"
+    }
   }
 }

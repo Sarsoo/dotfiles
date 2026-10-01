@@ -187,9 +187,18 @@ show_agent_labels_on_pane_borders = false
 # Accepts: hex (#89b4fa), named colors (cyan, blue, magenta), or rgb(r,g,b)
 # accent = "cyan"
 
+tab_bar_position = "top"
+tab_bar_right = [
+  { type = "hostname" }
+]
+
 # Background notification popup delivery
 agent_panel_sort = "spaces"
 status_indicators = "symbols"
+
+[ui.sidebar.spaces]
+row_gap = 1
+
 [ui.toast]
 # off = disable pop-up notifications
 # herdr = show in-app toasts

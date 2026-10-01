@@ -14,8 +14,9 @@
     "memory_add",
     "memory_search",
     "session_search",
-    "mcp",
-    "mcpScript",
-    "codegraph_explore"
+    "tool_search",
+    "mcp__codegraph__codegraph_explore",
+    "ask_advisor",
+    "record_advisor_outcome"
   ]
 }
