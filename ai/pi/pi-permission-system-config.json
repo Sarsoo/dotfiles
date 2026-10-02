@@ -17,16 +17,38 @@
     "grep": "allow",
     "find": "allow",
     "ls": "allow",
+
     "third_party_tool": "allow",
+
     "plan_mode_question": "allow",
     "plan_mode_complete": "allow",
     "ask_user_question": "allow",
+
     "memory_add": "allow",
     "memory_search": "allow",
+
     "tool_search": "allow",
     "mcp__codegraph__codegraph_explore": "allow",
+
     "ask_advisor": "allow",
     "record_advisor_outcome": "allow",
+
+    "lens_health": "allow",
+    "lens_project_scan": "allow",
+    "lens_diagnostics": "allow",
+    "lens_diagnostic_mark": "allow",
+    "lsp_navigation": "allow",
+    "effective_config": "allow",
+    "project_report": "allow",
+    "module_report": "allow",
+    "read_symbol": "allow",
+    "read_enclosing": "allow",
+    "symbol_search": "allow",
+    "ast_grep_search": "allow",
+    "ast_grep_replace": "allow",
+    "ast_grep_outline": "allow",
+    "pi_lens_activate_tools": "allow",
+
     "skill": "allow",
     "bash": {
       "*": "ask",

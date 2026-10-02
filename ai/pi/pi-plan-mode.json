@@ -17,6 +17,21 @@
     "tool_search",
     "mcp__codegraph__codegraph_explore",
     "ask_advisor",
-    "record_advisor_outcome"
+    "record_advisor_outcome",
+
+    "lens_health",
+    "lens_project_scan",
+    "lens_diagnostics",
+    "lens_diagnostic_mark",
+    "lsp_navigation",
+    "effective_config",
+    "project_report",
+    "module_report",
+    "read_symbol",
+    "read_enclosing",
+    "symbol_search",
+    "ast_grep_search",
+    "ast_grep_outline",
+    "pi_lens_activate_tools"
   ]
 }

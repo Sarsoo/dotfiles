@@ -5,7 +5,7 @@
   "showUsageFooter": true,
   "advisorSessionSummary": true,
   "advisor": "openai.sarsoo/dev",
-  "executor": "openai.sarsoo/dev",
+  "executor": "openai.sarsoo/deepseek-v4-flash",
   "executorEffort": "low",
   "alwaysOn": true,
   "advisorDisableSameModel": false

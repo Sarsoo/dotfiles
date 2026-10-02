@@ -201,6 +201,19 @@
   "tab_size": 2,
   "ssh_connections": [
     {
+      "host": "devy",
+      "username": "aj",
+      "args": [],
+      "projects": [
+        {
+          "paths": ["/home/aj/dev"],
+        },
+        {
+          "paths": ["/home/aj/iac"],
+        },
+      ],
+    },
+    {
       "host": "annexraw",
       "username": "admin_ajp",
       "args": [],
@@ -324,10 +337,12 @@
     "toolbar": {},
   },
   "agent": {
+    "threads_sidebar": {
+      "position": "right",
+    },
     "single_file_review": true,
     "enable_feedback": false,
     "notify_when_agent_waiting": "all_screens",
-    "sidebar_side": "right",
     "auto_compact": {
       "threshold": "90%",
     },
