@@ -4,7 +4,9 @@
   "defaultThinkingLevel": "medium",
   "enableInstallTelemetry": false,
   "enableAnalytics": false,
-  "defaultTools": ["+codemode"],
+  "defaultTools": [
+    "+codemode"
+  ],
   "compaction": {
     "enabled": true,
     "reserveTokens": 16384,
@@ -28,7 +30,7 @@
   "outputPad": 1,
   "autocompleteMaxVisible": 8,
   "tuiMode": "fullscreen",
-  "lastChangelogVersion": "0.99.2",
+  "lastChangelogVersion": "1.0.0",
   "packages": [
     "npm:pi-hermes-memory",
     "npm:pi-context-view",
