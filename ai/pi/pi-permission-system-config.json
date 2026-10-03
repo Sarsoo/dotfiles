@@ -55,6 +55,9 @@
 
       "sudo *": "ask",
 
+      "cd *": "allow",
+      "echo *": "allow",
+
       "cat *": "allow",
       "head *": "allow",
       "tail *": "allow",

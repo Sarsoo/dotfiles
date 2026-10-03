@@ -4,17 +4,10 @@
       "baseUrl": "https://bifrost.lab.sarsoo.xyz/openai",
       "api": "openai-completions",
       "compat": {
-        "supportsDeveloperRole": false
+        "supportsDeveloperRole": false,
+        "sendSessionAffinityHeaders": true
       },
       "models": [
-        {
-          "id": "dev",
-          "name": "SarDev",
-          "reasoning": true,
-          "input": ["text"],
-          "contextWindow": 1000000,
-          "maxTokens": 384000
-        },
         {
           "id": "deepseek-v4-flash",
           "name": "DeepSeek v4 Flash",
@@ -78,7 +71,8 @@
       "baseUrl": "https://bifrost.lab.sarsoo.xyz/openai",
       "api": "openai-completions",
       "compat": {
-        "supportsDeveloperRole": false
+        "supportsDeveloperRole": false,
+        "sendSessionAffinityHeaders": true
       },
       "models": [
         {

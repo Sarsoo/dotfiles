@@ -254,7 +254,6 @@ if [[ -z "${SAR_SKIP_PI}" ]]; then
   link_file "ai/pi/catpuccin-frappe.json" ".pi/agent/themes/catpuccin-frappe.json"
   link_file "ai/pi/pi-permission-system-config.json" ".pi/agent/extensions/pi-permission-system/config.json"
   hard_link_file "ai/pi/pi-plan-mode.json" ".pi/agent/pi-plan-mode.json"
-  link_file "ai/pi/mcp-adapter.json" ".pi/agent/mcp-adapter.json"
   link_file "ai/pi/advisor.json" ".pi/agent/advisor.json"
   link_file "ai/pi/mcp.json" ".pi/agent/mcp.json"
 else

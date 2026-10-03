@@ -1,12 +1,10 @@
 {
   "defaultProvider": "openai.sarsoo",
-  "defaultModel": "dev",
+  "defaultModel": "deepseek-v4.1-flash",
   "defaultThinkingLevel": "medium",
   "enableInstallTelemetry": false,
   "enableAnalytics": false,
-  "defaultTools": [
-    "+codemode"
-  ],
+  "defaultTools": ["+codemode"],
   "compaction": {
     "enabled": true,
     "reserveTokens": 16384,
