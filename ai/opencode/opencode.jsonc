@@ -17,31 +17,16 @@
         "includeUsage": true,
       },
       "whitelist": [
-        "dev",
         "gpt-5.6-luna",
-        "qwen3-coder-next",
-        "qwen3.7-plus",
         "qwen3.8-flash",
         "gemma-3-4b-it",
         "gemma-4-e2b",
-        "glm-5",
-        "glm-5.1",
-        "glm-5.2",
         "glm-5.3",
         "glm-5.3-flash",
-        "kimi-k2.5",
-        "kimi-k2.6",
-        "kimi-k2.7-code",
         "kimi-k3",
-        "deepseek-v4-flash",
         "deepseek-v4.1-flash",
       ],
       "models": {
-        "dev": {
-          "name": "SarDev",
-          "tool_call": true,
-          "reasoning": true,
-        },
         // OPENAI
         "gpt-5.6-luna": {
           "name": "GPT 5.6 Luna",
@@ -51,11 +36,6 @@
         // QWEN
         "qwen3-coder-next": {
           "name": "Qwen 3 Coder",
-          "tool_call": true,
-          "reasoning": false,
-        },
-        "qwen3.7-plus": {
-          "name": "Qwen 3.7",
           "tool_call": true,
           "reasoning": false,
         },
@@ -76,21 +56,6 @@
           "reasoning": false,
         },
         // GLM
-        "glm-5": {
-          "name": "GLM 5",
-          "tool_call": true,
-          "reasoning": true,
-        },
-        "glm-5.1": {
-          "name": "GLM 5.1",
-          "tool_call": true,
-          "reasoning": true,
-        },
-        "glm-5.2": {
-          "name": "GLM 5.2",
-          "tool_call": true,
-          "reasoning": true,
-        },
         "glm-5.3": {
           "name": "GLM 5.3",
           "tool_call": true,
@@ -102,36 +67,12 @@
           "reasoning": true,
         },
         // MOONSHOT
-        "kimi-k2.5": {
-          "name": "Kimi K2.5",
-          "tool_call": true,
-          "reasoning": true,
-        },
-        "kimi-k2.6": {
-          "name": "Kimi K2.6",
-          "tool_call": true,
-          "reasoning": true,
-        },
-        "kimi-k2.7-code": {
-          "name": "Kimi K2.7 Code",
-          "tool_call": true,
-          "reasoning": true,
-        },
         "kimi-k3": {
           "name": "Kimi K3",
           "tool_call": true,
           "reasoning": true,
         },
         // DEEPSEEK
-        "deepseek-v4-flash": {
-          "name": "Deepseek v4 Flash",
-          "tool_call": true,
-          "reasoning": true,
-          "limit": {
-            "context": 1000000,
-            "output": 384000,
-          },
-        },
         "deepseek-v4.1-flash": {
           "name": "Deepseek v4.1 Flash",
           "tool_call": true,
@@ -173,8 +114,8 @@
             "Max": { "output_config": { "effort": "max" } },
           },
         },
-        "claude-sonnet-5": {
-          "name": "Claude Sonnet 5",
+        "claude-sonnet-5-5": {
+          "name": "Claude Sonnet 5.5",
           "cost": {
             "input": 3,
             "output": 15,

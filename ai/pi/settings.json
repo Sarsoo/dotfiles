@@ -1,7 +1,7 @@
 {
   "defaultProvider": "openai.sarsoo",
   "defaultModel": "deepseek-v4.1-flash",
-  "defaultThinkingLevel": "medium",
+  "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
   "enableAnalytics": false,
   "defaultTools": ["+codemode"],
