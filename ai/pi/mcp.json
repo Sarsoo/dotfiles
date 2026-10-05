@@ -8,6 +8,15 @@
       "directTools": true,
       "exposure": "direct",
       "description": "Query the relationships and structure of a codebase locally"
+    },
+    "documentation": {
+      "type": "http",
+      "url": "https://bifrost.lab.sarsoo.xyz/mcp/documentation",
+      "headers": { "Authorization": "Bearer sk-bf-mcp" },
+      "lifecycle": "eager",
+      "directTools": true,
+      "exposure": "direct",
+      "description": "Query AWS, Microsoft and Terraform documentation"
     }
   }
 }

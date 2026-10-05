@@ -338,6 +338,7 @@
   },
   "agent": {
     "threads_sidebar": {
+      "default_width": 200.0,
       "position": "right",
     },
     "single_file_review": true,
