@@ -1,7 +1,7 @@
 {
   "defaultProvider": "openai.sarsoo",
   "defaultModel": "deepseek-v4.1-flash",
-  "defaultThinkingLevel": "high",
+  "defaultThinkingLevel": "low",
   "enableInstallTelemetry": false,
   "enableAnalytics": false,
   "defaultTools": ["+codemode"],
@@ -28,7 +28,7 @@
   "outputPad": 1,
   "autocompleteMaxVisible": 8,
   "tuiMode": "fullscreen",
-  "lastChangelogVersion": "1.0.0",
+  "lastChangelogVersion": "1.0.2",
   "packages": [
     "npm:pi-hermes-memory",
     "npm:pi-context-view",

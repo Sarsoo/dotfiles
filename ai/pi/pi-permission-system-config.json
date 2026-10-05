@@ -28,7 +28,6 @@
     "memory_search": "allow",
 
     "tool_search": "allow",
-    "mcp__codegraph__codegraph_explore": "allow",
 
     "ask_advisor": "allow",
     "record_advisor_outcome": "allow",
@@ -49,6 +48,9 @@
     "ast_grep_outline": "allow",
     "pi_lens_activate_tools": "allow",
 
+    "mcp": {
+      "*": "allow"
+    },
     "skill": "allow",
     "bash": {
       "*": "ask",
