@@ -340,10 +340,32 @@ link_file "gitui/theme.ron" ".config/gitui/theme.ron"
 ############
 #  GIT
 ############
+if [[ -z "${SAR_SKIP_GITCONFIG}" ]]; then
+  case $machine in
+
+      Mac)
+          link_file "git/mac.gitconfig" ".gitconfig"
+      ;;
+
+      Linux)
+          link_file "git/.gitconfig" ".gitconfig"
+      ;;
+
+  esac
+fi
+
+############
+# LAZYGIT
+############
+
 case $machine in
 
     Mac)
-        link_file "git/mac.gitconfig" ".gitconfig"
+        link_file "lazygit/config.yml" "Library/Application Support/lazygit/config.yml"
+    ;;
+
+    Linux)
+        link_file "lazygit/config.yml" ".config/lazygit/config.yml"
     ;;
 
 esac
