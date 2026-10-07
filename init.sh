@@ -75,7 +75,7 @@ function link_skills(){
   for i in "${source}"/*;do
 
     if [ -n "$(ls -A "${source}" 2>/dev/null)" ]; then
-      link_file "$i" ".agents/skills/$(basename ${i})"
+      link_file "${SKILLS_SUBDIR}/$(basename ${i})" ".agents/skills/$(basename ${i})"
     else
       echo "> skipping skills, none listed"
     fi
