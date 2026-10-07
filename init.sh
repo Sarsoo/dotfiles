@@ -2,6 +2,7 @@
 # set -x
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+SKILLS_SUBDIR="ai/agents/skills"
 
 unameOut="$(uname -s)"
 case "${unameOut}" in
@@ -66,6 +67,19 @@ function hard_link_file(){
 
   echo "hard linking (${source}) -> (${destination})"
   ln "${source}" "${destination}"
+}
+
+function link_skills(){
+  local source="${SCRIPT_DIR}/${SKILLS_SUBDIR}"
+
+  for i in "${source}"/*;do
+
+    if [ -n "$(ls -A "${source}" 2>/dev/null)" ]; then
+      link_file "$i" ".agents/skills/$(basename ${i})"
+    else
+      echo "> skipping skills, none listed"
+    fi
+  done
 }
 
 mkdir -p "${HOME}/.config"
@@ -266,11 +280,15 @@ fi
 if [[ -z "${SAR_SKIP_SKILLS}" ]]; then
   link_file "ai/agents/skill-lock.json" ".agents/.skill-lock.json"
   link_file "ai/agents/skill-lock.json" "skills-lock.json"
-  pushd ~
-  npx skills experimental_install
-  popd
+  pushd ~ && npx skills experimental_install && popd
 else
   echo "> Skipping agent skills"
+fi
+
+if [[ -z "${SAR_SKIP_PERSONAL_SKILLS}" ]]; then
+  link_skills
+else
+  echo "> Skipping personal agent skills"
 fi
 
 ############
@@ -289,17 +307,11 @@ link_file "mac/aerospace/.aerospace.toml" ".aerospace.toml"
 link_file "tmux/tmux.conf" ".tmux.conf"
 link_file "tmux/tmux.remote.conf" ".config/tmux/tmux.remote.conf"
 catpuccin_version="v2.3.0"
-if [[ ! -d "${HOME}/.config/tmux/plugins/catppuccin" ]]; then
-  mkdir -p ~/.config/tmux/plugins/catppuccin
-  git clone -b "${catpuccin_version}" https://github.com/catppuccin/tmux.git "${HOME}/.config/tmux/plugins/catppuccin/tmux"
-else
-  pushd ~/.config/tmux/plugins/catppuccin
-
-  git fetch
-  git checkout -f "${catpuccin_version}"
-
-  popd
+if [[ -d "${HOME}/.config/tmux/plugins/catppuccin" ]]; then
+  rm -rf "${HOME}/.config/tmux/plugins/catppuccin/tmux"
 fi
+mkdir -p ~/.config/tmux/plugins/catppuccin
+git clone -b "${catpuccin_version}" https://github.com/catppuccin/tmux.git "${HOME}/.config/tmux/plugins/catppuccin/tmux"
 
 ################
 #   sway

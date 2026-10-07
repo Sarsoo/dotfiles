@@ -103,7 +103,6 @@ fi
 ################
 
 paths=(
-    '/opt/homebrew/opt/python/bin'
     "/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/universal"
     "${HOME}/bin"
     "${HOME}/.local/bin"
@@ -115,6 +114,9 @@ paths=(
     "${HOME}/.aspire/bin"
     "${HOME}/go/bin"
     "${HOME}/.tfenv/bin"
+    '/opt/homebrew/opt/python/bin'
+    '/opt/homebrew/opt/findutils/libexec/gnubin'
+    '/opt/homebrew/opt/coreutils/libexec/gnubin'
 )
 for p in "${paths[@]}"; do
     if [ -d "${p}" ]; then

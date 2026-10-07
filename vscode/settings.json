@@ -173,7 +173,7 @@
     "resharper.dataSharing.allowDataSharing": false,
     "workbench.preferredDarkColorTheme": "Catppuccin Frappé",
     "workbench.colorTheme": "Catppuccin Mocha",
-    "workbench.iconTheme": "catppuccin-latte",
+    "workbench.iconTheme": "catppuccin-frappe",
     "workbench.activityBar.location": "bottom",
     "window.newWindowProfile": "Default",
     "terraform.codelens.referenceCount": true,
