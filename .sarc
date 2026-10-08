@@ -93,6 +93,12 @@ function y() {
 	command rm -f -- "$tmp"
 }
 
+# fzf directory switcher backed by ~/.bk bookmarks (see scripts/util/so-bk).
+bk() {
+	local dir
+	dir="$(so bk)" && [[ -n "$dir" ]] && builtin cd -- "$dir"
+}
+
 ################
 # MAC
 ################

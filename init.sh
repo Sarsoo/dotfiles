@@ -101,6 +101,7 @@ link_file "shell/zsh/zshenv" ".zshenv"
 # SaRC
 ############
 link_file ".sarc" ".sarc"
+link_file ".bk" ".bk"
 
 ############
 # profile

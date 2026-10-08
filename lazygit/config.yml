@@ -26,12 +26,9 @@ gui:
       - '#e78284'
     defaultFgColor:
       - '#c6d0f5'
-
-  authorColors:
-    '*': '#babbf1'
-
-  # screenMode: full
-
+    authorColors:
+      '*': '#babbf1'
+      # screenMode: full
 git:
   diffRenderers:
     - command: delta --dark --paging=never
