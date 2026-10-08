@@ -3,10 +3,12 @@
   "diffs": {
     "wrap": "word"
   },
+  "mouse": true,
   "session": {
     "sidebar": "auto",
     "scrollbar": false,
-    "thinking": "show"
+    "thinking": "show",
+    "tps": true
   },
   "animations": true,
   "theme": {
@@ -15,5 +17,12 @@
   "cursor": {
     "style": "line",
     "blinking": true
-  }
+  },
+  "tabs": {
+    "mode": "auto",
+    "scope": "global",
+    "layout": "horizontal",
+    "indicators": "status"
+  },
+  "plugins": ["./herdr-opencode"]
 }

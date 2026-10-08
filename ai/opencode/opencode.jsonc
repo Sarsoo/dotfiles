@@ -1,9 +1,9 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "model": "openai/deepseek-v4.1-flash",
-  "small_model": "openai/deepseek-v4.1-flash",
-  "disabled_providers": ["opencode"],
-  "provider": {
+  "default_agent": "plan",
+  "formatter": true,
+  "providers": {
     "openai": {
       "name": "openai.sarsoo",
       "options": {
@@ -16,14 +16,6 @@
         },
         "includeUsage": true,
       },
-      "whitelist": [
-        "gemma-3-4b-it",
-        "gemma-4-e2b",
-        "glm-5.3",
-        "glm-5.3-flash",
-        "kimi-k3",
-        "deepseek-v4.1-flash",
-      ],
       "models": {
         // GOOGLE
         "gemma-3-4b-it": {
@@ -77,15 +69,16 @@
           "x-opencode-git-repo-fullurl": "{env:GIT_REPO_URL}/{env:GIT_BRANCH}",
         },
       },
-      "whitelist": ["claude-opus-5-5", "claude-sonnet-5-5", "claude-haiku-4-5"],
       "models": {
         "claude-opus-5-5": {
-          "name": "Claude Opus 5.5",
+          "name": "Opus",
           "cost": {
-            "input": 5,
-            "output": 25,
-            "cache_read": 0.5,
-            "cache_write": 6.25,
+            "input": 4,
+            "output": 20,
+            "cache": {
+              "read": 0.2,
+              "write": 5,
+            },
           },
           "thinking": { "type": "adaptive" },
           "variants": {
@@ -96,12 +89,14 @@
           },
         },
         "claude-sonnet-5-5": {
-          "name": "Claude Sonnet 5.5",
+          "name": "Sonnet",
           "cost": {
-            "input": 3,
-            "output": 15,
-            "cache_read": 0.3,
-            "cache_write": 3.75,
+            "input": 2.0,
+            "output": 10,
+            "cache": {
+              "read": 0.1,
+              "write": 2.5,
+            },
           },
           "thinking": { "type": "adaptive" },
           "variants": {
@@ -111,13 +106,15 @@
             "Max": { "output_config": { "effort": "max" } },
           },
         },
-        "claude-haiku-4-5": {
-          "name": "Claude Haiku 4.5",
+        "claude-haiku-5-5": {
+          "name": "Haiku",
           "cost": {
-            "input": 1,
-            "output": 5,
-            "cache_read": 0.1,
-            "cache_write": 1.25,
+            "input": 0.1,
+            "output": 0.5,
+            "cache": {
+              "cache_read": 0.01,
+              "cache_write": 0.125,
+            },
           },
         },
       },
@@ -146,37 +143,67 @@
       "rg *": "allow",
       "find *": "allow",
       "wc -l *": "allow",
+      "echo *": "allow",
+      "test *": "allow",
+      "printf *": "allow",
+      "wc *": "allow",
+      "exit": "allow",
+      "exit *": "allow",
+      "file *": "allow",
+      "sleep *": "allow",
+      "true *": "allow",
+      "dos2unix *": "allow",
+      "unix2dos *": "allow",
+      "cmp *": "allow",
+
       "rm *": "ask",
       "rmdir *": "ask",
       "terraform plan *": "allow",
       "terraform fmt *": "allow",
       "terraform validate *": "allow",
       "aws *": "ask",
+
+      "git *": "deny",
+      "git status": "allow",
+      "git status *": "allow",
+      "git log *": "allow",
+      "git log": "allow",
+      "git diff *": "allow",
+      "git diff": "allow",
+      "git show *": "allow",
+      "git show": "allow",
+      "git branch": "allow",
+      "git remote": "allow",
+      "git remote *": "allow",
+      "git tag": "allow",
+      "git rev-parse": "allow",
+      "git rev-parse *": "allow",
+      "git describe": "allow",
+      "git describe *": "allow",
+      "git ls-files": "allow",
+      "git ls-files *": "allow",
+      "git blame": "allow",
+      "git blame *": "allow",
+      "git grep": "allow",
+      "git grep *": "allow",
+      "git diff": "allow",
+      "git diff *": "allow",
     },
   },
   "agent": {
-    "build": {
-      "temperature": 0.3,
-    },
-    "plan": {
-      "temperature": 0.1,
-    },
-    "general": {
-      "temperature": 0.3,
-    },
+    "build": {},
+    "plan": {},
+    "general": {},
     "explore": {},
     "scout": {},
     "compaction": {
       "model": "openai/gemma-4-e2b",
-      "temperature": 0.1,
     },
     "title": {
       "model": "openai/gemma-4-e2b",
-      "temperature": 0.3,
     },
     "summary": {
       "model": "openai/gemma-4-e2b",
-      "temperature": 0.1,
     },
   },
   "share": "disabled",
