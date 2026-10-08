@@ -129,6 +129,7 @@ paths=(
     "${HOME}/.aspire/bin"
     "${HOME}/go/bin"
     "${HOME}/.tfenv/bin"
+    "${HOME}/.pi/agent/bin"
     '/opt/homebrew/opt/python/bin'
     '/opt/homebrew/opt/findutils/libexec/gnubin'
     '/opt/homebrew/opt/coreutils/libexec/gnubin'

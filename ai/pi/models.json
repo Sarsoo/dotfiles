@@ -105,7 +105,7 @@
       ]
     },
     "anthropic.sarsoo": {
-      "baseUrl": "https://bifrost.lab.sarsoo.xyz/anthropic/v1",
+      "baseUrl": "https://bifrost.lab.sarsoo.xyz/anthropic",
       "api": "anthropic-messages",
       "compat": {
         "supportsDeveloperRole": false
@@ -121,6 +121,35 @@
         {
           "id": "claude-sonnet-5-5",
           "name": "Claude Sonnet 5",
+          "reasoning": true,
+          "input": ["text"],
+          "contextWindow": 1000000
+        },
+        {
+          "id": "claude-haiku-4-5",
+          "name": "Claude Haiku 4.5",
+          "input": ["text"],
+          "contextWindow": 1000000
+        }
+      ]
+    },
+    "anthropic.sinara": {
+      "baseUrl": "https://bifrost.lab.sarsoo.xyz/anthropic",
+      "api": "anthropic-messages",
+      "compat": {
+        "supportsDeveloperRole": false
+      },
+      "models": [
+        {
+          "id": "claude-opus-5-5",
+          "name": "Claude Opus",
+          "reasoning": true,
+          "input": ["text"],
+          "contextWindow": 1000000
+        },
+        {
+          "id": "claude-sonnet-5-5",
+          "name": "Claude Sonnet",
           "reasoning": true,
           "input": ["text"],
           "contextWindow": 1000000
