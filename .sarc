@@ -99,6 +99,12 @@ bk() {
 	dir="$(so bk)" && [[ -n "$dir" ]] && builtin cd -- "$dir"
 }
 
+# fzf directory switcher backed by ~/.bk bookmarks (see scripts/util/so-bk).
+ybk() {
+	local dir
+	dir="$(so bk)" && [[ -n "$dir" ]] && y "$dir"
+}
+
 ################
 # MAC
 ################
