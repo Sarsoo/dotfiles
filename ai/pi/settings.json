@@ -4,9 +4,7 @@
   "defaultThinkingLevel": "low",
   "enableInstallTelemetry": false,
   "enableAnalytics": false,
-  "defaultTools": [
-    "+codemode"
-  ],
+  "defaultTools": ["+codemode"],
   "compaction": {
     "enabled": true,
     "reserveTokens": 16384,
@@ -44,6 +42,7 @@
   "powerline": {
     "preset": "default",
     "placement": "above",
-    "welcome": true
+    "welcome": true,
+    "git": { "hostIcon": true }
   }
 }

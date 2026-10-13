@@ -74,6 +74,7 @@ alias k='kubectl'
 # herdr
 ##
 alias hr='herdr'
+export POWERLINE_NERD_FONTS=1
 
 alias lg='lazygit'
 alias ad='npx @firecrawl/anydoc'

@@ -266,11 +266,17 @@ fi
 if [[ -z "${SAR_SKIP_PI}" ]]; then
   link_file "ai/pi/models.json" ".pi/agent/models.json"
   link_file "ai/pi/settings.json" ".pi/agent/settings.json"
+  link_file "ai/pi/mcp.json" ".pi/agent/mcp.json"
+  link_file "ai/mcp/kube.toml" ".mcp/kube.toml"
+
   link_file "ai/pi/catpuccin-frappe.json" ".pi/agent/themes/catpuccin-frappe.json"
+
   link_file "ai/pi/pi-permission-system-config.json" ".pi/agent/extensions/pi-permission-system/config.json"
   hard_link_file "ai/pi/pi-plan-mode.json" ".pi/agent/pi-plan-mode.json"
+
   link_file "ai/pi/advisor.json" ".pi/agent/advisor.json"
-  link_file "ai/pi/mcp.json" ".pi/agent/mcp.json"
+
+  link_file "ai/pi/hermes-memory-config.json" ".pi/agent/hermes-memory-config.json"
 else
   echo "> Skipping Pi config"
 fi

@@ -17,6 +17,16 @@
       "directTools": true,
       "exposure": "direct",
       "description": "Query AWS, Microsoft and Terraform documentation"
+    },
+    "kubernetes": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "kubernetes-mcp-server@latest",
+        "--config",
+        "~/.mcp/kube.toml"
+      ]
     }
   }
 }

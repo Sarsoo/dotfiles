@@ -19,6 +19,7 @@
     "ls": "allow",
 
     "third_party_tool": "allow",
+    "codemode": "allow",
 
     "plan_mode_question": "allow",
     "plan_mode_complete": "allow",

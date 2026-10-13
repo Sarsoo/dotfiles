@@ -1,5 +1,5 @@
 {
-  "thinkingLevel": "inherit",
+  "thinkingLevel": "high",
   "implementationPlanRetention": "clear-on-start",
   "defaultImplementationThinkingLevel": "low",
   "defaultPlanExportPath": "PLAN.md",
