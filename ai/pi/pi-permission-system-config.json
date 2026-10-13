@@ -77,6 +77,7 @@
       "du *": "allow",
       "df *": "allow",
 
+      "sed *": "allow",
       "grep *": "allow",
       "egrep *": "allow",
       "fgrep *": "allow",
@@ -111,7 +112,7 @@
       "terraform validate *": "allow",
       "aws *": "ask",
 
-      "git *": "deny",
+      "git *": "ask",
       "git status": "allow",
       "git status *": "allow",
       "git log *": "allow",
@@ -137,6 +138,8 @@
     },
     "external_directory": {
       "*": "ask",
+      "/tmp": "allow",
+      "~/.nuget": "allow",
       "~/.agents/skills/*": "allow"
     }
   }

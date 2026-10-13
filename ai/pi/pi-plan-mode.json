@@ -16,6 +16,10 @@
     "session_search",
     "tool_search",
     "mcp__codegraph__codegraph_explore",
+    "mcp__documentation__executeToolCode",
+    "mcp__documentation__getToolDocs",
+    "mcp__documentation__listToolFiles",
+    "mcp__documentation__readToolFile",
     "ask_advisor",
     "record_advisor_outcome",
 
