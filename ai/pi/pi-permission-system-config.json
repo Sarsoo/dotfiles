@@ -33,6 +33,15 @@
     "ask_advisor": "allow",
     "record_advisor_outcome": "allow",
 
+    "web_search": "allow",
+    "fetch_content": "allow",
+    "get_search_content": "allow",
+    "source_check": "allow",
+
+    "subagent": "allow",
+    "get_subagent_result": "allow",
+    "steer_subagent": "allow",
+
     "lens_health": "allow",
     "lens_project_scan": "allow",
     "lens_diagnostics": "allow",
@@ -135,7 +144,9 @@
       "git blame": "allow",
       "git blame *": "allow",
       "git grep": "allow",
-      "git grep *": "allow"
+      "git grep *": "allow",
+
+      "npx -y @firecrawl/anydoc": "allow"
     },
     "external_directory": {
       "*": "ask",

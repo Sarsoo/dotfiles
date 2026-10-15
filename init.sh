@@ -277,6 +277,9 @@ if [[ -z "${SAR_SKIP_PI}" ]]; then
   link_file "ai/pi/advisor.json" ".pi/agent/advisor.json"
 
   link_file "ai/pi/hermes-memory-config.json" ".pi/agent/hermes-memory-config.json"
+
+  link_file "ai/pi/agents" ".pi/agents"
+  link_file "ai/pi/subagents.json" ".pi/agent/subagents.json"
 else
   echo "> Skipping Pi config"
 fi

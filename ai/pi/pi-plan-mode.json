@@ -23,6 +23,15 @@
     "ask_advisor",
     "record_advisor_outcome",
 
+    "web_search",
+    "fetch_content",
+    "get_search_content",
+    "source_check",
+
+    "subagent",
+    "get_subagent_result",
+    "steer_subagent",
+
     "lens_health",
     "lens_project_scan",
     "lens_diagnostics",

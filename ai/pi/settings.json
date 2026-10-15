@@ -27,17 +27,16 @@
   "editorPaddingX": 0,
   "outputPad": 1,
   "autocompleteMaxVisible": 8,
-  "tuiMode": "fullscreen",
+  "tuiMode": "regular",
   "lastChangelogVersion": "1.2.0",
   "packages": [
     "npm:pi-hermes-memory",
-    "npm:pi-context-view",
     "npm:@juicesharp/rpiv-ask-user-question",
     "npm:@narumitw/pi-plan-mode",
     "npm:@gotgenes/pi-permission-system",
-    "npm:pi-powerline-footer",
     "npm:pi-advisor-flow",
-    "npm:pi-lens"
+    "npm:pi-web-access",
+    "npm:@gotgenes/pi-subagents"
   ],
   "powerline": {
     "preset": "default",
