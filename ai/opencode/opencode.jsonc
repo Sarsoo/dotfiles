@@ -6,14 +6,14 @@
   "providers": {
     "openai": {
       "name": "openai.sarsoo",
-      "options": {
+      "settings": {
         "baseURL": "https://bifrost.lab.sarsoo.xyz/openai",
-        "headers": {
-          "x-opencode-git-username": "{env:GIT_USERNAME}",
-          "x-opencode-git-branch": "{env:GIT_BRANCH}",
-          "x-opencode-git-repo-url": "{env:GIT_REPO_URL}",
-          "x-opencode-git-repo-fullurl": "{env:GIT_REPO_URL}/{env:GIT_BRANCH}",
-        },
+        // "headers": {
+        //   "x-opencode-git-username": "{env:GIT_USERNAME}",
+        //   "x-opencode-git-branch": "{env:GIT_BRANCH}",
+        //   "x-opencode-git-repo-url": "{env:GIT_REPO_URL}",
+        //   "x-opencode-git-repo-fullurl": "{env:GIT_REPO_URL}/{env:GIT_BRANCH}",
+        // },
         "includeUsage": true,
       },
       "models": {
@@ -59,15 +59,15 @@
     },
     "anthropic": {
       "name": "anthropic.sarsoo",
-      "options": {
+      "settings": {
         "baseURL": "https://bifrost.lab.sarsoo.xyz/anthropic/v1",
-        "headers": {
-          "anthropic-version": "2023-06-01",
-          "x-opencode-git-username": "{env:GIT_USERNAME}",
-          "x-opencode-git-branch": "{env:GIT_BRANCH}",
-          "x-opencode-git-repo-url": "{env:GIT_REPO_URL}",
-          "x-opencode-git-repo-fullurl": "{env:GIT_REPO_URL}/{env:GIT_BRANCH}",
-        },
+        // "headers": {
+        //   "anthropic-version": "2023-06-01",
+        //   "x-opencode-git-username": "{env:GIT_USERNAME}",
+        //   "x-opencode-git-branch": "{env:GIT_BRANCH}",
+        //   "x-opencode-git-repo-url": "{env:GIT_REPO_URL}",
+        //   "x-opencode-git-repo-fullurl": "{env:GIT_REPO_URL}/{env:GIT_BRANCH}",
+        // },
       },
       "models": {
         "claude-opus-5-5": {
@@ -80,13 +80,6 @@
               "write": 5,
             },
           },
-          "thinking": { "type": "adaptive" },
-          "variants": {
-            "Low": { "output_config": { "effort": "low" } },
-            "Medium": { "output_config": { "effort": "medium" } },
-            "High": { "output_config": { "effort": "high" } },
-            "Max": { "output_config": { "effort": "max" } },
-          },
         },
         "claude-sonnet-5-5": {
           "name": "Sonnet",
@@ -98,13 +91,6 @@
               "write": 2.5,
             },
           },
-          "thinking": { "type": "adaptive" },
-          "variants": {
-            "Low": { "output_config": { "effort": "low" } },
-            "Medium": { "output_config": { "effort": "medium" } },
-            "High": { "output_config": { "effort": "high" } },
-            "Max": { "output_config": { "effort": "max" } },
-          },
         },
         "claude-haiku-5-5": {
           "name": "Haiku",
@@ -112,8 +98,8 @@
             "input": 0.1,
             "output": 0.5,
             "cache": {
-              "cache_read": 0.01,
-              "cache_write": 0.125,
+              "read": 0.01,
+              "write": 0.125,
             },
           },
         },
@@ -190,7 +176,7 @@
       "git diff *": "allow",
     },
   },
-  "agent": {
+  "agents": {
     "build": {},
     "plan": {},
     "general": {},
@@ -204,6 +190,55 @@
     },
     "summary": {
       "model": "openai/gemma-4-e2b",
+    },
+  },
+  "mcp": {
+    "servers": {
+      "codegraph": {
+        "type": "local",
+        "command": ["codegraph", "serve", "--mcp"],
+        "environment": {
+          "CODEGRAPH_TELEMETRY": "0",
+        },
+      },
+      // "terraform": {
+      //   "type": "local",
+      //   "command": [
+      //     "docker",
+      //     "run",
+      //     "-i",
+      //     "--rm",
+      //     "hashicorp/terraform-mcp-server:1.0.0",
+      //   ],
+      //   "enabled": true,
+      // },
+      // "aws": {
+      //   "type": "local",
+      //   "command": [
+      //     "uvx",
+      //     "mcp-proxy-for-aws==1.6.2",
+      //     "https://aws-mcp.eu-central-1.api.aws/mcp",
+      //     "--region",
+      //     "eu-west-2",
+      //     // "--read-only",
+      //     "--metadata",
+      //     "AWS_REGION=eu-west-2",
+      //   ],
+      //   "enabled": true,
+      //   "environment": {
+      //     "AWS_MCP_PROXY_PROFILES": "sinara_ttm_dev_readonly sinara_ttm_mirror_readonly sinara_tlc_demo_readonly sinara_sandbox_readonly sinara_terraform_readonly sinara_artifacts_readonly sinara_tlc_terraform_readonly sinara_tlc_artifacts_readonly sinara_tlc_artillery_readonly sinara_identity_readonly sinara_observability_readonly sinara_dns_readonly sinara_organisation_readonly sinara_eng_llm_readonly sinara_artifacts_readonly sinara_tlc_artifacts_readonly sinara_ipam_readonly sinara_audit_readonly sinara_cloudwatch_readonly sinara_remoteaccess_readonly sinara_secops_readonly sinara_backup_readonly",
+      //     "AWS_REGION": "eu-west-2",
+      //   },
+      // },
+      // "grafana": {
+      //   "type": "local",
+      //   "command": ["mcp-grafana"],
+      //   "enabled": true,
+      //   "environment": {
+      //     "GRAFANA_URL": "https://grafana.techops.sinara.cloud",
+      //     "GRAFANA_SERVICE_ACCOUNT_TOKEN": "eu-west-2",
+      //   },
+      // },
     },
   },
   "share": "disabled",

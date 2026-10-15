@@ -323,12 +323,6 @@
   ],
   "disable_ai": false,
   "terminal": {
-    "shell": {
-      "with_arguments": {
-        "program": "/bin/bash", // or path to your preferred shell
-        "args": ["-c", "tmux new-session -A -s \"zed-$(basename \"$PWD\")\""],
-      },
-    },
     "cursor_shape": "bar",
     "font_family": "JetBrains Mono",
     "font_fallbacks": ["JetBrains Mono", ".ZedMono"],

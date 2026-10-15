@@ -11,7 +11,7 @@ palette = 'catppuccin_mocha'
 
 # format = '> $all >'
 
-format = '$shell$username$hostname$directory$git_branch$character'
+format = '$shell$username$hostname$directory$git_branch${env_var.ISOLATE_ENV}$character'
 
 [character]
 success_symbol = '[➜](bold green)'
@@ -81,6 +81,12 @@ disabled = true
 
 [status]
 disabled = true
+
+[env_var.ISOLATE_ENV]
+variable = 'ISOLATE_ENV'
+symbol = '🫧'
+format = '[$symbol\($env_value\)]($style)'
+style = 'inverted flamingo'
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
