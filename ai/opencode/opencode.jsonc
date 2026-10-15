@@ -8,51 +8,98 @@
       "name": "openai.sarsoo",
       "settings": {
         "baseURL": "https://bifrost.lab.sarsoo.xyz/openai",
-        // "headers": {
-        //   "x-opencode-git-username": "{env:GIT_USERNAME}",
-        //   "x-opencode-git-branch": "{env:GIT_BRANCH}",
-        //   "x-opencode-git-repo-url": "{env:GIT_REPO_URL}",
-        //   "x-opencode-git-repo-fullurl": "{env:GIT_REPO_URL}/{env:GIT_BRANCH}",
-        // },
         "includeUsage": true,
       },
       "models": {
         // GOOGLE
-        "gemma-3-4b-it": {
-          "name": "Gemma 3",
-          "tool_call": false,
-          "reasoning": false,
-        },
         "gemma-4-e2b": {
+          "modelID": "gemma-4-e2b",
           "name": "Gemma 4",
-          "tool_call": false,
-          "reasoning": false,
+          "capabilities": {
+            "tools": false,
+          },
+          "cost": {
+            "input": 0.04,
+            "output": 0.08,
+          },
         },
         // GLM
         "glm-5.3": {
+          "modelID": "glm-5.3",
           "name": "GLM 5.3",
-          "tool_call": true,
-          "reasoning": true,
+          "capabilities": {
+            "tools": true,
+          },
         },
         "glm-5.3-flash": {
+          "modelID": "glm-5.3-flash",
           "name": "GLM 5.3 Flash",
-          "tool_call": true,
-          "reasoning": true,
+          "capabilities": {
+            "tools": true,
+          },
         },
         // MOONSHOT
         "kimi-k3": {
+          "modelID": "kimi-k3",
           "name": "Kimi K3",
-          "tool_call": true,
-          "reasoning": true,
+          "capabilities": {
+            "tools": true,
+          },
         },
         // DEEPSEEK
         "deepseek-v4.1-flash": {
+          "modelID": "deepseek-v4.1-flash",
           "name": "Deepseek v4.1 Flash",
-          "tool_call": true,
-          "reasoning": true,
+          "capabilities": {
+            "tools": true,
+          },
           "limit": {
             "context": 1000000,
             "output": 384000,
+          },
+          "cost": {
+            "input": 0.3,
+            "output": 1.2,
+            "cache": {
+              "read": 0.006,
+            },
+          },
+        },
+        // OPENAI
+        "gpt-6.1-sol": {
+          "name": "Sol",
+          "capabilities": {
+            "tools": true,
+          },
+          "limit": {
+            "context": 1000000,
+            "output": 128000,
+          },
+          "cost": {
+            "input": 2.0,
+            "output": 10.0,
+            "cache": {
+              "read": 0.1,
+              "write": 2.5,
+            },
+          },
+        },
+        "gpt-6-luna": {
+          "name": "Luna",
+          "capabilities": {
+            "tools": true,
+          },
+          "limit": {
+            "context": 1000000,
+            "output": 128000,
+          },
+          "cost": {
+            "input": 0.1,
+            "output": 0.5,
+            "cache": {
+              "read": 0.01,
+              "write": 0.125,
+            },
           },
         },
       },
@@ -61,13 +108,6 @@
       "name": "anthropic.sarsoo",
       "settings": {
         "baseURL": "https://bifrost.lab.sarsoo.xyz/anthropic/v1",
-        // "headers": {
-        //   "anthropic-version": "2023-06-01",
-        //   "x-opencode-git-username": "{env:GIT_USERNAME}",
-        //   "x-opencode-git-branch": "{env:GIT_BRANCH}",
-        //   "x-opencode-git-repo-url": "{env:GIT_REPO_URL}",
-        //   "x-opencode-git-repo-fullurl": "{env:GIT_REPO_URL}/{env:GIT_BRANCH}",
-        // },
       },
       "models": {
         "claude-opus-5-5": {
@@ -106,7 +146,6 @@
       },
     },
   },
-  "command": {},
   // "lsp": true,
   "lsp": false,
   "permission": {

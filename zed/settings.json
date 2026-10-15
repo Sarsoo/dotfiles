@@ -245,13 +245,6 @@
         },
         {
           "paths": [
-            "/home/admin_ajp/iac/comet-iac",
-            "/home/admin_ajp/iac/redkite-iac",
-            "/home/admin_ajp/iac/sparrow-iac",
-          ],
-        },
-        {
-          "paths": [
             "/home/admin_ajp/dev/tlc/redkite",
             "/home/admin_ajp/iac/redkite-iac",
             "/home/admin_ajp/dev/tlc/sidp",
@@ -287,6 +280,13 @@
             "/home/admin_ajp/iac/aws-monitoring",
             "/home/admin_ajp/iac/grafana",
             "/home/admin_ajp/.config/gcx/config.yaml",
+          ],
+        },
+        {
+          "paths": [
+            "/home/admin_ajp/iac/comet-iac",
+            "/home/admin_ajp/iac/redkite-iac",
+            "/home/admin_ajp/iac/sparrow-iac",
           ],
         },
         {
