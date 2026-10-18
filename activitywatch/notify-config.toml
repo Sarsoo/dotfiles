@@ -1,0 +1,51 @@
+enabled = false
+hourly_checkins = true
+new_day_greetings = true
+server_monitoring = true
+productivity_score = true
+http_port = 0
+
+[[alerts]]
+category = "All"
+label = "All"
+thresholds_minutes = [
+    60,
+    120,
+    240,
+    360,
+    480,
+]
+positive = false
+
+[[alerts]]
+category = "Media > Social Media"
+label = "🐦 Social Media"
+thresholds_minutes = [
+    15,
+    30,
+    60,
+]
+positive = false
+
+[[alerts]]
+category = "Media"
+label = "📺 Media"
+thresholds_minutes = [
+    30,
+    60,
+    120,
+    240,
+]
+positive = false
+
+[[alerts]]
+category = "Work"
+label = "💼 Work"
+thresholds_minutes = [
+    15,
+    30,
+    60,
+    120,
+    240,
+]
+positive = true

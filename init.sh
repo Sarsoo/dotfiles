@@ -314,6 +314,13 @@ link_file "mac/aerospace/.aerospace.toml" ".aerospace.toml"
 ################
 #   tmux
 ################
+if [[ -d "${HOME}/.tmux/plugins/tpm" ]]; then
+  pushd ~/.tmux/plugins/tpm
+  git pull
+  popd
+else
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
 link_file "tmux/tmux.conf" ".tmux.conf"
 link_file "tmux/tmux.remote.conf" ".config/tmux/tmux.remote.conf"
 catpuccin_version="v2.3.0"
@@ -396,3 +403,16 @@ esac
 #   vja
 ############
 link_file "vja/config.rc" ".config/vja/config.rc"
+
+############
+#  AW
+############
+case $machine in
+
+    Mac)
+        link_file "activitywatch/server-config.toml" "Library/Application Support/activitywatch/aw-server-rust/config.toml"
+        link_file "activitywatch/sync-config.toml" "Library/Application Support/activitywatch/aw-sync/config.toml"
+        link_file "activitywatch/notify-config.toml" "Library/Application Support/activitywatch/aw-notify/config.toml"
+    ;;
+
+esac

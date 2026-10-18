@@ -471,6 +471,7 @@
     },
   },
   "auto_install_extensions": {
+    "activitywatch": true,
     "ansible": true,
     "basher": true,
     "csharp": true,
