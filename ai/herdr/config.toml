@@ -159,6 +159,7 @@ height = "80%"
 # directory = "~/.herdr/worktrees"
 
 [ui]
+window_title = "herdr {hostname}: {workspace}"
 # Sidebar width (auto-scaled based on workspace names, this sets the default)
 # sidebar_width = 26
 
