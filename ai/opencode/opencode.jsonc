@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "openai/deepseek-v4.1-flash",
+  "model": "openai/dev",
   "default_agent": "plan",
   "formatter": true,
   "providers": {
@@ -23,33 +23,10 @@
             "output": 0.08,
           },
         },
-        // GLM
-        "glm-5.3": {
-          "modelID": "glm-5.3",
-          "name": "GLM 5.3",
-          "capabilities": {
-            "tools": true,
-          },
-        },
-        "glm-5.3-flash": {
-          "modelID": "glm-5.3-flash",
-          "name": "GLM 5.3 Flash",
-          "capabilities": {
-            "tools": true,
-          },
-        },
-        // MOONSHOT
-        "kimi-k3": {
-          "modelID": "kimi-k3",
-          "name": "Kimi K3",
-          "capabilities": {
-            "tools": true,
-          },
-        },
         // DEEPSEEK
-        "deepseek-v4.1-flash": {
-          "modelID": "deepseek-v4.1-flash",
-          "name": "Deepseek v4.1 Flash",
+        "dev": {
+          "modelID": "dev",
+          "name": "Dev",
           "capabilities": {
             "tools": true,
           },
@@ -66,26 +43,8 @@
           },
         },
         // OPENAI
-        "gpt-6.1-sol": {
-          "name": "Sol",
-          "capabilities": {
-            "tools": true,
-          },
-          "limit": {
-            "context": 1000000,
-            "output": 128000,
-          },
-          "cost": {
-            "input": 2.0,
-            "output": 10.0,
-            "cache": {
-              "read": 0.1,
-              "write": 2.5,
-            },
-          },
-        },
-        "gpt-6-luna": {
-          "name": "Luna",
+        "gpt-flash": {
+          "name": "GPT-Flash",
           "capabilities": {
             "tools": true,
           },
@@ -99,6 +58,24 @@
             "cache": {
               "read": 0.01,
               "write": 0.125,
+            },
+          },
+        },
+        "gpt-medium": {
+          "name": "GPT-Medium",
+          "capabilities": {
+            "tools": true,
+          },
+          "limit": {
+            "context": 1000000,
+            "output": 128000,
+          },
+          "cost": {
+            "input": 2.0,
+            "output": 10.0,
+            "cache": {
+              "read": 0.1,
+              "write": 2.5,
             },
           },
         },

@@ -6,7 +6,7 @@
   "projectCharLimit": 5000,
   "sessionSearch": { "variant": "anchors" },
   "llmThinkingOverride": "low",
-  "llmModelOverride": "openai.sarsoo/deepseek-v4.1-flash",
+  "llmModelOverride": "openai.sarsoo/dev",
   "nudgeInterval": 10,
   "nudgeToolCalls": 15,
   "reviewRecentMessages": 0,
