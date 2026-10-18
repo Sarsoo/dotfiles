@@ -280,6 +280,8 @@ if [[ -z "${SAR_SKIP_PI}" ]]; then
 
   link_file "ai/pi/agents" ".pi/agents"
   link_file "ai/pi/subagents.json" ".pi/agent/subagents.json"
+
+  link_file "ai/pi/ui-panels.json" ".pi/agent/ui-panels.json"
 else
   echo "> Skipping Pi config"
 fi
