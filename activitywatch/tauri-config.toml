@@ -1,0 +1,17 @@
+port = 5600
+discovery_paths = [
+  "/Users/andy/aw-modules",
+]
+
+[autostart]
+enabled = true
+minimized = true
+modules = [
+  "aw-watcher-afk",
+  "aw-watcher-window",
+  "aw-sync",
+  # "aw-watcher-input"
+]
+
+[updates]
+auto_download = true

@@ -378,10 +378,6 @@ if [[ -z "${SAR_SKIP_GITCONFIG}" ]]; then
           link_file "git/mac.gitconfig" ".gitconfig"
       ;;
 
-      Linux)
-          link_file "git/.gitconfig" ".gitconfig"
-      ;;
-
   esac
 fi
 
@@ -415,6 +411,7 @@ case $machine in
         link_file "activitywatch/server-config.toml" "Library/Application Support/activitywatch/aw-server-rust/config.toml"
         link_file "activitywatch/sync-config.toml" "Library/Application Support/activitywatch/aw-sync/config.toml"
         link_file "activitywatch/notify-config.toml" "Library/Application Support/activitywatch/aw-notify/config.toml"
+        link_file "activitywatch/tauri-config.toml" "Library/Application Support/activitywatch/aw-tauri/config.toml"
     ;;
 
 esac
