@@ -21,6 +21,8 @@ alias free='free -m' # show sizes in MB
 alias df='df -h' # human-readable sizes
 alias more=less
 
+alias rcd='cd $(git rev-parse --show-toplevel) && cd'
+
 alias lasterror='journalctl -p 3 -xb'
 alias mtr='mtr -b -o "LSRD NABWV G JMXI"'
 

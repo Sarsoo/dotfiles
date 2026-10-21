@@ -94,7 +94,6 @@
       "api_url": "https://bifrost.lab.sarsoo.xyz/v1",
       "prompt_format": "deepseek_coder",
     },
-    // "provider": "open_ai_compatible_api",
     "provider": "open_ai_compatible_api",
   },
   "collaboration_panel": {
@@ -251,6 +250,9 @@
           ],
         },
         {
+          "paths": ["/home/admin_ajp/dev/tlc/tlc-mcp"],
+        },
+        {
           "paths": [
             "/home/admin_ajp/dotfiles",
             "/home/admin_ajp/dev/scripts",
@@ -287,6 +289,13 @@
             "/home/admin_ajp/iac/comet-iac",
             "/home/admin_ajp/iac/redkite-iac",
             "/home/admin_ajp/iac/sparrow-iac",
+          ],
+        },
+        {
+          "paths": [
+            "/home/admin_ajp/dev/tlc/comet",
+            "/home/admin_ajp/dev/tlc/redkite",
+            "/home/admin_ajp/dev/tlc/sparrow",
           ],
         },
         {
