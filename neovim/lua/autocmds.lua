@@ -12,3 +12,29 @@ vim.api.nvim_create_autocmd("BufEnter", {
   group = aug,
 })
 
+
+-- https://github.com/den-is/nvim/blob/master/lua/config/autocmds.lua
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  desc = "Enable spell checking for certain file types",
+  pattern = { "*.txt", "*.md" },
+  callback = function()
+    vim.opt.spell = true
+  end,
+})
+
+-- https://www.mitchellhanberg.com/modern-format-on-save-in-neovim/
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = vim.api.nvim_create_augroup("lsp", { clear = true }),
+  callback = function(args)
+    -- 2
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      -- 3
+      buffer = args.buf,
+      callback = function()
+        -- 4 + 5
+        vim.lsp.buf.format {async = false, id = args.data.client_id }
+      end,
+    })
+  end
+})
+

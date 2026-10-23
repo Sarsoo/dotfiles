@@ -216,6 +216,25 @@
         "environment": {
           "CODEGRAPH_TELEMETRY": "0",
         },
+        "codemode": false,
+      },
+      "documentation": {
+        "type": "remote",
+        "url": "https://bifrost.lab.sarsoo.xyz/mcp/documentation",
+        "headers": {
+          "Authorization": "Bearer sk-bf-mcp",
+        },
+        "codemode": false,
+      },
+      "kubernetes": {
+        "type": "local",
+        "command": [
+          "npx",
+          "-y",
+          "kubernetes-mcp-server@latest",
+          "--config",
+          "~/.mcp/kube.toml",
+        ],
       },
       // "terraform": {
       //   "type": "local",

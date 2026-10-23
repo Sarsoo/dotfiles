@@ -256,6 +256,9 @@ if [[ -z "${SAR_SKIP_OPENCODE}" ]]; then
   link_file "ai/opencode/opencode.jsonc" ".config/opencode/opencode.jsonc"
   link_file "ai/opencode/tui.jsonc" ".config/opencode/tui.jsonc"
   link_file "ai/opencode/cli.json" ".config/opencode/cli.json"
+
+  link_file "ai/opencode/commands" ".config/opencode/commands"
+  link_file "ai/opencode/agents" ".config/opencode/agents"
 else
   echo "> Skipping OpenCode config"
 fi
