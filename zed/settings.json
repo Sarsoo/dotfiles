@@ -149,8 +149,8 @@
   "ui_font_family": "Fraunces",
   "ui_font_fallbacks": [".ZedSans"],
   "buffer_line_height": "standard",
-  "buffer_font_family": "JetBrains Mono",
-  "buffer_font_fallbacks": [".ZedMono"],
+  "buffer_font_family": "JetBrainsMono NF",
+  "buffer_font_fallbacks": ["JetBrains Mono", ".ZedMono"],
   "languages": {
     "YAML": {
       "format_on_save": "off",
@@ -333,7 +333,7 @@
   "disable_ai": false,
   "terminal": {
     "cursor_shape": "bar",
-    "font_family": "JetBrains Mono",
+    "font_family": "JetBrainsMono NF",
     "font_fallbacks": ["JetBrains Mono", ".ZedMono"],
     "working_directory": "current_file_directory",
     "dock": "bottom",
