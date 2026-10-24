@@ -11,7 +11,7 @@
     "blink.cmp": {
       "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
       "src": "https://github.com/saghen/blink.cmp",
-      "version": "'1.*'"
+      "version": "1.0.0 - 2.0.0"
     },
     "blink.lib": {
       "rev": "fd9a48ebbe6ec30d5dfcc5b42c243941ccdca1aa",
@@ -27,7 +27,7 @@
       "src": "https://github.com/folke/flash.nvim"
     },
     "fzf-lua": {
-      "rev": "5dca84ef44f37b960a128a43d044ee348ff86fb4",
+      "rev": "507dfc85551ff2d9293ec215f10f19395252aada",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "gitsigns.nvim": {

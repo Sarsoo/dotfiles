@@ -89,11 +89,30 @@ tssh() {
 }
 
 function y() {
-	local tmp cwd; tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-	command yazi "$@" --cwd-file="$tmp"
-	IFS= read -r -d '' cwd < "$tmp"
-	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd" || builtin true
-	command rm -f -- "$tmp"
+
+  if command -v yazi >/dev/null; then
+  	local tmp cwd; tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+  	command yazi "$@" --cwd-file="$tmp"
+  	IFS= read -r -d '' cwd < "$tmp"
+  	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd" || builtin true
+  	command rm -f -- "$tmp"
+  elif command -v ranger >/dev/null; then
+    local IFS=$'\t\n'
+    local tempfile="$(mktemp -t tmp.XXXXXX)"
+    local ranger_cmd=(
+        command
+        ranger
+        --cmd="map Q chain shell echo %d > "$tempfile"; quitall"
+    )
+
+    ${ranger_cmd[@]} "$@"
+    if [[ -f "$tempfile" ]] && [[ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]]; then
+        cd -- "$(cat "$tempfile")" || return
+    fi
+    command rm -f -- "$tempfile" 2>/dev/null
+  else
+    echo "no file manager installed" >&2
+  fi
 }
 
 # fzf directory switcher backed by ~/.bk bookmarks (see scripts/util/so-bk).
