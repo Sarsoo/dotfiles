@@ -127,14 +127,15 @@
   "lsp": false,
   "permission": {
     "*": "ask",
-    "external_directory": "ask",
     "read": "allow",
     "glob": "allow",
     "grep": "allow",
     "list": "allow",
     "edit": "ask",
     "lsp": "allow",
-    "webfetch": "allow",
+    "websearch": "ask",
+    "webfetch": "ask",
+    "todowrite *": "allow",
     "bash": {
       "*": "ask",
       "ls *": "allow",
@@ -190,6 +191,12 @@
       "git grep *": "allow",
       "git diff": "allow",
       "git diff *": "allow",
+    },
+    "task": {
+      "explore *": "allow",
+    },
+    "external_directory": {
+      "/tmp/opencode/**": "allow",
     },
   },
   "agents": {
@@ -277,4 +284,5 @@
     },
   },
   "share": "disabled",
+  "plugins": ["{env:HOME}/.hindsight/coding-agents"],
 }

@@ -22,6 +22,7 @@ auto_switch = false
 sidebar_bg = "#1e1e2e"
 # selection_bg = "#3b4370"
 selection_bg = "#11111b"
+active_row_bg = "#313244"
 # sidebar_bg = "#b4befe"
 # accent = "#f5c2e7"
 # red = "#ff6188"

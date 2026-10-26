@@ -50,6 +50,12 @@
   },
   "colorize_brackets": true,
   "agent_servers": {
+    "opencode-v2": {
+      "default_config_options": {
+        "mode": "plan"
+      },
+      "type": "registry"
+    },
     "pi-acp": {
       "favorite_config_option_values": {
         "model": ["openai.sarsoo/deepseek-v4-flash"],
@@ -64,25 +70,6 @@
       "type": "custom",
       "command": "ssh",
       "args": ["herm", "/home/hermes/.local/bin/hermes", "acp"],
-    },
-    "opencode": {
-      "env": {
-        "AWS_CONFIG_FILE": "~/.aws/config.readonly",
-      },
-      "favorite_config_option_values": {
-        "model": [
-          "openai.sarsoo/deepseek-v4-flash",
-          "openai.sarsoo/claude-sonnet-5",
-          "openai.sarsoo/qwen3.7-plus",
-          "openai.sarsoo/glm-5.2",
-        ],
-      },
-      "default_config_options": {
-        "effort": "medium",
-        "mode": "plan",
-        "model": "openai/deepseek-v4-flash",
-      },
-      "type": "registry",
     },
   },
   "show_edit_predictions": true,

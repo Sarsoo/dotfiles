@@ -1,12 +1,11 @@
 {
+  "$schema": "https://pi.dev/schemas/settings.schema.json",
   "defaultProvider": "openai.sarsoo",
   "defaultModel": "dev",
   "defaultThinkingLevel": "low",
   "enableInstallTelemetry": false,
   "enableAnalytics": false,
-  "defaultTools": [
-    "+codemode"
-  ],
+  "defaultTools": ["+codemode"],
   "compaction": {
     "enabled": true,
     "reserveTokens": 16384,
@@ -30,7 +29,7 @@
   "outputPad": 1,
   "autocompleteMaxVisible": 8,
   "tuiMode": "fullscreen",
-  "lastChangelogVersion": "1.3.0",
+  "lastChangelogVersion": "1.4.0",
   "packages": [
     "npm:pi-hermes-memory",
     "npm:@juicesharp/rpiv-ask-user-question",
@@ -38,8 +37,7 @@
     "npm:@gotgenes/pi-permission-system",
     "npm:pi-advisor-flow",
     "npm:pi-web-access",
-    "npm:@gotgenes/pi-subagents",
-    "npm:pi-split-view"
+    "npm:@gotgenes/pi-subagents"
   ],
   "powerline": {
     "preset": "default",
@@ -48,5 +46,6 @@
     "git": {
       "hostIcon": true
     }
-  }
+  },
+  "extensions": ["~/.hindsight/coding-agents/dist/pi.js"]
 }
