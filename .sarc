@@ -20,6 +20,7 @@ alias cp="cp -i" # confirm before overwriting something
 alias free='free -m' # show sizes in MB
 alias df='df -h' # human-readable sizes
 alias more=less
+alias msh='sudo machinectl shell'
 
 alias rcd='cd $(git rev-parse --show-toplevel) && cd'
 
@@ -31,6 +32,7 @@ alias rdoc='cargo doc --open'
 alias dbx='distrobox'
 
 command -v nvim >/dev/null 2>&1 && alias vim='nvim'
+command -v batcat >/dev/null 2>&1 && alias bat='batcat'
 
 ##
 # util
