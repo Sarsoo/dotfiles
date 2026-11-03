@@ -418,3 +418,23 @@ case $machine in
     ;;
 
 esac
+
+############
+#   aerc
+############
+
+case $machine in
+
+    Mac)
+        link_file "aerc/aerc.conf" "Library/Preferences/aerc/aerc.conf"
+        link_file "aerc/binds.conf" "Library/Preferences/aerc/binds.conf"
+        link_file "aerc/catppuccin-frappe" "Library/Preferences/aerc/stylesets/catppuccin-frappe"
+    ;;
+
+    Linux)
+        link_file "aerc/aerc.conf" ".config/aerc/aerc.conf"
+        link_file "aerc/binds.conf" ".config/aerc/binds.conf"
+        link_file "aerc/catppuccin-frappe" ".config/aerc/stylesets/catppuccin-frappe"
+    ;;
+
+esac

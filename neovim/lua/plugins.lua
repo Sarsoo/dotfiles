@@ -147,3 +147,7 @@ require("flash").setup({
     }
   }
 })
+
+require("catppuccin").setup({
+  flavour = "frappe"
+})
