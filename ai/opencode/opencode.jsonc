@@ -11,16 +11,11 @@
         "includeUsage": true,
       },
       "models": {
-        // GOOGLE
-        "gemma-4-e2b": {
-          "modelID": "gemma-4-e2b",
-          "name": "Gemma 4",
+        "tiny": {
+          "modelID": "tiny",
+          "name": "Tiny",
           "capabilities": {
             "tools": false,
-          },
-          "cost": {
-            "input": 0.04,
-            "output": 0.08,
           },
         },
         // DEEPSEEK
@@ -206,13 +201,13 @@
     "explore": {},
     "scout": {},
     "compaction": {
-      "model": "openai/gemma-4-e2b",
+      "model": "openai/tiny",
     },
     "title": {
-      "model": "openai/gemma-4-e2b",
+      "model": "openai/tiny",
     },
     "summary": {
-      "model": "openai/gemma-4-e2b",
+      "model": "openai/tiny",
     },
   },
   "mcp": {

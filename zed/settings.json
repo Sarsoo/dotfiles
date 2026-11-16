@@ -129,6 +129,7 @@
     "enabled": true,
   },
   "vim": {
+    "use_smartcase_find": true,
     "toggle_relative_line_numbers": false,
   },
   "relative_line_numbers": "disabled",

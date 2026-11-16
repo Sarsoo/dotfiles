@@ -149,6 +149,7 @@ paths=(
     "/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/universal"
     "${HOME}/bin"
     "${HOME}/.local/bin"
+    "${HOME}/.dotnetup"
     "${HOME}/.dotnet"
     "${HOME}/.dotnet/tools"
     "${HOME}/.kubectx"
