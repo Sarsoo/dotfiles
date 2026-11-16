@@ -264,6 +264,15 @@ else
 fi
 
 ############
+# hindsight
+############
+if [[ -z "${SAR_SKIP_HINDSIGHT}" ]]; then
+  link_file "ai/hindsight/coding-agent.json" ".hindsight/coding-agent.json"
+else
+  echo "> Skipping Hindsight config"
+fi
+
+############
 #   pi
 ############
 if [[ -z "${SAR_SKIP_PI}" ]]; then

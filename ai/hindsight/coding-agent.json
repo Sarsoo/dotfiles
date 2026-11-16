@@ -1,0 +1,9 @@
+{
+  "serverMode": "self-hosted",
+  "apiUrl": "https://hindsight.lab.sarsoo.xyz",
+  "bankId": "personal",
+  "retainTags": ["agent:{harness}", "project:{gitProject}", "env:personal"],
+  "pageTriggerType": "cron",
+  "pageTriggerCron": "H H * * H",
+  "reflectBudget": "low"
+}
