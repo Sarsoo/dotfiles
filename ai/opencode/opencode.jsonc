@@ -6,6 +6,7 @@
   "providers": {
     "openai": {
       "name": "openai.sarsoo",
+      "package": "@opencode/ai/providers/openai-compatible",
       "settings": {
         "baseURL": "https://bifrost.lab.sarsoo.xyz/openai",
         "includeUsage": true,
@@ -24,6 +25,8 @@
           "name": "Dev",
           "capabilities": {
             "tools": true,
+            "input": ["text"],
+            "output": ["text"],
           },
           "limit": {
             "context": 1000000,
@@ -78,6 +81,7 @@
     },
     "anthropic": {
       "name": "anthropic.sarsoo",
+      "package": "@opencode/ai/providers/anthropic-compatible",
       "settings": {
         "baseURL": "https://bifrost.lab.sarsoo.xyz/anthropic/v1",
       },
@@ -228,16 +232,16 @@
         },
         "codemode": false,
       },
-      "kubernetes": {
-        "type": "local",
-        "command": [
-          "npx",
-          "-y",
-          "kubernetes-mcp-server@latest",
-          "--config",
-          "~/.mcp/kube.toml",
-        ],
-      },
+      // "kubernetes": {
+      //   "type": "local",
+      //   "command": [
+      //     "npx",
+      //     "-y",
+      //     "kubernetes-mcp-server@latest",
+      //     "--config",
+      //     "~/.mcp/kube.toml",
+      //   ],
+      // },
       // "terraform": {
       //   "type": "local",
       //   "command": [

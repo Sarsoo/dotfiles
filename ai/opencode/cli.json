@@ -19,7 +19,7 @@
     "blinking": true
   },
   "tabs": {
-    "mode": "auto",
+    "mode": "off",
     "scope": "global",
     "layout": "horizontal",
     "indicators": "status"

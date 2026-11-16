@@ -5,7 +5,9 @@
   "defaultThinkingLevel": "low",
   "enableInstallTelemetry": false,
   "enableAnalytics": false,
-  "defaultTools": ["+codemode"],
+  "defaultTools": [
+    "+codemode"
+  ],
   "compaction": {
     "enabled": true,
     "reserveTokens": 16384,
@@ -29,7 +31,7 @@
   "outputPad": 1,
   "autocompleteMaxVisible": 8,
   "tuiMode": "fullscreen",
-  "lastChangelogVersion": "1.4.0",
+  "lastChangelogVersion": "1.5.2",
   "packages": [
     "npm:pi-hermes-memory",
     "npm:@juicesharp/rpiv-ask-user-question",
@@ -45,5 +47,12 @@
       "hostIcon": true
     }
   },
-  "extensions": ["~/.hindsight/coding-agents/dist/pi.js"]
+  "extensions": [
+    "~/.hindsight/coding-agents/dist/pi.js"
+  ],
+  "extensionChangelogVersions": {
+    "{\"source\":\"npm:@narumitw/pi-plan-mode\",\"scope\":\"user\"}": "0.60.1",
+    "{\"source\":\"npm:@gotgenes/pi-permission-system\",\"scope\":\"user\"}": "42.0.0",
+    "{\"source\":\"npm:pi-advisor-flow\",\"scope\":\"user\"}": "0.15.0"
+  }
 }
