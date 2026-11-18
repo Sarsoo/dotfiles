@@ -147,8 +147,8 @@ fi
 # PATH
 ################
 
+# common paths
 paths=(
-    "/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/universal"
     "${HOME}/bin"
     "${HOME}/.local/bin"
     "${HOME}/.dotnetup"
@@ -161,12 +161,25 @@ paths=(
     "${HOME}/go/bin"
     "${HOME}/.tfenv/bin"
     "${HOME}/.pi/agent/bin"
-    "/Applications/ActivityWatch.app/Contents/Resources/aw-server-rust"
-    "/Applications/kitty.app/Contents/MacOS"
-    '/opt/homebrew/opt/python/bin'
-    '/opt/homebrew/opt/findutils/libexec/gnubin'
-    '/opt/homebrew/opt/coreutils/libexec/gnubin'
 )
+
+# os-specific paths
+case $machine in
+
+    Mac)
+        paths+=(
+            "/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/universal"
+            "${HOME}/Library/Application Support/dotnetup/dotnet"
+            "/Applications/ActivityWatch.app/Contents/Resources/aw-server-rust"
+            "/Applications/kitty.app/Contents/MacOS"
+            '/opt/homebrew/opt/python/bin'
+            '/opt/homebrew/opt/findutils/libexec/gnubin'
+            '/opt/homebrew/opt/coreutils/libexec/gnubin'
+        )
+    ;;
+
+esac
+
 for p in "${paths[@]}"; do
     if [ -d "${p}" ]; then
         export PATH="${p}:${PATH}"
