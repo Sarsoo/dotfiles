@@ -5,5 +5,12 @@
   "retainTags": ["agent:{harness}", "project:{gitProject}", "env:personal"],
   "pageTriggerType": "cron",
   "pageTriggerCron": "H H * * H",
-  "reflectBudget": "low"
+  "reflectBudget": "low",
+  "pages": {
+    "Component map": false,
+    "Core concepts": false,
+    "Conventions and patterns": false,
+    "Key decisions and rationale": false,
+    "Initiatives and enhancements": false
+  }
 }
