@@ -203,6 +203,7 @@ paths=(
     "${HOME}/scripts/.rc"
     "${HOME}/.nvm/nvm.sh"
     "${HOME}/.nvm/bash_completion"
+    "${HOME}/scripts/lib/so-rec.sh"
 )
 for p in "${paths[@]}"; do
     if [ -e "${p}" ]; then
